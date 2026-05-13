@@ -3,1716 +3,1452 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMKS Digital Marketing Agency - Grow Your Business Online</title>
-    <meta name="description" content="MMKS - Affordable digital solutions for growing businesses. Social media, web development, SEO, training & more.">
+    <meta name="description" content="MMKS Digital Marketing Agency - Affordable digital marketing services in Kovilpatti, Tamil Nadu. SEO, social media marketing, website development, WhatsApp marketing, and AI marketing solutions.">
+    <meta name="keywords" content="Digital Marketing Agency Kovilpatti, SEO Services Tamil Nadu, Social Media Marketing, Website Development, WhatsApp Marketing, AI Marketing Agency">
+    <meta name="author" content="MMKS Digital Marketing Agency">
+    <meta name="theme-color" content="#0f2137">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta property="og:title" content="MMKS Digital Marketing Agency - Affordable Digital Solutions">
+    <meta property="og:description" content="Grow your business with smart, creative, and affordable digital marketing solutions">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MMKS Digital Marketing Agency",
+        "description": "Affordable digital marketing agency specializing in SEO, social media marketing, and website development",
+        "url": "https://mmksdigital.com",
+        "telephone": "+91-8608717184",
+        "areaServed": "TN",
+        "priceRange": "₹",
+        "serviceArea": {
+            "@type": "City",
+            "name": "Kovilpatti"
+        }
+    }
+    </script>
     
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <title>MMKS Digital Marketing Agency | Affordable Digital Solutions in Kovilpatti</title>
     
-    <!-- Lenis Smooth Scrolling -->
-    <script src="https://cdn.jsdelivr.net/gh/darkroomengineering/lenis@latest/bundled/lenis.js"></script>
-    
-    <!-- AOS Animation Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0f2137;
+            --navy-mid: #12294a;
+            --navy-light: #1a3a5c;
+            --green: #1e7e34;
+            --green-mid: #23963d;
+            --green-light: #28a745;
+            --green-bright: #1e7e34;
+            --accent: #23963d;
+            --white: #ffffff;
+            --off-white: #f4faf6;
+            --text-body: #2d3e30;
+            --text-muted: #5a7a62;
+            --border: rgba(30, 126, 52, 0.18);
+            --card-bg: #ffffff;
+            --gradient-green: linear-gradient(135deg, #1e7e34, #34c759);
+            --gradient-navy: linear-gradient(135deg, #0f2137, #1a3a5c);
+            --gradient-mixed: linear-gradient(135deg, #0f2137 0%, #1e7e34 100%);
+            --page-bg: #f4faf6;
+            --section-alt: #edf7f0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f8f4 100%);
-            color: #0f2137;
-            overflow-x: hidden;
+            font-family: 'DM Sans', sans-serif;
+            background: var(--page-bg);
+            color: var(--text-body);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* ============ COLOR VARIABLES ============ */
-        :root {
-            --primary: #1e7e34;
-            --primary-dark: #0f2137;
-            --primary-light: #2eb563;
-            --accent: #1e7e34;
-            --secondary: #f3f4f6;
-            --text-primary: #0f2137;
-            --text-secondary: #666666;
-            --border-color: rgba(30, 126, 52, 0.1);
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed; top: 0; left: 0;
+            height: 3px;
+            background: var(--gradient-green);
+            z-index: 2000; width: 0%;
+            transition: width 0.1s;
         }
 
-        /* ============ UTILITY CLASSES ============ */
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #1e7e34 0%, #0f2137 100%);
+        /* NAV */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(30, 126, 52, 0.15);
+            padding: 0.9rem 0;
+            box-shadow: 0 2px 20px rgba(30, 126, 52, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px; margin: 0 auto;
+            padding: 0 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.9rem; font-weight: 900;
+            letter-spacing: -1px;
+            background: var(--gradient-green);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .gradient-btn {
-            background: linear-gradient(135deg, #1e7e34 0%, #0f2137 100%);
-            color: white;
-            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-            box-shadow: 0 10px 30px rgba(30, 126, 52, 0.2);
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: #2d3e30; text-decoration: none;
+            font-weight: 500; font-size: 0.95rem;
+            transition: color 0.3s;
         }
+        .nav-links a:hover { color: var(--green); }
 
-        .gradient-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(30, 126, 52, 0.3);
+        .cta-btn {
+            background: var(--gradient-green);
+            color: white; padding: 0.6rem 1.4rem;
+            border: none; border-radius: 50px;
+            cursor: pointer; font-weight: 700;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s;
         }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(30, 126, 52, 0.4); }
 
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(30, 126, 52, 0.15);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-        }
+        .mobile-menu-btn { display: none; background: none; border: none; color: #2d3e30; font-size: 1.5rem; cursor: pointer; }
 
-        .glass-effect-dark {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(30, 126, 52, 0.2);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        /* ============ FLOATING BLOBS ============ */
-
-        .floating-blob {
-            position: absolute;
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            opacity: 0.6;
-            filter: blur(40px);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(180deg); }
-        }
-
-        .blob-1 {
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, #1e7e34 0%, #2eb563 100%);
-            top: -100px;
-            left: -100px;
-            opacity: 0.4;
-        }
-
-        .blob-2 {
-            width: 350px;
-            height: 350px;
-            background: linear-gradient(135deg, #0f2137 0%, #1e7e34 100%);
-            bottom: -80px;
-            right: -80px;
-            opacity: 0.3;
-            animation-delay: -3s;
-        }
-
-        /* ============ NAVBAR ============ */
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(30, 126, 52, 0.1);
-            padding: 15px 0;
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #0f2137;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-m {
-            color: #0f2137;
-        }
-
-        .logo-ks {
-            color: #1e7e34;
-        }
-
-        .nav-link {
-            color: #0f2137;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            font-size: 15px;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(135deg, #1e7e34 0%, #0f2137 100%);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* ============ HERO SECTION ============ */
-
+        /* HERO */
         .hero {
+            margin-top: 62px;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding: 120px 20px 50px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+            background: radial-gradient(ellipse at 80% 20%, rgba(30, 126, 52, 0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 10% 80%, rgba(52, 199, 89, 0.06) 0%, transparent 50%),
+                        linear-gradient(160deg, #ffffff 0%, #f4faf6 50%, #edf7f0 100%);
+        }
+
+        .hero-grid {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(30,126,52,0.04) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(30,126,52,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+        .orb1 { width: 400px; height: 400px; background: rgba(30, 126, 52, 0.1); top: -80px; right: -80px; animation: drift 18s ease-in-out infinite; }
+        .orb2 { width: 300px; height: 300px; background: rgba(52, 199, 89, 0.07); bottom: -60px; left: -60px; animation: drift 24s ease-in-out infinite reverse; }
+
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(30px, -20px); }
+            66% { transform: translate(-20px, 30px); }
         }
 
         .hero-content {
-            max-width: 900px;
-            text-align: center;
-            z-index: 2;
-            position: relative;
+            position: relative; z-index: 10;
+            max-width: 900px; text-align: center;
+            padding: 0 24px;
+            animation: riseIn 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .hero-title {
-            font-size: 64px;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            color: #0f2137;
+        @keyframes riseIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .hero-subtitle {
-            font-size: 18px;
-            color: #333333;
-            font-weight: 500;
-            margin-bottom: 45px;
-            line-height: 1.7;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: rgba(30, 126, 52, 0.1);
+            border: 1px solid rgba(30, 126, 52, 0.3);
+            color: var(--green);
+            padding: 0.4rem 1rem; border-radius: 50px;
+            font-size: 0.82rem; font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 80px;
+        h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 4rem);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+            color: var(--navy);
+            letter-spacing: -2px;
         }
 
-        .btn-primary {
-            padding: 16px 45px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
+        .gradient-text {
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .btn-secondary {
-            padding: 16px 45px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid #1e7e34;
-            background: transparent;
-            color: #1e7e34;
+        .subtitle {
+            font-size: 1.15rem; color: #5a7a62;
+            margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;
         }
 
-        .btn-secondary:hover {
-            background: linear-gradient(135deg, #1e7e34 0%, #0f2137 100%);
-            color: white;
-            border-color: transparent;
-        }
-
-        /* ============ STATS SECTION ============ */
-
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 80px;
-            padding: 40px;
-            background: rgba(30, 126, 52, 0.08);
-            border-radius: 20px;
+        .hero-stats {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem; margin: 3rem 0;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(30, 126, 52, 0.15);
+            border-radius: 20px; padding: 2rem;
             backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(30, 126, 52, 0.08);
         }
 
-        .stat-item {
-            text-align: center;
-        }
-
+        .stat { text-align: center; }
         .stat-number {
-            font-size: 42px;
-            font-weight: 800;
-            color: #1e7e34;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2.8rem; font-weight: 900;
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             line-height: 1;
         }
+        .stat-label { color: #5a7a62; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 0.4rem; }
 
-        .stat-label {
-            color: #666666;
-            font-size: 14px;
-            margin-top: 12px;
-            font-weight: 500;
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; }
+
+        .btn {
+            padding: 0.9rem 2rem; border: none; border-radius: 50px;
+            font-weight: 700; cursor: pointer; transition: all 0.3s;
+            font-size: 0.95rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .btn-primary { background: var(--gradient-green); color: white; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(30, 126, 52, 0.4); }
+        .btn-secondary { background: transparent; color: var(--green-light); border: 2px solid var(--green-light); }
+        .btn-secondary:hover { background: var(--green-light); color: white; transform: translateY(-3px); }
+
+        .scroll-indicator {
+            position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+            animation: bounce 2s infinite; color: #5a7a62; font-size: 1.3rem;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
         }
 
-        /* ============ TRUST BADGES ============ */
+        /* SECTIONS */
+        .section { max-width: 1200px; margin: 0 auto; padding: 90px 24px; }
 
-        .trust-badges {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
+        .section-label {
+            display: inline-block;
             background: rgba(30, 126, 52, 0.1);
-            border-radius: 8px;
-            font-size: 14px;
-            color: #0f2137;
-            font-weight: 500;
-        }
-
-        /* ============ SECTION STYLES ============ */
-
-        .section {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
+            border: 1px solid rgba(30, 126, 52, 0.25);
+            color: var(--green);
+            padding: 0.3rem 0.9rem; border-radius: 50px;
+            font-size: 0.75rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 1rem;
         }
 
         .section-title {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 15px;
-            color: #0f2137;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 900;
+            text-align: center; margin-bottom: 0.8rem;
+            color: var(--navy); letter-spacing: -1px;
         }
 
-        .section-subtitle {
-            font-size: 16px;
-            color: #666666;
-            margin-bottom: 60px;
-            max-width: 600px;
-        }
+        .section-subtitle { text-align: center; color: #5a7a62; margin-bottom: 4rem; font-size: 1.05rem; }
 
-        /* ============ SERVICE CARDS ============ */
-
+        /* SERVICES */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
 
         .service-card {
-            padding: 35px;
-            border-radius: 16px;
-            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-            position: relative;
-            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid rgba(30, 126, 52, 0.12);
+            border-radius: 18px; padding: 2.2rem;
+            position: relative; overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 2px 15px rgba(30, 126, 52, 0.06);
         }
 
-        .service-card::before {
+        .service-card::after {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(135deg, #1e7e34 0%, #2eb563 100%);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(30, 126, 52, 0.03) 0%, transparent 100%);
+            opacity: 0; transition: opacity 0.3s;
+            pointer-events: none;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(30, 126, 52, 0.15);
+            border-color: rgba(30, 126, 52, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(30, 126, 52, 0.12);
         }
+        .service-card:hover::after { opacity: 1; }
 
         .service-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            width: 56px; height: 56px;
+            background: rgba(30, 126, 52, 0.15);
+            border: 1px solid rgba(30, 126, 52, 0.25);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; margin-bottom: 1.3rem;
         }
 
         .service-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #0f2137;
-            margin-bottom: 12px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.25rem; font-weight: 700;
+            margin-bottom: 0.8rem; color: var(--navy);
         }
 
-        .service-description {
-            font-size: 14px;
-            color: #666666;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
+        .service-desc { color: #5a7a62; margin-bottom: 1.2rem; font-size: 0.93rem; line-height: 1.7; }
 
-        .service-pricing {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(30, 126, 52, 0.1);
+        .service-link {
+            color: var(--green); text-decoration: none;
+            font-weight: 600; font-size: 0.88rem;
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            transition: gap 0.3s;
         }
+        .service-link:hover { gap: 0.8rem; }
 
-        .price {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1e7e34;
+        /* PRICING */
+        .pricing-section { background: var(--section-alt); }
+
+        .pricing-categories { display: flex; flex-direction: column; gap: 3rem; }
+
+        .pricing-category-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.4rem; font-weight: 800;
+            color: var(--navy); margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--green);
         }
-
-        .offer-badge {
-            display: inline-block;
-            background: #fef3c7;
-            color: #92400e;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        /* ============ PRICING CARDS ============ */
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
         }
 
         .pricing-card {
-            padding: 40px 30px;
-            border-radius: 16px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(30, 126, 52, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, #1e7e34 0%, #2eb563 100%);
-        }
-
-        .pricing-card.featured {
-            background: linear-gradient(135deg, #1e7e34 0%, #0f2137 100%);
-            color: white;
-            transform: scale(1.08);
-            box-shadow: 0 20px 50px rgba(30, 126, 52, 0.3);
-            border: none;
-        }
-
-        .pricing-card.featured::before {
-            display: none;
+            background: #ffffff;
+            border: 1px solid rgba(30, 126, 52, 0.12);
+            border-radius: 16px; padding: 1.8rem;
+            position: relative; transition: all 0.3s;
+            box-shadow: 0 2px 12px rgba(30, 126, 52, 0.05);
         }
 
         .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(30, 126, 52, 0.15);
+            border-color: rgba(30, 126, 52, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(30, 126, 52, 0.12);
         }
 
-        .pricing-card.featured:hover {
-            transform: scale(1.08) translateY(-10px);
+        .pricing-card.popular {
+            border-color: rgba(30, 126, 52, 0.4);
+            background: linear-gradient(135deg, #ffffff 0%, #f0faf2 100%);
+            box-shadow: 0 4px 20px rgba(30, 126, 52, 0.12);
         }
 
         .popular-badge {
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--gradient-green);
+            color: white; padding: 0.25rem 1rem;
+            border-radius: 50px; font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 1px; white-space: nowrap;
+        }
+
+        .pricing-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem; font-weight: 700; color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-desc { color: #5a7a62; font-size: 0.83rem; margin-bottom: 1.2rem; line-height: 1.5; }
+
+        .pricing-amount {
+            display: flex; align-items: baseline; gap: 0.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-main {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2rem; font-weight: 900; color: var(--green);
+        }
+        .price-period { font-size: 0.8rem; color: #5a7a62; }
+        .price-original {
+            text-decoration: line-through; color: #aaa;
+            font-size: 0.85rem; display: block;
+        }
+
+        .pricing-offer {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 15px;
+            background: rgba(30, 126, 52, 0.1);
+            border: 1px solid rgba(30, 126, 52, 0.2);
+            color: var(--green);
+            padding: 0.2rem 0.6rem; border-radius: 6px;
+            font-size: 0.72rem; font-weight: 700;
+            margin-bottom: 1rem;
         }
 
-        .price-amount {
-            font-size: 48px;
-            font-weight: 800;
-            margin: 20px 0;
-        }
+        .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+        .pricing-features li { font-size: 0.85rem; color: #5a7a62; display: flex; align-items: center; gap: 0.5rem; }
+        .pricing-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
 
-        .price-currency {
-            font-size: 24px;
-        }
-
-        .price-period {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 25px;
-        }
-
-        .pricing-features {
-            text-align: left;
-            margin: 30px 0;
-        }
-
-        .pricing-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(30, 126, 52, 0.1);
-            font-size: 14px;
-        }
-
-        .pricing-card.featured .pricing-features li {
-            border-bottom-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .pricing-features li:before {
-            content: '✓ ';
-            color: #1e7e34;
-            font-weight: 700;
-            margin-right: 8px;
-        }
-
-        .pricing-card.featured .pricing-features li:before {
-            color: #2eb563;
-        }
-
-        /* ============ BENTO GRID ============ */
-
-        .bento-grid {
+        /* PACKAGES */
+        .packages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .bento-item {
-            padding: 30px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, rgba(30, 126, 52, 0.08) 0%, rgba(46, 181, 99, 0.08) 100%);
-            border: 1px solid rgba(30, 126, 52, 0.15);
-            transition: all 0.3s ease;
+        .package-card {
+            background: #ffffff;
+            border: 2px solid rgba(30, 126, 52, 0.12);
+            border-radius: 22px; padding: 2.5rem;
+            position: relative; transition: all 0.35s;
+            box-shadow: 0 2px 15px rgba(30, 126, 52, 0.06);
         }
 
-        .bento-item:hover {
-            transform: translateY(-5px);
-            background: linear-gradient(135deg, rgba(30, 126, 52, 0.12) 0%, rgba(46, 181, 99, 0.12) 100%);
-            border-color: rgba(30, 126, 52, 0.3);
+        .package-card.starter { border-color: rgba(30, 126, 52, 0.15); }
+        .package-card.growth { border-color: rgba(30, 126, 52, 0.35); background: linear-gradient(135deg, #ffffff, #f0faf2); }
+        .package-card.premium { border-color: rgba(30, 126, 52, 0.45); background: linear-gradient(135deg, #edf7f0, #ffffff); }
+
+        .package-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(15, 33, 55, 0.7); }
+
+        .package-tier {
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; margin-bottom: 0.8rem;
+        }
+        .starter .package-tier { color: var(--text-muted); }
+        .growth .package-tier { color: var(--green-light); }
+        .premium .package-tier { color: var(--green-bright); }
+
+        .package-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.7rem; font-weight: 900; color: var(--navy);
+            margin-bottom: 0.5rem;
         }
 
-        .bento-icon {
-            font-size: 36px;
-            margin-bottom: 15px;
+        .package-tagline { color: #5a7a62; font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+        .package-price {
+            margin-bottom: 0.5rem;
+        }
+        .package-price .price-main { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.5rem; font-weight: 900; color: var(--green); }
+        .package-price .price-original { text-decoration: line-through; color: #aaa; font-size: 1rem; }
+
+        .package-features { list-style: none; margin: 1.5rem 0 2rem; display: flex; flex-direction: column; gap: 0.7rem; }
+        .package-features li { display: flex; align-items: flex-start; gap: 0.6rem; color: var(--text-body); font-size: 0.92rem; }
+        .package-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+        .package-btn {
+            width: 100%; padding: 0.9rem;
+            border-radius: 12px; border: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700; font-size: 0.95rem;
+            cursor: pointer; transition: all 0.3s;
         }
 
-        .bento-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #0f2137;
-            margin-bottom: 10px;
+        .starter .package-btn { background: rgba(30, 126, 52, 0.08); border: 1.5px solid rgba(30, 126, 52, 0.3); color: var(--green); }
+        .starter .package-btn:hover { background: rgba(30, 126, 52, 0.15); }
+        .growth .package-btn, .premium .package-btn { background: var(--gradient-green); color: white; }
+        .growth .package-btn:hover, .premium .package-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(30, 126, 52, 0.4); }
+
+        /* PORTFOLIO */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+
+        .portfolio-item {
+            background: #ffffff;
+            border-radius: 18px; overflow: hidden;
+            border: 1px solid rgba(30, 126, 52, 0.1);
+            cursor: pointer; transition: all 0.3s;
+            box-shadow: 0 2px 12px rgba(30, 126, 52, 0.06);
+        }
+        .portfolio-item:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(30, 126, 52, 0.12); }
+
+        .portfolio-image {
+            width: 100%; height: 200px;
+            background: var(--gradient-mixed);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3.5rem; position: relative; overflow: hidden;
         }
 
-        .bento-text {
-            font-size: 14px;
-            color: #666666;
-            line-height: 1.6;
+        .portfolio-overlay {
+            position: absolute; inset: 0;
+            background: rgba(15, 33, 55, 0.85);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+        .portfolio-info { padding: 1.4rem; }
+        .portfolio-tag {
+            display: inline-block; background: rgba(30, 126, 52, 0.08);
+            border: 1px solid rgba(30, 126, 52, 0.18);
+            color: var(--green);
+            padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.72rem; font-weight: 600; margin-bottom: 0.6rem;
+        }
+        .portfolio-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--navy); }
+        .portfolio-result { color: var(--green); font-weight: 600; font-size: 0.88rem; }
+
+        /* WHY US */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+
+        .feature {
+            padding: 2rem;
+            background: #ffffff;
+            border: 1px solid rgba(30, 126, 52, 0.1);
+            border-left: 4px solid var(--green);
+            border-radius: 14px; transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(30, 126, 52, 0.05);
+        }
+        .feature:hover { background: rgba(30, 126, 52, 0.03); transform: translateX(6px); border-left-color: var(--green-mid); }
+
+        .feature-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+        .feature-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--navy); }
+        .feature-desc { color: #5a7a62; font-size: 0.9rem; }
+
+        /* TESTIMONIALS */
+        .testimonials-container { position: relative; max-width: 850px; margin: 0 auto; }
+
+        .testimonial-card {
+            background: #ffffff;
+            border: 1px solid rgba(30, 126, 52, 0.12);
+            border-radius: 20px; padding: 3rem;
+            text-align: center; animation: fadeIn 0.5s ease-out;
+            box-shadow: 0 4px 25px rgba(30, 126, 52, 0.08);
         }
 
-        /* ============ OFFER CARDS ============ */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .offers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
+        .testimonial-stars { margin-bottom: 1.2rem; font-size: 1.4rem; letter-spacing: 0.2rem; }
+        .testimonial-text { font-size: 1.08rem; margin-bottom: 2rem; color: #2d3e30; font-style: italic; line-height: 1.8; }
+
+        .testimonial-author { display: flex; align-items: center; justify-content: center; gap: 1rem; }
+        .author-avatar {
+            width: 50px; height: 50px; border-radius: 50%;
+            background: var(--gradient-green);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800; color: white; font-size: 1rem;
         }
+        .author-info h4 { font-size: 1rem; color: var(--navy); margin-bottom: 0.2rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+        .author-info p { font-size: 0.82rem; color: #5a7a62; }
+
+        .carousel-controls { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
+        .carousel-btn {
+            width: 42px; height: 42px; border-radius: 50%;
+            border: 2px solid rgba(30, 126, 52, 0.4);
+            background: transparent; color: var(--green-bright);
+            cursor: pointer; transition: all 0.3s; font-size: 1rem;
+        }
+        .carousel-btn:hover { background: var(--green); border-color: var(--green); color: white; }
+
+        /* SPECIAL OFFERS */
+        .offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
 
         .offer-card {
-            padding: 30px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, #1e7e34 0%, #2eb563 100%);
-            color: white;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, rgba(30, 126, 52, 0.06), rgba(255,255,255,0.9));
+            border: 1px solid rgba(30, 126, 52, 0.18);
+            border-radius: 14px; padding: 1.5rem;
+            text-align: center; transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(30, 126, 52, 0.05);
+        }
+        .offer-card:hover { transform: translateY(-5px); border-color: rgba(30, 126, 52, 0.35); box-shadow: 0 12px 30px rgba(30, 126, 52, 0.1); }
+
+        .offer-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+        .offer-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+        .offer-desc { color: #5a7a62; font-size: 0.85rem; }
+
+        /* CONTACT */
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+
+        .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+
+        .contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+        .contact-icon {
+            width: 48px; height: 48px; flex-shrink: 0;
+            background: rgba(30, 126, 52, 0.15);
+            border: 1px solid rgba(30, 126, 52, 0.25);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+        }
+        .contact-details h4 { color: var(--navy); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; margin-bottom: 0.3rem; }
+        .contact-details p { color: #5a7a62; font-size: 0.92rem; }
+        .contact-details a { color: var(--green); text-decoration: none; transition: color 0.3s; }
+        .contact-details a:hover { color: var(--green-mid); }
+
+        .contact-form {
+            background: #ffffff;
+            border: 1px solid rgba(30, 126, 52, 0.12);
+            border-radius: 20px; padding: 2.5rem;
+            box-shadow: 0 4px 25px rgba(30, 126, 52, 0.07);
         }
 
-        .offer-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
+        .form-group { margin-bottom: 1.3rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2d3e30; font-size: 0.88rem; letter-spacing: 0.3px; }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%; padding: 0.8rem 1rem;
+            border: 1.5px solid rgba(30, 126, 52, 0.18);
+            background: #f9fdf9;
+            border-radius: 10px; color: #2d3e30;
+            font-family: 'DM Sans', sans-serif; font-size: 0.93rem;
+            transition: all 0.3s;
         }
-
-        .offer-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(30, 126, 52, 0.3);
-        }
-
-        .offer-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .offer-text {
-            font-size: 18px;
-            font-weight: 700;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* ============ CONTACT FORM ============ */
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-input,
-        .form-select {
-            width: 100%;
-            padding: 14px 18px;
-            border: 2px solid rgba(30, 126, 52, 0.2);
-            border-radius: 10px;
-            font-size: 16px;
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.7);
-            color: #0f2137;
-        }
-
-        .form-input:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: #1e7e34;
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none; border-color: var(--green);
             box-shadow: 0 0 0 3px rgba(30, 126, 52, 0.1);
-            background: white;
+            background: #ffffff;
         }
+        .form-group textarea { resize: vertical; min-height: 110px; }
 
-        .form-input::placeholder {
-            color: #999999;
+        .form-submit {
+            width: 100%; padding: 1rem;
+            background: var(--gradient-green);
+            color: white; border: none; border-radius: 12px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700; font-size: 0.95rem;
+            cursor: pointer; transition: all 0.3s;
         }
+        .form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(30, 126, 52, 0.4); }
 
-        /* ============ FOOTER ============ */
-
+        /* FOOTER */
         footer {
-            background: rgba(15, 33, 55, 0.95);
-            color: white;
-            padding: 60px 20px 30px;
+            background: var(--navy);
+            border-top: 1px solid rgba(30, 126, 52, 0.2);
+            padding: 4rem 24px 2rem; margin-top: 4rem;
         }
 
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem; margin-bottom: 2rem;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+        .footer-section h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; color: #ffffff; margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.6rem; }
+        .footer-section a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-section a:hover { color: var(--green-bright); }
+
+        .footer-tagline {
+            color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.8;
+            font-style: italic;
         }
 
-        .footer-section h3 {
-            font-weight: 700;
-            color: #2eb563;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
-        .footer-link {
-            color: #ccc;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: block;
-            margin-bottom: 12px;
-            font-size: 14px;
-        }
-
-        .footer-link:hover {
-            color: #2eb563;
-            margin-left: 5px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
+        .social-icons { display: flex; gap: 0.8rem; flex-wrap: wrap; }
         .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(46, 181, 99, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2eb563;
-            transition: all 0.3s ease;
-            font-size: 18px;
-            text-decoration: none;
+            width: 40px; height: 40px; border-radius: 50%;
+            background: rgba(30, 126, 52, 0.1);
+            border: 1px solid rgba(30, 126, 52, 0.2);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--green-bright); text-decoration: none;
+            transition: all 0.3s; font-size: 0.9rem; font-weight: 700;
         }
-
-        .social-icon:hover {
-            background: #1e7e34;
-            color: white;
-            transform: translateY(-3px);
-        }
+        .social-icon:hover { background: var(--green); border-color: var(--green); color: white; transform: translateY(-3px); }
 
         .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(46, 181, 99, 0.2);
-            color: #ccc;
-            font-size: 14px;
+            max-width: 1200px; margin: 0 auto;
+            text-align: center; padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.4); font-size: 0.85rem;
         }
 
-        /* ============ ANIMATIONS ============ */
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        /* FLOATING */
+        .floating-actions {
+            position: fixed; bottom: 30px; right: 30px;
+            z-index: 500; display: flex; flex-direction: column; gap: 0.8rem;
         }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .fab {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--gradient-green);
+            color: white; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; font-size: 1.4rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(30, 126, 52, 0.4);
+            cursor: pointer; border: none;
         }
+        .fab:hover { transform: scale(1.1) translateY(-4px); box-shadow: 0 10px 30px rgba(30, 126, 52, 0.5); }
 
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+        /* Loading */
+        .loading-screen {
+            position: fixed; inset: 0;
+            background: #f4faf6;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 2001;
+            animation: fadeOut 0.4s ease-out 1.8s forwards;
         }
+        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; pointer-events: none; } }
 
-        .fade-in {
-            animation: fadeIn 0.8s ease-out;
+        .loader {
+            width: 44px; height: 44px;
+            border: 3px solid rgba(30, 126, 52, 0.15);
+            border-top-color: var(--green);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
         }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
-        .slide-up {
-            animation: slideUp 0.8s ease-out;
-        }
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(25px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        .scale-in {
-            animation: scaleIn 0.8s ease-out;
-        }
-
-        /* ============ RESPONSIVE ============ */
-
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            body {
-                overflow-x: hidden;
-            }
-
-            .hero {
-                padding: 70px 16px 25px;
-                min-height: auto;
-                width: 100%;
-                overflow: hidden;
-            }
-
-            .hero-content {
-                max-width: 100%;
-                width: 100%;
-                padding: 0 10px;
-                box-sizing: border-box;
-            }
-
-            .hero-title {
-                font-size: 24px;
-                line-height: 1.2;
-                margin-bottom: 20px;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-            }
-
-            .hero-subtitle {
-                font-size: 13px;
-                color: #1a1a1a;
-                font-weight: 500;
-                margin-bottom: 30px;
-                max-width: 100%;
-                line-height: 1.5;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                gap: 10px;
-                margin-bottom: 40px;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                padding: 13px 20px;
-                font-size: 13px;
-                border-radius: 8px;
-            }
-
-            .trust-badges {
-                flex-direction: column;
-                gap: 10px;
-                margin-top: 30px;
-            }
-
-            .trust-badge {
-                width: 100%;
-                justify-content: center;
-                padding: 10px 12px;
-                font-size: 12px;
-            }
-
-            .navbar {
-                padding: 10px 0;
-            }
-
-            .logo {
-                font-size: 16px;
-            }
-
-            .nav-link {
-                font-size: 11px;
-            }
-
-            .section {
-                padding: 50px 16px;
-                max-width: 100%;
-            }
-
-            .section-title {
-                font-size: 22px;
-                margin-bottom: 10px;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-            }
-
-            .section-subtitle {
-                font-size: 13px;
-                margin-bottom: 30px;
-                max-width: 100%;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 15px;
-                padding: 20px;
-                margin-top: 40px;
-            }
-
-            .stat-item {
-                text-align: center;
-            }
-
-            .stat-number {
-                font-size: 24px;
-            }
-
-            .stat-label {
-                font-size: 11px;
-                margin-top: 8px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .service-card {
-                padding: 20px;
-            }
-
-            .service-icon {
-                font-size: 36px;
-                margin-bottom: 15px;
-            }
-
-            .service-title {
-                font-size: 16px;
-            }
-
-            .service-description {
-                font-size: 13px;
-            }
-
-            .pricing-card {
-                padding: 25px 20px;
-            }
-
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-
-            .pricing-card.featured:hover {
-                transform: translateY(-10px);
-            }
-
-            .price-amount {
-                font-size: 36px;
-            }
-
-            .price-currency {
-                font-size: 18px;
-            }
-
-            .pricing-features li {
-                font-size: 13px;
-                padding: 8px 0;
-            }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+            .floating-actions { bottom: 20px; right: 16px; }
+            .section { padding: 60px 20px; }
+            .hero { margin-top: 70px; padding: 40px 20px; min-height: auto; }
+            h1 { font-size: 2rem; letter-spacing: -1px; }
+            .hero-stats { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; }
+            .testimonial-card { padding: 2rem; }
         }
 
-        /* ============ MOBILE MENU ============ */
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            flex-direction: column;
-            gap: 10px;
-            padding: 20px;
-            border-bottom: 1px solid rgba(30, 126, 52, 0.1);
-            z-index: 999;
+        @media (max-width: 480px) {
+            .hero-stats { grid-template-columns: repeat(3, 1fr); }
+            .stat-number { font-size: 1.8rem; }
         }
 
-        .mobile-menu.active {
-            display: flex;
-        }
-
-        .mobile-menu a {
-            color: #0f2137;
-            text-decoration: none;
-            padding: 12px 0;
-            font-weight: 500;
-            border-bottom: 1px solid rgba(30, 126, 52, 0.1);
-        }
-
-        @media (min-width: 769px) {
-            .mobile-menu-btn {
-                display: none !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hidden-mobile {
-                display: none !important;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-                background: none;
-                border: none;
-                font-size: 24px;
-                cursor: pointer;
-                color: #0f2137;
-            }
+        /* Divider */
+        .section-divider {
+            max-width: 1200px; margin: 0 auto;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(30, 126, 52, 0.2), transparent);
         }
     </style>
 </head>
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-            <div class="logo">
-                <span class="logo-m">MMI</span><span class="logo-ks">KS</span>
-            </div>
-            <div class="hidden-mobile flex gap-8">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#packages" class="nav-link">Packages</a>
-                <a href="#training" class="nav-link">Training</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="flex items-center gap-3">
-                <button class="gradient-btn btn-primary md:block hidden">Get Started</button>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-            </div>
-        </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#packages">Packages</a>
-            <a href="#training">Training</a>
-            <a href="#contact">Contact</a>
-            <button class="gradient-btn btn-primary w-full mt-2">Get Started</button>
-        </div>
-    </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="floating-blob blob-1"></div>
-        <div class="floating-blob blob-2"></div>
-        
-        <div class="hero-content">
-            <h1 class="hero-title fade-in">
-                Affordable Digital Solutions<br><span class="gradient-text">for Growing Businesses</span>
-            </h1>
-            <p class="hero-subtitle slide-up">
-                Let's grow your business digitally with smart, creative, and affordable solutions. From social media management to web development, we have everything you need.
-            </p>
-            
-            <div class="hero-buttons">
-                <button class="gradient-btn btn-primary scale-in">Get Started Now</button>
-                <button class="btn-secondary">View Services</button>
-            </div>
+<div class="loading-screen"><div class="loader"></div></div>
+<div class="scroll-progress"></div>
 
-            <div class="trust-badges fade-in">
-                <div class="trust-badge">✓ 50+ Happy Clients</div>
-                <div class="trust-badge">✓ 200+ Projects Completed</div>
-                <div class="trust-badge">✓ 5+ Years Experience</div>
-            </div>
+<!-- NAV -->
+<nav>
+    <div class="nav-container">
+        <div class="logo">MMKS</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+        <button class="mobile-menu-btn">☰</button>
+    </div>
+</nav>
 
-            <div class="stats-container" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-item">
-                    <div class="stat-number counter" data-target="50">0</div>
-                    <div class="stat-label">Happy Clients</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number counter" data-target="200">0</div>
-                    <div class="stat-label">Projects Delivered</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number counter" data-target="5">0</div>
-                    <div class="stat-label">Years in Business</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number counter" data-target="98">0</div>
-                    <div class="stat-label">Client Satisfaction %</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
 
-    <!-- SERVICES SECTION -->
-    <section class="section" id="services">
-        <h2 class="section-title" data-aos="fade-up">Our Services</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Complete digital marketing solutions tailored to your business needs</p>
-        
-        <!-- Social Media Services -->
-        <h3 class="text-2xl font-bold mt-16 mb-8 text-left" data-aos="fade-up">📱 Social Media Services</h3>
-        <div class="services-grid">
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="150">
-                <div class="service-icon">📲</div>
-                <h4 class="service-title">Account Setup (One-Time)</h4>
-                <p class="service-description">Instagram & Facebook account creation, bio setup, logo upload, and 1 promotional post.</p>
-                <div class="service-pricing">
-                    <span class="price">₹999</span>
-                    <span class="offer-badge">FREE with any monthly package</span>
-                </div>
-            </div>
+    <div class="hero-content">
+        <div class="hero-badge">🌱 Kovilpatti's Trusted Digital Agency</div>
+        <h1>Grow Your Business With <span class="gradient-text">Smart Digital Marketing</span></h1>
+        <p class="subtitle">Creative, affordable, and results-driven digital solutions for businesses across Tamil Nadu</p>
 
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-icon">📸</div>
-                <h4 class="service-title">12 Posts Creation (1 Month)</h4>
-                <p class="service-description">Creative post designs with captions optimized for engagement.</p>
-                <div class="service-pricing">
-                    <span class="price">₹1,499</span>
-                </div>
+        <div class="hero-stats reveal">
+            <div class="stat">
+                <div class="stat-number" data-target="50">50+</div>
+                <div class="stat-label">Happy Clients</div>
             </div>
-
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="250">
-                <div class="service-icon">👥</div>
-                <h4 class="service-title">Social Media Management (1 Month)</h4>
-                <p class="service-description">Posting, page handling, audience engagement, and basic growth support.</p>
-                <div class="service-pricing">
-                    <span class="price">₹1,999</span>
-                </div>
+            <div class="stat">
+                <div class="stat-number" data-target="200">200+</div>
+                <div class="stat-label">Projects Done</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" data-target="5">5+</div>
+                <div class="stat-label">Years Experience</div>
             </div>
         </div>
 
-        <!-- Google My Business -->
-        <h3 class="text-2xl font-bold mt-16 mb-8 text-left" data-aos="fade-up">🗺️ Google My Business (GMB)</h3>
-        <div class="services-grid">
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="150">
-                <div class="service-icon">🏢</div>
-                <h4 class="service-title">GMB Account Creation</h4>
-                <p class="service-description">Complete setup for Google My Business with all essential information.</p>
-                <div class="service-pricing">
-                    <span class="price">₹999</span>
-                </div>
-            </div>
-
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-icon">⭐</div>
-                <h4 class="service-title">GMB Management (1 Month)</h4>
-                <p class="service-description">Posting updates, replying to reviews, and profile optimization.</p>
-                <div class="service-pricing">
-                    <span class="price">₹2,499</span>
-                </div>
-            </div>
-
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="250">
-                <div class="service-icon">🎁</div>
-                <h4 class="service-title">Combo Offer</h4>
-                <p class="service-description">Creation + Management bundle at special discounted rate.</p>
-                <div class="service-pricing">
-                    <span class="price">₹2,999</span>
-                    <span class="offer-badge">Save ₹500</span>
-                </div>
-            </div>
+        <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Free Consultation</button>
+            <button class="btn btn-secondary" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">View Packages</button>
         </div>
+    </div>
 
-        <!-- WhatsApp Automation -->
-        <h3 class="text-2xl font-bold mt-16 mb-8 text-left" data-aos="fade-up">💬 WhatsApp Automation</h3>
-        <div class="services-grid">
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="150">
-                <div class="service-icon">🤖</div>
-                <h4 class="service-title">WhatsApp Automation Setup</h4>
-                <p class="service-description">Setup automated WhatsApp campaigns for customer engagement and business growth.</p>
-                <div class="service-pricing">
-                    <span class="price">₹2,999</span>
-                    <span class="offer-badge">Setup Charge</span>
+    <div class="scroll-indicator">↓</div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+    <div style="text-align:center"><span class="section-label">What We Do</span></div>
+    <h2 class="section-title reveal">Our Premium Services</h2>
+    <p class="section-subtitle">Comprehensive digital marketing solutions tailored to your business needs</p>
+
+    <div class="services-grid">
+        <div class="service-card reveal">
+            <div class="service-icon">📱</div>
+            <h3 class="service-title">Social Media Marketing</h3>
+            <p class="service-desc">Engage your audience across Instagram & Facebook with creative posts, account management, and audience growth strategies.</p>
+            <a href="#pricing" class="service-link">View Pricing →</a>
+        </div>
+        <div class="service-card reveal">
+            <div class="service-icon">📍</div>
+            <h3 class="service-title">Google My Business</h3>
+            <p class="service-desc">Optimize your local presence — posting updates, replying to reviews, and attracting nearby customers.</p>
+            <a href="#pricing" class="service-link">View Pricing →</a>
+        </div>
+        <div class="service-card reveal">
+            <div class="service-icon">💬</div>
+            <h3 class="service-title">WhatsApp Automation</h3>
+            <p class="service-desc">Direct customer engagement through WhatsApp automation for higher conversion and retention rates.</p>
+            <a href="#pricing" class="service-link">View Pricing →</a>
+        </div>
+        <div class="service-card reveal">
+            <div class="service-icon">🌐</div>
+            <h3 class="service-title">Website Development</h3>
+            <p class="service-desc">Fast, responsive, conversion-optimized websites — from basic to premium business sites.</p>
+            <a href="#pricing" class="service-link">View Pricing →</a>
+        </div>
+        <div class="service-card reveal">
+            <div class="service-icon">🧾</div>
+            <h3 class="service-title">Billing Software</h3>
+            <p class="service-desc">Custom billing systems for your business — basic to advanced, tailored to your workflow.</p>
+            <a href="#pricing" class="service-link">View Pricing →</a>
+        </div>
+        <div class="service-card reveal">
+            <div class="service-icon">🎓</div>
+            <h3 class="service-title">Training Programs</h3>
+            <p class="service-desc">Learn digital marketing from basics to advanced — webinars, courses, and hands-on training available.</p>
+            <a href="#pricing" class="service-link">View Pricing →</a>
+        </div>
+        <div class="service-card reveal">
+            <div class="service-icon">💳</div>
+            <h3 class="service-title">Digital Visiting Card</h3>
+            <p class="service-desc">Make a lasting first impression with a professionally designed digital business card.</p>
+            <a href="#pricing" class="service-link">View Pricing →</a>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PRICING -->
+<section class="section pricing-section" id="pricing">
+    <div style="text-align:center"><span class="section-label">Transparent Pricing</span></div>
+    <h2 class="section-title reveal">Affordable for Every Business</h2>
+    <p class="section-subtitle">Clear, honest pricing with no hidden fees</p>
+
+    <div class="pricing-categories">
+
+        <!-- Social Media -->
+        <div class="reveal">
+            <h3 class="pricing-category-title">📱 Social Media Services</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-name">Account Setup</div>
+                    <div class="pricing-desc">Instagram & Facebook creation, bio, logo, and 1 promo post</div>
+                    <div class="pricing-amount"><span class="price-main">₹999</span><span class="price-period">one-time</span></div>
+                    <span class="pricing-offer">FREE with any monthly plan</span>
+                    <ul class="pricing-features">
+                        <li>Instagram & Facebook setup</li>
+                        <li>Bio & logo upload</li>
+                        <li>1 promotional post</li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-icon">📨</div>
-                <h4 class="service-title">Monthly Maintenance</h4>
-                <p class="service-description">Ongoing maintenance and management of WhatsApp automation system.</p>
-                <div class="service-pricing">
-                    <span class="price">₹999</span>
-                    <span class="offer-badge">15 Days FREE</span>
+                <div class="pricing-card">
+                    <div class="pricing-name">12 Posts Creation</div>
+                    <div class="pricing-desc">Creative post designs with captions for 1 month</div>
+                    <div class="pricing-amount"><span class="price-main">₹1,499</span><span class="price-period">/month</span></div>
+                    <ul class="pricing-features">
+                        <li>12 creative post designs</li>
+                        <li>Engaging captions</li>
+                        <li>Brand-aligned visuals</li>
+                    </ul>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">🔥 POPULAR</div>
+                    <div class="pricing-name">Social Media Management</div>
+                    <div class="pricing-desc">Complete page handling, engagement & growth</div>
+                    <div class="pricing-amount"><span class="price-main">₹1,999</span><span class="price-period">/month</span></div>
+                    <ul class="pricing-features">
+                        <li>Posting & scheduling</li>
+                        <li>Page handling</li>
+                        <li>Audience engagement</li>
+                        <li>Basic growth support</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Digital Visiting Card -->
-        <h3 class="text-2xl font-bold mt-16 mb-8 text-left" data-aos="fade-up">💳 Digital Visiting Card</h3>
-        <div class="services-grid">
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="150">
-                <div class="service-icon">📇</div>
-                <h4 class="service-title">Digital Visiting Card Design</h4>
-                <p class="service-description">Professional digital visiting card with modern design and interactive features.</p>
-                <div class="service-pricing">
-                    <span class="price">₹399</span>
+        <!-- GMB -->
+        <div class="reveal">
+            <h3 class="pricing-category-title">📍 Google My Business</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-name">GMB Creation</div>
+                    <div class="pricing-desc">Professional Google My Business setup</div>
+                    <div class="pricing-amount"><span class="price-main">₹999</span><span class="price-period">one-time</span></div>
+                    <ul class="pricing-features"><li>Full GMB setup</li><li>Profile optimization</li></ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">GMB Management</div>
+                    <div class="pricing-desc">Ongoing GMB optimization and management</div>
+                    <div class="pricing-amount"><span class="price-main">₹2,499</span><span class="price-period">/month</span></div>
+                    <ul class="pricing-features"><li>Post updates</li><li>Reply to reviews</li><li>Profile optimization</li></ul>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">💰 BEST VALUE</div>
+                    <div class="pricing-name">GMB Combo</div>
+                    <div class="pricing-desc">Creation + Management together</div>
+                    <span class="price-original">₹3,499</span>
+                    <div class="pricing-amount"><span class="price-main">₹2,999</span></div>
+                    <span class="pricing-offer">Save ₹500</span>
+                    <ul class="pricing-features"><li>Complete GMB setup</li><li>1 month management</li><li>Combo discount</li></ul>
                 </div>
             </div>
         </div>
 
-        <!-- Website Development -->
-        <h3 class="text-2xl font-bold mt-16 mb-8 text-left" data-aos="fade-up">💻 Website Development</h3>
-        <div class="services-grid">
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="150">
-                <div class="service-icon">🌐</div>
-                <h4 class="service-title">Basic Website</h4>
-                <p class="service-description">Professional basic website with essential pages and features.</p>
-                <div class="service-pricing">
-                    <span class="price">₹4,999</span>
-                    <span class="offer-badge">was ₹5,999</span>
+        <!-- WhatsApp + Digital Card -->
+        <div class="reveal">
+            <h3 class="pricing-category-title">🤖 WhatsApp Automation & Digital Card</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-name">WhatsApp Automation Setup</div>
+                    <div class="pricing-desc">Full automation system setup</div>
+                    <div class="pricing-amount"><span class="price-main">₹2,999</span><span class="price-period">setup</span></div>
+                    <span class="pricing-offer">15 Days FREE Maintenance</span>
+                    <ul class="pricing-features"><li>Full automation setup</li><li>15 days free maintenance</li><li>₹999/month after</li></ul>
                 </div>
-            </div>
-
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-icon">🚀</div>
-                <h4 class="service-title">Business Website</h4>
-                <p class="service-description">Advanced business website with SEO optimization and forms.</p>
-                <div class="service-pricing">
-                    <span class="price">₹10,999</span>
-                    <span class="offer-badge">was ₹12,999</span>
-                </div>
-            </div>
-
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="250">
-                <div class="service-icon">👑</div>
-                <h4 class="service-title">Premium Website</h4>
-                <p class="service-description">Custom premium website with advanced features and integrations.</p>
-                <div class="service-pricing">
-                    <span class="price">₹24,999+</span>
+                <div class="pricing-card">
+                    <div class="pricing-name">Digital Visiting Card</div>
+                    <div class="pricing-desc">Professional digital business card</div>
+                    <div class="pricing-amount"><span class="price-main">₹399</span><span class="price-period">one-time</span></div>
+                    <ul class="pricing-features"><li>Professional design</li><li>Shareable digital format</li><li>Contact details</li></ul>
                 </div>
             </div>
         </div>
 
-        <!-- Billing Software -->
-        <h3 class="text-2xl font-bold mt-16 mb-8 text-left" data-aos="fade-up">🧾 Billing Software</h3>
-        <div class="services-grid">
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="150">
-                <div class="service-icon">📊</div>
-                <h4 class="service-title">Basic Billing System</h4>
-                <p class="service-description">Simple billing software for small businesses with basic features.</p>
-                <div class="service-pricing">
-                    <span class="price">₹7,999</span>
+        <!-- Websites -->
+        <div class="reveal">
+            <h3 class="pricing-category-title">💻 Website Development</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-name">Basic Website</div>
+                    <div class="pricing-desc">Clean, responsive site for small businesses</div>
+                    <span class="price-original">₹5,999</span>
+                    <div class="pricing-amount"><span class="price-main">₹4,999</span></div>
+                    <span class="pricing-offer">Limited Time Offer</span>
+                    <ul class="pricing-features"><li>Responsive design</li><li>Fast loading</li><li>Basic pages</li></ul>
                 </div>
-            </div>
-
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-icon">📈</div>
-                <h4 class="service-title">Advanced Billing System</h4>
-                <p class="service-description">Advanced billing software with inventory, reports, and integrations.</p>
-                <div class="service-pricing">
-                    <span class="price">₹19,999+</span>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">⭐ RECOMMENDED</div>
+                    <div class="pricing-name">Business Website</div>
+                    <div class="pricing-desc">Full-featured business website</div>
+                    <span class="price-original">₹12,999</span>
+                    <div class="pricing-amount"><span class="price-main">₹10,999</span></div>
+                    <span class="pricing-offer">Save ₹2,000</span>
+                    <ul class="pricing-features"><li>Custom design</li><li>Multiple pages</li><li>Contact & lead forms</li><li>SEO optimized</li></ul>
                 </div>
-            </div>
-        </div>
-
-        <!-- Client Management -->
-        <h3 class="text-2xl font-bold mt-16 mb-8 text-left" data-aos="fade-up">👨‍💼 Client Management Services</h3>
-        <div class="services-grid">
-            <div class="service-card glass-effect" data-aos="fade-up" data-aos-delay="150">
-                <div class="service-icon">🎯</div>
-                <h4 class="service-title">Client Management Services</h4>
-                <p class="service-description">Complete client relationship management and tracking system.</p>
-                <div class="service-pricing">
-                    <span class="price">₹2,999</span>
-                    <span class="offer-badge">Monthly</span>
+                <div class="pricing-card">
+                    <div class="pricing-name">Premium Website</div>
+                    <div class="pricing-desc">Advanced features & custom solutions</div>
+                    <div class="pricing-amount"><span class="price-main">₹24,999+</span></div>
+                    <ul class="pricing-features"><li>Advanced features</li><li>E-commerce ready</li><li>Custom integrations</li><li>Priority support</li></ul>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- TRAINING PROGRAMS SECTION -->
-    <section class="section" id="training">
-        <h2 class="section-title" data-aos="fade-up">Training Programs</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Learn digital marketing skills from industry experts</p>
-        
-        <div class="pricing-grid">
-            <div class="pricing-card glass-effect" data-aos="zoom-in" data-aos-delay="150">
-                <h3 class="text-2xl font-bold mb-2 text-left" style="color: #1e7e34;">🎓 1-Hour Webinar</h3>
-                <p class="text-sm text-gray-600 mb-6 text-left">Quick introduction to digital marketing basics</p>
-                <div class="price-amount"><span class="price-currency">₹</span>199</div>
-                <p class="price-period">Per Session</p>
-                <div class="offer-badge" style="background: #fef3c7; color: #92400e; width: 100%; margin-bottom: 20px;">✓ First 3 Students FREE</div>
-                <button class="gradient-btn btn-primary w-full">Enroll Now</button>
-            </div>
-
-            <div class="pricing-card glass-effect" data-aos="zoom-in" data-aos-delay="200">
-                <h3 class="text-2xl font-bold mb-2 text-left" style="color: #1e7e34;">📚 Basic Course</h3>
-                <p class="text-sm text-gray-600 mb-6 text-left">Comprehensive beginner course in digital marketing</p>
-                <div class="price-amount"><span class="price-currency">₹</span>799<span style="font-size: 20px; color: #666; text-decoration: line-through; margin-left: 10px;">999</span></div>
-                <p class="price-period">One-time Payment</p>
-                <ul class="pricing-features" style="color: #0f2137;">
-                    <li>4-Week Course</li>
-                    <li>Live Classes</li>
-                    <li>Certificate</li>
-                </ul>
-                <button class="gradient-btn btn-primary w-full">Enroll Now</button>
-            </div>
-
-            <div class="pricing-card glass-effect" data-aos="zoom-in" data-aos-delay="250">
-                <h3 class="text-2xl font-bold mb-2 text-left" style="color: #1e7e34;">🎯 Intermediate Course</h3>
-                <p class="text-sm text-gray-600 mb-6 text-left">Advanced techniques and strategies in digital marketing</p>
-                <div class="price-amount"><span class="price-currency">₹</span>2,499<span style="font-size: 20px; color: #666; text-decoration: line-through; margin-left: 10px;">2,999</span></div>
-                <p class="price-period">One-time Payment</p>
-                <ul class="pricing-features" style="color: #0f2137;">
-                    <li>8-Week Course</li>
-                    <li>Interactive Sessions</li>
-                    <li>Project Work</li>
-                </ul>
-                <button class="gradient-btn btn-primary w-full">Enroll Now</button>
-            </div>
-
-            <div class="pricing-card glass-effect" data-aos="zoom-in" data-aos-delay="300">
-                <h3 class="text-2xl font-bold mb-2 text-left" style="color: #1e7e34;">🚀 Advanced Course</h3>
-                <p class="text-sm text-gray-600 mb-6 text-left">Master-level digital marketing strategies and tools</p>
-                <div class="price-amount"><span class="price-currency">₹</span>5,999</div>
-                <p class="price-period">One-time Payment</p>
-                <ul class="pricing-features" style="color: #0f2137;">
-                    <li>12-Week Course</li>
-                    <li>Mentorship</li>
-                    <li>Job Placement</li>
-                </ul>
-                <button class="gradient-btn btn-primary w-full">Enroll Now</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- PACKAGE PLANS SECTION -->
-    <section class="section" id="packages">
-        <h2 class="section-title" data-aos="fade-up">Package Plans</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Choose the perfect plan for your business growth</p>
-        
-        <div class="pricing-grid">
-            <!-- Starter Plan -->
-            <div class="pricing-card glass-effect" data-aos="zoom-in" data-aos-delay="150">
-                <div style="color: #1e7e34; font-weight: 700; margin-bottom: 15px;">🟢 STARTER PLAN</div>
-                <h3 class="text-2xl font-bold mb-2">Starter</h3>
-                <p class="text-sm text-gray-600 mb-6">Perfect for startups and small businesses</p>
-                <div class="price-amount"><span class="price-currency">₹</span>1,999<span style="font-size: 20px; color: #666; text-decoration: line-through; margin-left: 10px;">2,499</span></div>
-                <p class="price-period">Monthly</p>
-                <ul class="pricing-features" style="color: #0f2137;">
-                    <li>12 Posts Creation</li>
-                    <li>Basic Management</li>
-                    <li>Account Setup</li>
-                    <li>Basic Engagement Support</li>
-                </ul>
-                <button class="gradient-btn btn-primary w-full">Get Started</button>
-            </div>
-
-            <!-- Growth Plan (Featured) -->
-            <div class="pricing-card featured" data-aos="zoom-in" data-aos-delay="200">
-                <div class="popular-badge">⭐ MOST POPULAR</div>
-                <div style="color: #2eb563; font-weight: 700; margin-bottom: 15px;">🔵 GROWTH PLAN</div>
-                <h3 class="text-2xl font-bold mb-2">Growth</h3>
-                <p class="text-sm mb-6" style="opacity: 0.9;">Best for growing businesses</p>
-                <div class="price-amount"><span class="price-currency">₹</span>3,999<span style="font-size: 20px; opacity: 0.7; text-decoration: line-through; margin-left: 10px;">4,999</span></div>
-                <p class="price-period">Monthly</p>
-                <ul class="pricing-features">
-                    <li>12 Posts + Full Management</li>
-                    <li>GMB Setup & Management</li>
-                    <li>Audience Growth Strategy</li>
-                    <li>Monthly Analytics Report</li>
-                    <li>Priority Support</li>
-                </ul>
-                <button class="w-full bg-white text-green-600 font-bold py-3 rounded-lg hover:bg-gray-100 transition mt-4">Get Started</button>
-            </div>
-
-            <!-- Premium Plan -->
-            <div class="pricing-card glass-effect" data-aos="zoom-in" data-aos-delay="250">
-                <div style="color: #1e7e34; font-weight: 700; margin-bottom: 15px;">🔴 PREMIUM PLAN</div>
-                <h3 class="text-2xl font-bold mb-2">Premium</h3>
-                <p class="text-sm text-gray-600 mb-6">For maximum business growth</p>
-                <div class="price-amount"><span class="price-currency">₹</span>6,499<span style="font-size: 20px; color: #666; text-decoration: line-through; margin-left: 10px;">7,999</span></div>
-                <p class="price-period">Monthly</p>
-                <ul class="pricing-features" style="color: #0f2137;">
-                    <li>All Growth Plan Features</li>
-                    <li>WhatsApp Automation</li>
-                    <li>Digital Visiting Card</li>
-                    <li>Advanced Analytics</li>
-                    <li>Dedicated Account Manager</li>
-                </ul>
-                <button class="gradient-btn btn-primary w-full">Get Started</button>
-            </div>
-        </div>
-
-        <!-- Special Offers -->
-        <h2 class="section-title mt-20" data-aos="fade-up">Special Offers</h2>
-        
-        <div class="offers-grid">
-            <div class="offer-card" data-aos="fade-up" data-aos-delay="150">
-                <div class="offer-icon">✨</div>
-                <div class="offer-text">First 3 Clients Get 20% Discount</div>
-            </div>
-
-            <div class="offer-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="offer-icon">🎁</div>
-                <div class="offer-text">FREE Setup with Monthly Packages</div>
-            </div>
-
-            <div class="offer-card" data-aos="fade-up" data-aos-delay="250">
-                <div class="offer-icon">🔗</div>
-                <div class="offer-text">Combo Discounts Available</div>
-            </div>
-
-            <div class="offer-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="offer-icon">⏰</div>
-                <div class="offer-text">Limited-Time Offers</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY CHOOSE US SECTION -->
-    <section class="section">
-        <h2 class="section-title" data-aos="fade-up">Why Choose MMKS?</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We bring expertise, creativity, and affordability to every project</p>
-        
-        <div class="bento-grid">
-            <div class="bento-item" data-aos="fade-up" data-aos-delay="150">
-                <div class="bento-icon">💰</div>
-                <h4 class="bento-title">Affordable Pricing</h4>
-                <p class="bento-text">Best rates in the market without compromising quality</p>
-            </div>
-
-            <div class="bento-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="bento-icon">🎨</div>
-                <h4 class="bento-title">Creative Designs</h4>
-                <p class="bento-text">Modern, eye-catching designs that convert</p>
-            </div>
-
-            <div class="bento-item" data-aos="fade-up" data-aos-delay="250">
-                <div class="bento-icon">⚡</div>
-                <h4 class="bento-title">Fast Support</h4>
-                <p class="bento-text">Quick response time and dedicated customer support</p>
-            </div>
-
-            <div class="bento-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="bento-icon">📈</div>
-                <h4 class="bento-title">Business Growth</h4>
-                <p class="bento-text">Proven strategies that deliver measurable results</p>
-            </div>
-
-            <div class="bento-item" data-aos="fade-up" data-aos-delay="350">
-                <div class="bento-icon">🤖</div>
-                <h4 class="bento-title">Smart Automation</h4>
-                <p class="bento-text">Intelligent automation to save time and resources</p>
-            </div>
-
-            <div class="bento-item" data-aos="fade-up" data-aos-delay="400">
-                <div class="bento-icon">🚀</div>
-                <h4 class="bento-title">Modern Strategies</h4>
-                <p class="bento-text">Latest digital marketing trends and techniques</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section class="section" id="contact">
-        <h2 class="section-title" data-aos="fade-up">Ready to Grow?</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Let's start your digital transformation journey today</p>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-60 mt-16">
-            <!-- Contact Form -->
-            <div data-aos="fade-up" data-aos-delay="150">
-                <h3 class="text-2xl font-bold mb-8">Send us a Message</h3>
-                <form class="space-y-6" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Your Full Name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" class="form-input" placeholder="Your Email Address" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="tel" class="form-input" placeholder="Your Phone Number" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Your Business Name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <select class="form-select" required>
-                            <option value="">Select Service Interested</option>
-                            <option value="social">Social Media Management</option>
-                            <option value="web">Web Development</option>
-                            <option value="seo">SEO & Content</option>
-                            <option value="gmb">Google My Business</option>
-                            <option value="training">Training Programs</option>
-                            <option value="automation">WhatsApp Automation</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <textarea class="form-input" placeholder="Tell us about your business" rows="5" required></textarea>
-                    </div>
-
-                    <button type="submit" class="gradient-btn btn-primary w-full">Send Message</button>
-                </form>
-            </div>
-
-            <!-- Contact Information -->
-            <div data-aos="fade-up" data-aos-delay="250">
-                <div class="space-y-8">
-                    <div class="glass-effect p-8 rounded-16">
-                        <h4 class="text-xl font-bold mb-4 flex items-center gap-3">
-                            <span style="font-size: 28px;">📞</span> Phone
-                        </h4>
-                        <a href="tel:+918608717184" class="text-2xl font-bold text-green-600 hover:text-green-700">+91 8608717184</a>
-                        <p class="text-gray-600 mt-2">Call us anytime Monday - Friday, 9am - 6pm</p>
-                    </div>
-
-                    <div class="glass-effect p-8 rounded-16">
-                        <h4 class="text-xl font-bold mb-4 flex items-center gap-3">
-                            <span style="font-size: 28px;">✉️</span> Email
-                        </h4>
-                        <a href="mailto:mmksagency.official@gmail.com" class="text-lg font-bold text-green-600 hover:text-green-700">mmksagency.official@gmail.com</a>
-                        <p class="text-gray-600 mt-2">We'll respond within 24 hours</p>
-                    </div>
-
-                    <div class="glass-effect p-8 rounded-16">
-                        <h4 class="text-xl font-bold mb-4 flex items-center gap-3">
-                            <span style="font-size: 28px;">💬</span> WhatsApp
-                        </h4>
-                        <a href="https://wa.me/918608717184" class="text-lg font-bold text-green-600 hover:text-green-700">Chat with us on WhatsApp</a>
-                        <p class="text-gray-600 mt-2">Get instant responses to your queries</p>
-                    </div>
-
-                    <div class="glass-effect p-8 rounded-16">
-                        <h4 class="text-xl font-bold mb-4">🎯 Our Mission</h4>
-                        <p class="text-gray-600">"Let's grow your business digitally with smart, creative, and affordable solutions."</p>
-                    </div>
+        <!-- Billing + CRM -->
+        <div class="reveal">
+            <h3 class="pricing-category-title">🧾 Billing Software & Client Management</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-name">Basic Billing System</div>
+                    <div class="pricing-desc">Simple, easy-to-use billing solution</div>
+                    <div class="pricing-amount"><span class="price-main">₹7,999</span><span class="price-period">one-time</span></div>
+                    <ul class="pricing-features"><li>Invoice generation</li><li>Basic reports</li><li>Customer records</li></ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Advanced Billing System</div>
+                    <div class="pricing-desc">Full-featured billing & management</div>
+                    <div class="pricing-amount"><span class="price-main">₹19,999+</span></div>
+                    <ul class="pricing-features"><li>Advanced reports</li><li>Multi-user support</li><li>Custom workflows</li></ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Client Management</div>
+                    <div class="pricing-desc">Complete CRM for your business</div>
+                    <div class="pricing-amount"><span class="price-main">₹2,999</span><span class="price-period">/month</span></div>
+                    <ul class="pricing-features"><li>Client tracking</li><li>Follow-up reminders</li><li>Communication logs</li></ul>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>MMKS Digital Marketing Agency</h3>
-                    <p class="text-sm text-gray-400 mb-4">Affordable digital solutions for growing businesses. Let's grow your brand together!</p>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon" title="Facebook">f</a>
-                        <a href="#" class="social-icon" title="LinkedIn">in</a>
-                        <a href="#" class="social-icon" title="Instagram">📷</a>
-                        <a href="https://wa.me/918608717184" class="social-icon" title="WhatsApp">W</a>
-                    </div>
+        <!-- Training -->
+        <div class="reveal">
+            <h3 class="pricing-category-title">🎓 Training Programs</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-name">1-Hour Webinar</div>
+                    <div class="pricing-desc">Quick intro to digital marketing</div>
+                    <div class="pricing-amount"><span class="price-main">₹199</span></div>
+                    <span class="pricing-offer">First 3 Students FREE</span>
+                    <ul class="pricing-features"><li>1-hour live session</li><li>Q&A included</li></ul>
                 </div>
-
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <a href="#services" class="footer-link">Social Media Management</a>
-                    <a href="#services" class="footer-link">Web Development</a>
-                    <a href="#services" class="footer-link">Google My Business</a>
-                    <a href="#services" class="footer-link">WhatsApp Automation</a>
+                <div class="pricing-card">
+                    <div class="pricing-name">Basic Course</div>
+                    <div class="pricing-desc">Foundation digital marketing skills</div>
+                    <span class="price-original">₹999</span>
+                    <div class="pricing-amount"><span class="price-main">₹799</span></div>
+                    <span class="pricing-offer">Limited Offer</span>
+                    <ul class="pricing-features"><li>Core concepts</li><li>Practical exercises</li><li>Certificate</li></ul>
                 </div>
-
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <a href="#home" class="footer-link">About Us</a>
-                    <a href="#services" class="footer-link">Services</a>
-                    <a href="#packages" class="footer-link">Packages</a>
-                    <a href="#contact" class="footer-link">Contact</a>
+                <div class="pricing-card">
+                    <div class="pricing-name">Intermediate Course</div>
+                    <div class="pricing-desc">Level up your digital skills</div>
+                    <span class="price-original">₹2,999</span>
+                    <div class="pricing-amount"><span class="price-main">₹2,499</span></div>
+                    <span class="pricing-offer">Save ₹500</span>
+                    <ul class="pricing-features"><li>Advanced strategies</li><li>Live projects</li><li>Mentorship</li></ul>
                 </div>
-
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <a href="#" class="footer-link">Privacy Policy</a>
-                    <a href="#" class="footer-link">Terms of Service</a>
-                    <a href="#" class="footer-link">Refund Policy</a>
+                <div class="pricing-card">
+                    <div class="pricing-name">Advanced Course</div>
+                    <div class="pricing-desc">Master-level digital marketing training</div>
+                    <div class="pricing-amount"><span class="price-main">₹5,999</span></div>
+                    <ul class="pricing-features"><li>Complete curriculum</li><li>1-on-1 coaching</li><li>Job-ready skills</li><li>Certificate</li></ul>
                 </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 MMKS Digital Marketing Agency. All rights reserved. | Let's grow your business online! 🚀</p>
             </div>
         </div>
-    </footer>
 
-    <!-- SCRIPTS -->
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            offset: 100,
-            once: true,
-            easing: 'ease-out-cubic'
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PACKAGES -->
+<section class="section" id="packages">
+    <div style="text-align:center"><span class="section-label">🔥 Most Popular</span></div>
+    <h2 class="section-title reveal">Bundle & Save More</h2>
+    <p class="section-subtitle">Hand-picked combinations for maximum growth at the best value</p>
+
+    <div class="packages-grid">
+        <div class="package-card starter reveal">
+            <div class="package-tier">🟢 Starter</div>
+            <div class="package-name">Starter Plan</div>
+            <div class="package-tagline">Perfect for new businesses getting online</div>
+            <div class="package-price">
+                <span class="price-original">₹2,499</span>
+                <span class="price-main">₹1,999</span>
+            </div>
+            <ul class="package-features">
+                <li>12 Posts Creation</li>
+                <li>Basic Social Media Management</li>
+                <li>Monthly Reporting</li>
+            </ul>
+            <button class="package-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
+        </div>
+
+        <div class="package-card growth reveal">
+            <div class="package-tier">🔵 Growth</div>
+            <div class="package-name">Growth Plan</div>
+            <div class="package-tagline">Scale up your digital presence fast</div>
+            <div class="package-price">
+                <span class="price-original">₹4,999</span>
+                <span class="price-main">₹3,999</span>
+            </div>
+            <ul class="package-features">
+                <li>12 Creative Posts</li>
+                <li>Full Social Media Management</li>
+                <li>GMB Setup & Optimization</li>
+                <li>Audience Growth Support</li>
+            </ul>
+            <button class="package-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Growth Plan →</button>
+        </div>
+
+        <div class="package-card premium reveal">
+            <div class="package-tier">🔴 Premium</div>
+            <div class="package-name">Premium Plan</div>
+            <div class="package-tagline">Complete digital domination for serious businesses</div>
+            <div class="package-price">
+                <span class="price-original">₹7,999</span>
+                <span class="price-main">₹6,499</span>
+            </div>
+            <ul class="package-features">
+                <li>Social Media Management</li>
+                <li>Google My Business</li>
+                <li>WhatsApp Automation</li>
+                <li>Digital Visiting Card</li>
+                <li>Priority Support</li>
+            </ul>
+            <button class="package-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Go Premium →</button>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+    <div style="text-align:center"><span class="section-label">Our Work</span></div>
+    <h2 class="section-title reveal">Results We've Delivered</h2>
+    <p class="section-subtitle">Real projects, measurable outcomes</p>
+
+    <div class="portfolio-grid">
+        <div class="portfolio-item reveal">
+            <div class="portfolio-image">📊</div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" style="margin:0">View Details</button></div>
+            <div class="portfolio-info">
+                <span class="portfolio-tag">Social Media</span>
+                <h3 class="portfolio-title">Instagram Growth Campaign</h3>
+                <p class="portfolio-result">↑ 150% Followers in 3 months</p>
+            </div>
+        </div>
+        <div class="portfolio-item reveal">
+            <div class="portfolio-image">🎯</div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" style="margin:0">View Details</button></div>
+            <div class="portfolio-info">
+                <span class="portfolio-tag">SEO</span>
+                <h3 class="portfolio-title">E-Commerce SEO Optimization</h3>
+                <p class="portfolio-result">↑ 280% Organic Traffic</p>
+            </div>
+        </div>
+        <div class="portfolio-item reveal">
+            <div class="portfolio-image">🌟</div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" style="margin:0">View Details</button></div>
+            <div class="portfolio-info">
+                <span class="portfolio-tag">Web Design</span>
+                <h3 class="portfolio-title">Corporate Website Redesign</h3>
+                <p class="portfolio-result">↑ 95% Conversion Rate</p>
+            </div>
+        </div>
+        <div class="portfolio-item reveal">
+            <div class="portfolio-image">📈</div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" style="margin:0">View Details</button></div>
+            <div class="portfolio-info">
+                <span class="portfolio-tag">GMB</span>
+                <h3 class="portfolio-title">Local Business GMB Boost</h3>
+                <p class="portfolio-result">↑ 340% Local Search Visibility</p>
+            </div>
+        </div>
+        <div class="portfolio-item reveal">
+            <div class="portfolio-image">🎨</div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" style="margin:0">View Details</button></div>
+            <div class="portfolio-info">
+                <span class="portfolio-tag">Branding</span>
+                <h3 class="portfolio-title">Complete Brand Overhaul</h3>
+                <p class="portfolio-result">↑ Brand Recognition 200%</p>
+            </div>
+        </div>
+        <div class="portfolio-item reveal">
+            <div class="portfolio-image">💬</div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" style="margin:0">View Details</button></div>
+            <div class="portfolio-info">
+                <span class="portfolio-tag">WhatsApp</span>
+                <h3 class="portfolio-title">WhatsApp Lead Generation</h3>
+                <p class="portfolio-result">↑ 420% Lead Conversion</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- WHY US -->
+<section class="section">
+    <div style="text-align:center"><span class="section-label">Why MMKS</span></div>
+    <h2 class="section-title reveal">What Sets Us Apart</h2>
+    <p class="section-subtitle">Results-driven, affordable, and made for Tamil Nadu businesses</p>
+
+    <div class="features-grid">
+        <div class="feature reveal">
+            <div class="feature-icon">✅</div>
+            <h3 class="feature-title">Proven Track Record</h3>
+            <p class="feature-desc">5+ years delivering exceptional results for 50+ businesses across Tamil Nadu.</p>
+        </div>
+        <div class="feature reveal">
+            <div class="feature-icon">💰</div>
+            <h3 class="feature-title">Truly Affordable</h3>
+            <p class="feature-desc">Premium quality at prices designed for small and growing businesses.</p>
+        </div>
+        <div class="feature reveal">
+            <div class="feature-icon">📊</div>
+            <h3 class="feature-title">Data-Driven Results</h3>
+            <p class="feature-desc">Every decision backed by analytics and measurable performance metrics.</p>
+        </div>
+        <div class="feature reveal">
+            <div class="feature-icon">🌐</div>
+            <h3 class="feature-title">Local Expertise</h3>
+            <p class="feature-desc">Deep understanding of Tamil Nadu markets, culture, and consumer behavior.</p>
+        </div>
+        <div class="feature reveal">
+            <div class="feature-icon">💬</div>
+            <h3 class="feature-title">Dedicated Support</h3>
+            <p class="feature-desc">Responsive support team available via WhatsApp for quick assistance.</p>
+        </div>
+        <div class="feature reveal">
+            <div class="feature-icon">🎯</div>
+            <h3 class="feature-title">Customized Plans</h3>
+            <p class="feature-desc">Every strategy tailored specifically to your business goals and budget.</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SPECIAL OFFERS -->
+<section class="section">
+    <div style="text-align:center"><span class="section-label">🎯 Limited Time</span></div>
+    <h2 class="section-title reveal">Special Offers</h2>
+    <p class="section-subtitle">Don't miss these exclusive deals for new clients</p>
+
+    <div class="offers-grid">
+        <div class="offer-card reveal">
+            <div class="offer-icon">🏆</div>
+            <div class="offer-title">First 3 Clients Get 20% Off</div>
+            <div class="offer-desc">New to MMKS? Enjoy an exclusive 20% discount on any service.</div>
+        </div>
+        <div class="offer-card reveal">
+            <div class="offer-icon">🎁</div>
+            <div class="offer-title">FREE Setup with Monthly Plans</div>
+            <div class="offer-desc">Account setup (₹999 value) is completely free when you choose a monthly package.</div>
+        </div>
+        <div class="offer-card reveal">
+            <div class="offer-icon">💼</div>
+            <div class="offer-title">Combo Discounts</div>
+            <div class="offer-desc">Bundle multiple services and save more. Ask us about custom combo offers.</div>
+        </div>
+        <div class="offer-card reveal">
+            <div class="offer-icon">📚</div>
+            <div class="offer-title">Free Webinar Seats</div>
+            <div class="offer-desc">First 3 students get our 1-hour digital marketing webinar absolutely free.</div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+    <div style="text-align:center"><span class="section-label">Client Stories</span></div>
+    <h2 class="section-title reveal">What Our Clients Say</h2>
+    <p class="section-subtitle">Real success stories from businesses we've transformed</p>
+
+    <div class="testimonials-container">
+        <div class="testimonial-card reveal" id="testimonial-1">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"MMKS transformed our entire digital presence. Within 6 months, our sales increased by 300%. Truly affordable and highly professional!"</p>
+            <div class="testimonial-author">
+                <div class="author-avatar">RK</div>
+                <div class="author-info"><h4>Rajesh Kumar</h4><p>E-commerce Business Owner, Kovilpatti</p></div>
+            </div>
+        </div>
+        <div class="testimonial-card reveal" id="testimonial-2" style="display:none">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"The GMB management from MMKS brought us so many local customers we never reached before. Best investment for our shop!"</p>
+            <div class="testimonial-author">
+                <div class="author-avatar">PS</div>
+                <div class="author-info"><h4>Priya Sundaram</h4><p>Boutique Owner, Tamil Nadu</p></div>
+            </div>
+        </div>
+        <div class="testimonial-card reveal" id="testimonial-3" style="display:none">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"From 2K to 50K Instagram followers in just a few months! MMKS exceeded all our expectations and the pricing is very reasonable."</p>
+            <div class="testimonial-author">
+                <div class="author-avatar">VJ</div>
+                <div class="author-info"><h4>Vikram Joshi</h4><p>Fashion Brand Owner</p></div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn" onclick="changeTestimonial(-1)">❮</button>
+            <button class="carousel-btn" onclick="changeTestimonial(1)">❯</button>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+    <div style="text-align:center"><span class="section-label">Let's Talk</span></div>
+    <h2 class="section-title reveal">Get In Touch</h2>
+    <p class="section-subtitle">Ready to grow your business? Contact us for a free consultation today</p>
+
+    <div class="contact-wrapper">
+        <div class="contact-info">
+            <div class="contact-item reveal">
+                <div class="contact-icon">📱</div>
+                <div class="contact-details">
+                    <h4>WhatsApp</h4>
+                    <p><a href="https://wa.me/918608717184">+91 86087 17184</a></p>
+                </div>
+            </div>
+            <div class="contact-item reveal">
+                <div class="contact-icon">📞</div>
+                <div class="contact-details">
+                    <h4>Phone</h4>
+                    <p><a href="tel:+918608717184">+91 86087 17184</a></p>
+                </div>
+            </div>
+            <div class="contact-item reveal">
+                <div class="contact-icon">📧</div>
+                <div class="contact-details">
+                    <h4>Email</h4>
+                    <p><a href="mailto:hello@mmksdigital.com">hello@mmksdigital.com</a></p>
+                </div>
+            </div>
+            <div class="contact-item reveal">
+                <div class="contact-icon">📍</div>
+                <div class="contact-details">
+                    <h4>Location</h4>
+                    <p>Kovilpatti, Tamil Nadu, India</p>
+                </div>
+            </div>
+
+            <div style="background: rgba(30,126,52,0.08); border: 1px solid rgba(30,126,52,0.2); border-radius: 14px; padding: 1.5rem; margin-top: 1rem;">
+                <p style="color: var(--green-bright); font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif; margin-bottom: 0.5rem;">✨ Our Promise</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; font-style: italic;">"Let's grow your business digitally with smart, creative, and affordable solutions."</p>
+            </div>
+        </div>
+
+        <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" placeholder="+91 86087 17184" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Tell Us About Your Business</label>
+                <textarea id="message" placeholder="What services are you interested in?..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message 🚀</button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <div class="logo" style="margin-bottom: 1rem;">MMKS</div>
+            <p class="footer-tagline">"Let's grow your business digitally with smart, creative, and affordable solutions."</p>
+            <br>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">📍 Kovilpatti, Tamil Nadu, India<br>📱 +91 86087 17184</p>
+        </div>
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#services">Social Media Marketing</a></li>
+                <li><a href="#services">Google My Business</a></li>
+                <li><a href="#services">WhatsApp Automation</a></li>
+                <li><a href="#services">Website Development</a></li>
+                <li><a href="#services">Billing Software</a></li>
+                <li><a href="#services">Training Programs</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Packages</h3>
+            <ul>
+                <li><a href="#packages">🟢 Starter Plan — ₹1,999</a></li>
+                <li><a href="#packages">🔵 Growth Plan — ₹3,999</a></li>
+                <li><a href="#packages">🔴 Premium Plan — ₹6,499</a></li>
+                <li><a href="#contact">Free Consultation</a></li>
+                <li><a href="#pricing">View All Pricing</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://facebook.com" class="social-icon" target="_blank">f</a>
+                <a href="https://instagram.com" class="social-icon" target="_blank">📷</a>
+                <a href="https://linkedin.com" class="social-icon" target="_blank">in</a>
+                <a href="https://twitter.com" class="social-icon" target="_blank">𝕏</a>
+                <a href="https://wa.me/918608717184" class="social-icon" target="_blank">💬</a>
+            </div>
+            <br>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 MMKS Digital Marketing Agency, Kovilpatti. All rights reserved. | Crafted with ❤️ for your success</p>
+    </div>
+</footer>
+
+<!-- FLOATING -->
+<div class="floating-actions">
+    <a href="https://wa.me/918608717184" class="fab" target="_blank" title="WhatsApp Us">💬</a>
+    <button class="fab" onclick="scrollToTop()" title="Back to top">⬆️</button>
+</div>
+
+<script>
+    // Scroll Progress
+    window.addEventListener('scroll', () => {
+        const el = document.querySelector('.scroll-progress');
+        const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        el.style.width = pct + '%';
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Testimonial carousel
+    let cur = 1;
+    function changeTestimonial(dir) {
+        document.getElementById(`testimonial-${cur}`).style.display = 'none';
+        cur += dir;
+        if (cur > 3) cur = 1;
+        if (cur < 1) cur = 3;
+        document.getElementById(`testimonial-${cur}`).style.display = 'block';
+    }
+    setInterval(() => changeTestimonial(1), 8000);
+
+    // Form
+    function handleSubmit(e) {
+        e.preventDefault();
+        alert('Thank you! We will contact you on WhatsApp shortly. 📱');
+        e.target.reset();
+    }
+
+    // Scroll top
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+    // Smooth anchor scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            const t = document.querySelector(this.getAttribute('href'));
+            if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         });
-
-        // Navbar scroll effect
-        const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when link clicked
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-
-        // Smooth scroll for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 70;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Counter animation
-        function animateCounter(element, target, duration = 2000) {
-            let current = 0;
-            const increment = target / (duration / 16);
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target + '+';
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current) + '+';
-                }
-            }, 16);
-        }
-
-        // Intersection Observer for counters
-        const counters = document.querySelectorAll('.counter');
-        const observerOptions = {
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = parseInt(entry.target.getAttribute('data-target'));
-                    animateCounter(entry.target, target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        counters.forEach(counter => observer.observe(counter));
-
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you for your message! We will get back to you soon.');
-                contactForm.reset();
-            });
-        }
-
-        // GSAP animations
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.from('.hero-content h1', {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            delay: 0.2
-        });
-
-        gsap.from('.hero-content p', {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            delay: 0.4
-        });
-
-        gsap.from('.hero-buttons', {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            delay: 0.6
-        });
-
-        // Lenis smooth scrolling
-        const lenis = new Lenis({
-            duration: 0.4,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: 'vertical',
-            gestureDirection: 'vertical',
-            smooth: true,
-            mouseMultiplier: 2.5,
-            smoothTouch: false,
-            touchMultiplier: 3,
-            infinite: false,
-        });
-
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-
-        requestAnimationFrame(raf);
-
-        // Button ripple effect
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                if (this.classList.contains('btn-primary') || this.classList.contains('btn-secondary')) {
-                    const ripple = document.createElement('span');
-                    const rect = this.getBoundingClientRect();
-                    const size = Math.max(rect.width, rect.height);
-                    const x = e.clientX - rect.left - size / 2;
-                    const y = e.clientY - rect.top - size / 2;
-
-                    ripple.style.width = ripple.style.height = size + 'px';
-                    ripple.style.left = x + 'px';
-                    ripple.style.top = y + 'px';
-                    ripple.style.position = 'absolute';
-                    ripple.style.background = 'rgba(255,255,255,0.5)';
-                    ripple.style.borderRadius = '50%';
-                    ripple.style.pointerEvents = 'none';
-                    ripple.style.animation = 'ripple 0.6s ease-out';
-
-                    this.style.position = 'relative';
-                    this.style.overflow = 'hidden';
-                    this.appendChild(ripple);
-                    setTimeout(() => ripple.remove(), 600);
-                }
-            });
-        });
-
-        // Ripple animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+    });
+</script>
 </body>
 </html>
