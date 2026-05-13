@@ -210,7 +210,8 @@
 
         .hero-subtitle {
             font-size: 18px;
-            color: #666666;
+            color: #333333;
+            font-weight: 500;
             margin-bottom: 45px;
             line-height: 1.7;
             max-width: 700px;
@@ -790,6 +791,8 @@
 
             .hero-subtitle {
                 font-size: 13px;
+                color: #1a1a1a;
+                font-weight: 500;
                 margin-bottom: 30px;
                 max-width: 100%;
                 line-height: 1.5;
@@ -1654,14 +1657,14 @@
 
         // Lenis smooth scrolling
         const lenis = new Lenis({
-            duration: 1.2,
+            duration: 0.4,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             direction: 'vertical',
             gestureDirection: 'vertical',
             smooth: true,
-            mouseMultiplier: 1,
+            mouseMultiplier: 2.5,
             smoothTouch: false,
-            touchMultiplier: 2,
+            touchMultiplier: 3,
             infinite: false,
         });
 
