@@ -82,8 +82,8 @@
             z-index: 1000;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(30, 126, 52, 0.15);
-            padding: 0.9rem 0;
+            border-bottom: 5px solid rgba(30, 126, 52, 0.15);
+            padding: 0.1rem 0rem;
             box-shadow: 0 2px 20px rgba(30, 126, 52, 0.08);
         }
 
@@ -103,7 +103,7 @@
             background-clip: text;
         }
 
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links { display: flex; gap: 1rem; list-style: none; }
         .nav-links a {
             color: #2d3e30; text-decoration: none;
             font-weight: 500; font-size: 0.95rem;
@@ -144,6 +144,12 @@
             transition: background 0.3s;
         }
         .mobile-menu a:hover { background: rgba(30, 126, 52, 0.05); color: var(--green); }
+        
+        .mobile-menu .cta-btn {
+            display: block;
+            margin: 1rem 24px;
+            text-align: center;
+        }
 
         /* HERO */
         .hero {
@@ -313,7 +319,7 @@
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(0, 229, 255, 0.2);
             border-radius: 18px; 
-            padding: 7rem 1.5rem;
+            padding: 3rem 1.5rem;
             position: relative; 
             overflow: hidden;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -342,7 +348,7 @@
         .service-card:hover::after { opacity: 1; }
 
         .service-icon {
-            width: 110px; height: 110px;
+            width: 98px; height: 98px;
             background: rgba(30, 126, 52, 0.15);
             border: 1px solid rgba(30, 126, 52, 0.25);
             border-radius: 14px;
@@ -352,7 +358,7 @@
 
         .service-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 3.06rem; font-weight: 700;
+            font-size: 2.06rem; font-weight: 700;
             margin-bottom: 0.8rem; color: var(--navy);
         }
 
@@ -875,6 +881,7 @@
             .nav-links { display: none; }
             .mobile-menu { display: flex; }
             .mobile-menu-btn { display: block; }
+            .cta-btn { display: none; }
             .hero-buttons { flex-direction: column; align-items: center; }
             .contact-wrapper { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr; }
@@ -944,6 +951,7 @@
         <li><a href="#packages" onclick="toggleMobileMenu()">Packages</a></li>
         <li><a href="#portfolio" onclick="toggleMobileMenu()">Portfolio</a></li>
         <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
+        <li><button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); toggleMobileMenu();">Get Started</button></li>
     </ul>
 </nav>
 
@@ -1459,23 +1467,23 @@
             <p class="testimonial-text">"MMKS transformed our entire digital presence. Within 6 months, our sales increased by 300%. Truly affordable and highly professional!"</p>
             <div class="testimonial-author">
                 <div class="author-avatar">RK</div>
-                <div class="author-info"><h4>Rajesh Kumar</h4><p>E-commerce Business Owner, Kovilpatti</p></div>
+                <div class="author-info"><h4>Trend Wear Fashion</h4><p>E-commerce Business Owner, Kovilpatti</p></div>
             </div>
         </div>
         <div class="testimonial-card reveal" id="testimonial-2" style="display:none">
             <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
             <p class="testimonial-text">"The GMB management from MMKS brought us so many local customers we never reached before. Best investment for our shop!"</p>
             <div class="testimonial-author">
-                <div class="author-avatar">PS</div>
-                <div class="author-info"><h4>Priya Sundaram</h4><p>Boutique Owner, Tamil Nadu</p></div>
+                <div class="author-avatar">SJ</div>
+                <div class="author-info"><h4>SJ Design Agency</h4><p>Design Agency Owner, Tamil Nadu</p></div>
             </div>
         </div>
         <div class="testimonial-card reveal" id="testimonial-3" style="display:none">
             <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
             <p class="testimonial-text">"From 2K to 50K Instagram followers in just a few months! MMKS exceeded all our expectations and the pricing is very reasonable."</p>
             <div class="testimonial-author">
-                <div class="author-avatar">VJ</div>
-                <div class="author-info"><h4>Vikram Joshi</h4><p>Fashion Brand Owner</p></div>
+                <div class="author-avatar">AJ</div>
+                <div class="author-info"><h4>AJ-Collection</h4><p>Fashion Brand Owner</p></div>
             </div>
         </div>
         <div class="carousel-controls">
