@@ -91,6 +91,7 @@
             max-width: 1200px; margin: 0 auto;
             padding: 0 24px;
             display: flex; justify-content: space-between; align-items: center;
+            gap: 1rem;
         }
 
         .logo {
@@ -103,13 +104,26 @@
             background-clip: text;
         }
 
-        .nav-links { display: flex; gap: 1rem; list-style: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
         .nav-links a {
             color: #2d3e30; text-decoration: none;
             font-weight: 500; font-size: 0.95rem;
             transition: color 0.3s;
         }
         .nav-links a:hover { color: var(--green); }
+        
+        .login-link {
+            border: 2px solid var(--green) !important;
+            padding: 0.4rem 1rem !important;
+            border-radius: 50px !important;
+            color: var(--green) !important;
+            font-weight: 600 !important;
+            transition: all 0.3s !important;
+        }
+        .login-link:hover {
+            background: var(--green) !important;
+            color: white !important;
+        }
 
         .cta-btn {
             background: var(--gradient-green);
@@ -119,6 +133,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.9rem;
             transition: all 0.3s;
+            margin-left: 1rem;
         }
         .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(30, 126, 52, 0.4); }
 
@@ -144,6 +159,20 @@
             transition: background 0.3s;
         }
         .mobile-menu a:hover { background: rgba(30, 126, 52, 0.05); color: var(--green); }
+        
+        .mobile-menu .login-link {
+            border: none !important;
+            padding: 1rem 24px !important;
+            border-radius: 0 !important;
+            background: transparent !important;
+            color: #2d3e30 !important;
+            font-weight: 500 !important;
+            border-bottom: 1px solid rgba(30, 126, 52, 0.1) !important;
+        }
+        .mobile-menu .login-link:hover {
+            background: rgba(30, 126, 52, 0.05) !important;
+            color: var(--green) !important;
+        }
         
         .mobile-menu .cta-btn {
             display: block;
@@ -723,21 +752,147 @@
         }
         .carousel-btn:hover { background: var(--green); border-color: var(--green); color: white; }
 
-        /* SPECIAL OFFERS */
-        .offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+        /* UPCOMING EVENTS - PROFESSIONAL POSTER STYLE */
+        .offers-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 2.5rem;
+            perspective: 1200px;
+        }
 
         .offer-card {
-            background: linear-gradient(135deg, rgba(30, 126, 52, 0.06), rgba(255,255,255,0.9));
-            border: 1px solid rgba(30, 126, 52, 0.18);
-            border-radius: 14px; padding: 1.5rem;
-            text-align: center; transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(30, 126, 52, 0.05);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 3px solid var(--green);
+            border-radius: 20px; 
+            padding: 0;
+            text-align: center; 
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(30, 126, 52, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            aspect-ratio: 3/4.2;
+            position: relative;
+            transform-style: preserve-3d;
+            min-height: 480px;
         }
-        .offer-card:hover { transform: translateY(-5px); border-color: rgba(30, 126, 52, 0.35); box-shadow: 0 12px 30px rgba(30, 126, 52, 0.1); }
 
-        .offer-icon { font-size: 2rem; margin-bottom: 0.8rem; }
-        .offer-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
-        .offer-desc { color: #5a7a62; font-size: 0.85rem; }
+        .offer-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, rgba(15, 33, 55, 0.3) 0%, rgba(15, 33, 55, 0.5) 40%, rgba(15, 33, 55, 0.9) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .offer-card:hover { 
+            transform: translateY(-16px) scale(1.03);
+            border-color: var(--green-light);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(30, 126, 52, 0.3);
+        }
+
+        .offer-card-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2.5rem 1.8rem;
+            height: 100%;
+            text-align: center;
+        }
+
+        .offer-icon { 
+            font-size: 3.5rem; 
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90px;
+            height: 90px;
+            background: rgba(52, 199, 89, 0.25);
+            border: 2.5px solid var(--green-light);
+            border-radius: 14px;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 8px 24px rgba(52, 199, 89, 0.3);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .offer-title { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            font-size: 1.5rem; 
+            font-weight: 900; 
+            color: #ffffff; 
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: -0.5px;
+        }
+
+        .offer-desc { 
+            color: rgba(255, 255, 255, 0.92); 
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-top: auto;
+            padding-top: 1.2rem;
+            border-top: 2.5px solid rgba(52, 199, 89, 0.4);
+            font-weight: 500;
+        }
+
+        .offer-details {
+            position: relative;
+            z-index: 2;
+            margin: 1.2rem 0 0 0;
+            padding: 1rem;
+            background: rgba(15, 33, 55, 0.5);
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(52, 199, 89, 0.3);
+        }
+
+        .offer-price {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--green-light);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .offer-period {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .offer-cta {
+            margin-top: 1.2rem;
+            padding: 0.8rem 1.8rem;
+            background: var(--gradient-green);
+            color: white;
+            border: none;
+            border-radius: 22px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            box-shadow: 0 8px 24px rgba(30, 126, 52, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .offer-cta:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 32px rgba(30, 126, 52, 0.5);
+        }
 
         /* CONTACT */
         .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
@@ -881,7 +1036,7 @@
             .nav-links { display: none; }
             .mobile-menu { display: flex; }
             .mobile-menu-btn { display: block; }
-            .cta-btn { display: none; }
+            .nav-container > .cta-btn { display: none; margin-left: 0; }
             .hero-buttons { flex-direction: column; align-items: center; }
             .contact-wrapper { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr; }
@@ -941,6 +1096,7 @@
             <li><a href="#packages">Packages</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="login.html" class="login-link">Login</a></li>
         </ul>
         <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
         <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle mobile menu">☰</button>
@@ -951,6 +1107,7 @@
         <li><a href="#packages" onclick="toggleMobileMenu()">Packages</a></li>
         <li><a href="#portfolio" onclick="toggleMobileMenu()">Portfolio</a></li>
         <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
+        <li><a href="login.html" class="login-link" onclick="toggleMobileMenu()">Login</a></li>
         <li><button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); toggleMobileMenu();">Get Started</button></li>
     </ul>
 </nav>
@@ -1369,7 +1526,7 @@
     <div class="portfolio-modal-backdrop" onclick="closePortfolioModal()"></div>
     <div class="portfolio-modal-content">
         <button class="portfolio-modal-close" onclick="closePortfolioModal()">×</button>
-        <div class="portfolio-modal-image"><img id="modal-image" src="" alt="Portfolio detail"></div>
+        <div class="portfolio-modal-image"><img id="modal-image" src="soruces/sj_design_agency.jpeg.jpg" alt="Portfolio detail"></div>
         <div class="portfolio-modal-body">
             <span id="modal-tag" class="portfolio-tag"></span>
             <h3 id="modal-title" class="portfolio-title"></h3>
@@ -1378,6 +1535,22 @@
         </div>
     </div>
 </div>
+
+<div class="section-divider"></div>
+
+<!-- UPLOADED POSTERS -->
+<section class="section" id="uploaded-posters">
+    <div style="text-align:center"><span class="section-label">Latest Posters</span></div>
+    <h2 class="section-title reveal">Uploaded Posters from Admin</h2>
+    <p class="section-subtitle">View the latest promotional posters uploaded by the admin directly on the homepage.</p>
+
+    <div class="portfolio-grid" id="uploaded-posters-grid">
+        <div class="no-posters" style="grid-column: 1/-1; text-align:center; padding:2rem; background: white; border-radius: 16px; border: 1px solid rgba(30, 126, 52, 0.1); box-shadow: 0 10px 30px rgba(30, 126, 52, 0.06);">
+            <div class="no-posters-icon">🎨</div>
+            <p>No posters uploaded yet. Please add a poster from the admin dashboard.</p>
+        </div>
+    </div>
+</section>
 
 <div class="section-divider"></div>
 
@@ -1423,32 +1596,71 @@
 
 <div class="section-divider"></div>
 
-<!-- SPECIAL OFFERS -->
+<!-- UPCOMING EVENTS - POSTER SECTION -->
 <section class="section">
-    <div style="text-align:center"><span class="section-label">🎯 Limited Time</span></div>
-    <h2 class="section-title reveal">Special Launch Offers</h2>
-    <p class="section-subtitle">Exclusive deals for new clients. Don't miss these limited-time offers to boost your digital marketing at unbeatable prices</p>
+    <div style="text-align:center"><span class="section-label">🎯 Limited Time Offers</span></div>
+    <h2 class="section-title reveal">Upcoming Events, Webinars & Courses</h2>
+    <p class="section-subtitle">Join thousands of students, business owners & freelancers learning digital marketing skills to grow online</p>
 
     <div class="offers-grid">
-        <div class="offer-card reveal">
-            <div class="offer-icon">🏆</div>
-            <div class="offer-title">First 3 Clients Get 20% Off</div>
-            <div class="offer-desc">New to MMKS? Enjoy an exclusive 20% discount on any service.</div>
+        <div class="offer-card reveal" style="background-image: url('soruces/offers.png');">
+            <div class="offer-card-content">
+                <div class="offer-icon">🎓</div>
+                <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="offer-title">Learn Powerful Business Tools</div>
+                    <div class="offer-desc">Complete digital marketing mastery in just 2 weeks</div>
+                </div>
+                <div class="offer-details">
+                    <div class="offer-price">₹999</div>
+                    <div class="offer-period">Per Person • Limited Seats Only!</div>
+                </div>
+                <button class="offer-cta">🚀 Enroll Now</button>
+            </div>
         </div>
-        <div class="offer-card reveal">
-            <div class="offer-icon">🎁</div>
-            <div class="offer-title">FREE Setup with Monthly Plans</div>
-            <div class="offer-desc">Account setup (₹999 value) is completely free when you choose a monthly package.</div>
+
+        <div class="offer-card reveal" style="background-image: url('soruces/offers.png');">
+            <div class="offer-card-content">
+                <div class="offer-icon">🤖</div>
+                <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="offer-title">AI Poster Design Masterclass</div>
+                    <div class="offer-desc">Create professional posters with Canva & AI tools in 1 hour</div>
+                </div>
+                <div class="offer-details">
+                    <div class="offer-price">FREE</div>
+                    <div class="offer-period">Live Webinar • Expert Tips Included</div>
+                </div>
+                <button class="offer-cta">🎬 Join Now</button>
+            </div>
         </div>
-        <div class="offer-card reveal">
-            <div class="offer-icon">💼</div>
-            <div class="offer-title">Combo Discounts</div>
-            <div class="offer-desc">Bundle multiple services and save more. Ask us about custom combo offers.</div>
+
+        <div class="offer-card reveal" style="background-image: url('soruces/offers.png');">
+            <div class="offer-card-content">
+                <div class="offer-icon">📱</div>
+                <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="offer-title">Social Media Mastery</div>
+                    <div class="offer-desc">From zero to hero on Instagram & Facebook in 4 weeks</div>
+                </div>
+                <div class="offer-details">
+                    <div class="offer-price">₹2,499</div>
+                    <div class="offer-period">4-Week Course • Certificate</div>
+                </div>
+                <button class="offer-cta">📈 Register</button>
+            </div>
         </div>
-        <div class="offer-card reveal">
-            <div class="offer-icon">📚</div>
-            <div class="offer-title">Free Webinar Seats</div>
-            <div class="offer-desc">First 3 students get our 1-hour digital marketing webinar absolutely free.</div>
+
+        <div class="offer-card reveal" style="background-image: url('soruces/offers.png');">
+            <div class="offer-card-content">
+                <div class="offer-icon">💼</div>
+                <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="offer-title">Complete Digital Package</div>
+                    <div class="offer-desc">Get website, social media setup & SMO in one package</div>
+                </div>
+                <div class="offer-details">
+                    <div class="offer-price">₹19,999</div>
+                    <div class="offer-period">Combo Offer • Limited Time</div>
+                </div>
+                <button class="offer-cta">💎 Get Deal</button>
+            </div>
         </div>
     </div>
 </section>
@@ -1744,6 +1956,89 @@
         document.getElementById('portfolio-modal').classList.remove('active');
         document.getElementById('portfolio-modal').setAttribute('aria-hidden', 'true');
     }
+
+    // Load Events from Admin Dashboard
+    function loadAdminEvents() {
+        try {
+            const mmksEvents = JSON.parse(localStorage.getItem('mmksEvents') || '[]');
+            const offersGrid = document.querySelector('.offers-grid');
+            
+            if (mmksEvents.length === 0) {
+                // If no admin events, keep the hardcoded ones
+                return;
+            }
+
+            // Clear and repopulate with admin events
+            offersGrid.innerHTML = mmksEvents.map(event => `
+                <div class="offer-card reveal" style="background-image: url('soruces/offers.png');">
+                    <div class="offer-card-content">
+                        <div class="offer-icon">${event.icon}</div>
+                        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+                            <div class="offer-title">${event.title}</div>
+                            <div class="offer-desc">${event.description}</div>
+                        </div>
+                        <div class="offer-details">
+                            <div class="offer-price">${event.price}</div>
+                            <div class="offer-period">${event.period}</div>
+                        </div>
+                        <button class="offer-cta">${event.cta}</button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Re-observe new elements for animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+            }, { threshold: 0.08 });
+            document.querySelectorAll('.offer-card').forEach(el => observer.observe(el));
+        } catch (error) {
+            console.error('Error loading admin events:', error);
+        }
+    }
+
+    function loadUploadedPosters() {
+        try {
+            const posters = JSON.parse(localStorage.getItem('posters') || '[]');
+            const grid = document.getElementById('uploaded-posters-grid');
+            if (!grid) return;
+
+            if (posters.length === 0) {
+                grid.innerHTML = `
+                    <div class="no-posters" style="grid-column: 1/-1; text-align:center; padding:2rem; background: white; border-radius: 16px; border: 1px solid rgba(30, 126, 52, 0.1); box-shadow: 0 10px 30px rgba(30, 126, 52, 0.06);">
+                        <div class="no-posters-icon">🎨</div>
+                        <p>No posters uploaded yet. Please add a poster from the admin dashboard.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = posters.map(poster => `
+                <div class="portfolio-item reveal">
+                    <div class="portfolio-image"><img src="${poster.image}" alt="${poster.title}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22%23999%22%3EImage%20Error%3C/text%3E%3C/svg%3E'" /></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Uploaded Poster</span>
+                        <h3 class="portfolio-title">${poster.title}</h3>
+                        <p class="portfolio-result">${poster.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        } catch (error) {
+            console.error('Error loading uploaded posters:', error);
+        }
+    }
+
+    // Load events when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+        loadAdminEvents();
+        loadUploadedPosters();
+    });
+
+    // Update homepage posters when admin saves new posters in another tab/page
+    window.addEventListener('storage', (event) => {
+        if (event.key === 'posters') {
+            loadUploadedPosters();
+        }
+    });
 </script>
 </body>
 </html>
