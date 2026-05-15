@@ -122,7 +122,28 @@
         }
         .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(30, 126, 52, 0.4); }
 
-        .mobile-menu-btn { display: none; background: none; border: none; color: #2d3e30; font-size: 1.5rem; cursor: pointer; }
+        .mobile-menu-btn { display: none; background: none; border: none; color: #2d3e30; font-size: 1.5rem; cursor: pointer; z-index: 999; }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed; top: 62px; left: 0; right: 0;
+            background: #ffffff;
+            flex-direction: column; gap: 0;
+            list-style: none;
+            box-shadow: 0 4px 20px rgba(30, 126, 52, 0.15);
+            z-index: 998;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .mobile-menu.active { display: flex; max-height: 400px; }
+        .mobile-menu li { padding: 0; }
+        .mobile-menu a {
+            display: block; padding: 1rem 24px; color: #2d3e30; text-decoration: none;
+            font-weight: 500; border-bottom: 1px solid rgba(30, 126, 52, 0.1);
+            transition: background 0.3s;
+        }
+        .mobile-menu a:hover { background: rgba(30, 126, 52, 0.05); color: var(--green); }
 
         /* HERO */
         .hero {
@@ -271,38 +292,57 @@
         .section-subtitle { text-align: center; color: #5a7a62; margin-bottom: 4rem; font-size: 1.05rem; }
 
         /* SERVICES */
+        /* SERVICES GRID - SQUARE CARDS */
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            display: flex;
+            gap: 2.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 20px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .services-grid::-webkit-scrollbar {
+            display: none;
         }
 
         .service-card {
-            background: #ffffff;
-            border: 1px solid rgba(30, 126, 52, 0.12);
-            border-radius: 18px; padding: 2.2rem;
-            position: relative; overflow: hidden;
+            min-width: 380px;
+            aspect-ratio: auto;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            border-radius: 18px; 
+            padding: 7rem 1.5rem;
+            position: relative; 
+            overflow: hidden;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 2px 15px rgba(30, 126, 52, 0.06);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .service-card::after {
             content: '';
             position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(30, 126, 52, 0.03) 0%, transparent 100%);
-            opacity: 0; transition: opacity 0.3s;
+            background: radial-gradient(circle at top right, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
+            opacity: 0; 
+            transition: opacity 0.3s;
             pointer-events: none;
         }
 
         .service-card:hover {
-            border-color: rgba(30, 126, 52, 0.3);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(30, 126, 52, 0.12);
+            border-color: rgba(0, 229, 255, 0.5);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(0, 229, 255, 0.2);
         }
         .service-card:hover::after { opacity: 1; }
 
         .service-icon {
-            width: 56px; height: 56px;
+            width: 110px; height: 110px;
             background: rgba(30, 126, 52, 0.15);
             border: 1px solid rgba(30, 126, 52, 0.25);
             border-radius: 14px;
@@ -312,15 +352,18 @@
 
         .service-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.25rem; font-weight: 700;
+            font-size: 3.06rem; font-weight: 700;
             margin-bottom: 0.8rem; color: var(--navy);
         }
 
-        .service-desc { color: #5a7a62; margin-bottom: 1.2rem; font-size: 0.93rem; line-height: 1.7; }
+        .service-desc { 
+            color: #5a7a62; margin-bottom: 1.2rem; 
+            font-size: 1.00rem; 
+            line-height: 1.7; }
 
         .service-link {
             color: var(--green); text-decoration: none;
-            font-weight: 600; font-size: 0.88rem;
+            font-weight: 600; font-size: 1.05rem;
             display: inline-flex; align-items: center; gap: 0.4rem;
             transition: gap 0.3s;
         }
@@ -540,8 +583,8 @@
         /* WHY US */
         .features-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
             overflow-x: hidden;
             width: 100%;
             max-width: 100%;
@@ -550,20 +593,30 @@
 
         @media (min-width: 768px) {
             .features-grid {
-                grid-template-columns: repeat(2, minmax(250px, 1fr));
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 767px) {
             .features-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(1, 1fr);
             }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @keyframes slideInFromRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(10px); }
         }
 
         .feature {
             min-width: 0;
             width: 100%;
-            padding: 1.75rem;
+            padding: 2.2rem;
             background: #ffffff;
             border: 1px solid rgba(30, 126, 52, 0.12);
             border-radius: 18px;
@@ -574,17 +627,24 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            will-change: auto;
+            will-change: transform;
             box-sizing: border-box;
+            animation: float 3s ease-in-out infinite, slideInFromRight 0.6s ease-out forwards;
         }
+        .feature:nth-child(1) { animation-delay: 0s, 0s; }
+        .feature:nth-child(2) { animation-delay: 0.2s, 0.1s; }
+        .feature:nth-child(3) { animation-delay: 0.4s, 0.2s; }
+        .feature:nth-child(4) { animation-delay: 0.2s, 0.3s; }
+        .feature:nth-child(5) { animation-delay: 0.4s, 0.4s; }
+        .feature:nth-child(6) { animation-delay: 0.6s, 0.5s; }
         .feature:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
             box-shadow: 0 12px 36px rgba(30, 126, 52, 0.12);
         }
 
         .feature-icon {
             font-size: 2.2rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 2.2rem;
             width: 90px;
             height: 90px;
             display: flex;
@@ -813,6 +873,7 @@
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .nav-links { display: none; }
+            .mobile-menu { display: flex; }
             .mobile-menu-btn { display: block; }
             .hero-buttons { flex-direction: column; align-items: center; }
             .contact-wrapper { grid-template-columns: 1fr; }
@@ -823,11 +884,31 @@
             h1 { font-size: 2rem; letter-spacing: -1px; }
             .hero-stats { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; }
             .testimonial-card { padding: 2rem; }
+            
+            /* Service Cards Mobile */
+            .services-grid { gap: 1.5rem; padding-bottom: 15px; }
+            .service-card { min-width: 300px; padding: 2rem 1.5rem; }
+            .service-title { font-size: 1rem; }
+            .service-desc { font-size: 0.85rem; line-height: 1.5; }
+            .service-icon { width: 55px; height: 55px; }
+            
+            /* Pricing Mobile Optimization */
+            .pricing-card { padding: 1.2rem; }
+            .pricing-name { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.4rem; line-height: 1.3; }
+            .pricing-desc { font-size: 0.75rem; margin-bottom: 0.8rem; line-height: 1.4; }
+            .price-main { font-size: 1.5rem; }
+            .price-period { font-size: 0.7rem; }
+            .pricing-category-title { font-size: 1.5rem !important; margin-bottom: 1rem; }
+            .pricing-category-title img { width: 8% !important; height: 8% !important; }
+            .pricing-offer { font-size: 0.65rem; padding: 0.15rem 0.5rem; margin-bottom: 0.8rem; }
+            .pricing-features li { font-size: 0.75rem; gap: 0.4rem; }
         }
 
         @media (max-width: 480px) {
             .hero-stats { grid-template-columns: repeat(3, 1fr); }
             .stat-number { font-size: 1.8rem; }
+            .services-grid { gap: 1rem; padding-bottom: 10px; }
+            .service-card { min-width: 280px; padding: 1.5rem; }
         }
 
         /* Divider */
@@ -855,8 +936,15 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
-        <button class="mobile-menu-btn">☰</button>
+        <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle mobile menu">☰</button>
     </div>
+    <ul class="mobile-menu nav-links" id="mobile-menu">
+        <li><a href="#services" onclick="toggleMobileMenu()">Services</a></li>
+        <li><a href="#pricing" onclick="toggleMobileMenu()">Pricing</a></li>
+        <li><a href="#packages" onclick="toggleMobileMenu()">Packages</a></li>
+        <li><a href="#portfolio" onclick="toggleMobileMenu()">Portfolio</a></li>
+        <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
+    </ul>
 </nav>
 
 <!-- HERO -->
@@ -867,8 +955,8 @@
 
     <div class="hero-content">
         <div class="hero-badge">🌱 Kovilpatti's Trusted Digital Agency</div>
-        <h1>Grow Your Business With <span class="gradient-text">Smart Digital Marketing</span></h1>
-        <p class="subtitle">Creative, affordable, and results-driven digital solutions for businesses across Tamil Nadu</p>
+        <h1>Professional Digital Marketing Services for Tamil Nadu Businesses</h1>
+        <p class="subtitle">Grow your business with <span class="gradient-text">smart digital marketing</span> — SEO services, social media marketing, website development, and WhatsApp automation at affordable prices</p>
 
         <div class="hero-stats reveal">
             <div class="stat">
@@ -886,8 +974,8 @@
         </div>
 
         <div class="hero-buttons">
-            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Free Consultation</button>
-            <button class="btn btn-secondary" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">View Packages</button>
+            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Book Free Consultation Call">Book Free Consultation</button>
+            <button class="btn btn-secondary" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})" aria-label="View Service Packages and Pricing">View Packages</button>
         </div>
     </div>
 
@@ -897,50 +985,50 @@
 <!-- SERVICES -->
 <section class="section" id="services">
     <div style="text-align:center"><span class="section-label">What We Do</span></div>
-    <h2 class="section-title reveal">Our Premium Services</h2>
-    <p class="section-subtitle">Comprehensive digital marketing solutions tailored to your business needs</p>
+    <h2 class="section-title reveal">Digital Marketing Services in Kovilpatti & Tamil Nadu</h2>
+    <p class="section-subtitle">Award-winning SEO, social media marketing, and website development services tailored for your business growth</p>
 
     <div class="services-grid">
         <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/marking.png" alt="Social Media Marketing" style="width: 100%; height: 100%;"></div>
+            <div class="service-icon"><img src="soruces/marking.png" alt="Social Media Marketing Services" style="width: 100%; height: 100%;"></div>
             <h3 class="service-title">Social Media Marketing</h3>
-            <p class="service-desc">Engage your audience across Instagram & Facebook with creative posts, account management, and audience growth strategies.</p>
+            <p class="service-desc">Professional social media management across Instagram and Facebook.<br> We create engaging posts, grow your audience, <br> Increase customer engagement with data-driven strategies for businesses in Tamil Nadu.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
         <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/my bussness.png" alt="Google My Business" style="width: 100%; height: 100%;"></div>
-            <h3 class="service-title">Google My Business</h3>
-            <p class="service-desc">Optimize your local presence — posting updates, replying to reviews, and attracting nearby customers.</p>
+            <div class="service-icon"><img src="soruces/my bussness.png" alt="Google My Business Optimization" style="width: 100%; height: 100%;"></div>
+            <h3 class="service-title">Google My Business (GMB) Management</h3>
+            <p class="service-desc">Maximize your local SEO visibility with expert Google My Business optimization.<br> We manage posts, respond to reviews, <br>attract nearby customers searching for your services in Kovilpatti and Tamil Nadu.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
         <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/chat.png" alt="WhatsApp Automation" style="width: 100%; height: 100%;"></div>
-            <h3 class="service-title">WhatsApp Automation</h3>
-            <p class="service-desc">Direct customer engagement through WhatsApp automation for higher conversion and retention rates.</p>
+            <div class="service-icon"><img src="soruces/chat.png" alt="WhatsApp Marketing Automation" style="width: 100%; height: 100%;"></div>
+            <h3 class="service-title">WhatsApp Automation & Marketing</h3>
+            <p class="service-desc">Engage customers directly via WhatsApp with automated marketing campaigns. <br>Increase conversion rates and customer retention with personalized messaging,<br>automated follow-ups.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
         <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/website.png" alt="Website Development" style="width: 100%; height: 100%;"></div>
-            <h3 class="service-title">Website Development</h3>
-            <p class="service-desc">Fast, responsive, conversion-optimized websites — from basic to premium business sites.</p>
+            <div class="service-icon"><img src="soruces/website.png" alt="Website Development and Design" style="width: 100%; height: 100%;"></div>
+            <h3 class="service-title">Website Development & Design</h3>
+            <p class="service-desc">Custom-built, fast-loading, mobile-responsive websites optimized for conversions. <br>From basic business sites to advanced e-commerce platforms with SEO integration.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
         <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/billing.png" alt="Billing Software" style="width: 100%; height: 100%;"></div>
-            <h3 class="service-title">Billing Software</h3>
-            <p class="service-desc">Custom billing systems for your business — basic to advanced, tailored to your workflow.</p>
+            <div class="service-icon"><img src="soruces/billing.png" alt="Billing and Invoicing Software" style="width: 100%; height: 100%;"></div>
+            <h3 class="service-title">Billing & Invoicing Software</h3>
+            <p class="service-desc">Streamline your business operations with custom billing software. <br>From simple invoice generation to advanced client management with automated reports,<br>multi-user support.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
         <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/training.png" alt="Training Programs" style="width: 100%; height: 100%;"></div>
-            <h3 class="service-title">Training Programs</h3>
-            <p class="service-desc">Learn digital marketing from basics to advanced — webinars, courses, and hands-on training available.</p>
+            <div class="service-icon"><img src="soruces/training.png" alt="Digital Marketing Training and Courses" style="width: 100%; height: 100%;"></div>
+            <h3 class="service-title">Digital Marketing Training & Courses</h3>
+            <p class="service-desc">Comprehensive digital marketing training from basics to advanced levels.<br>Live webinars, online courses, <br>hands-on projects to help you master SEO, social media, and content marketing.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
         <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/visiting-card.png" alt="Digital Visiting Card" style="width: 100%; height: 100%;"></div>
+            <div class="service-icon"><img src="soruces/visiting-card.png" alt="Digital Visiting Card Creator" style="width: 100%; height: 100%;"></div>
             <h3 class="service-title">Digital Visiting Card</h3>
-            <p class="service-desc">Make a lasting first impression with a professionally designed digital business card.</p>
+            <p class="service-desc">Professional digital business cards that make lasting impressions.<br> Shareable, trackable, and eco-friendly — perfect for modern networking and client outreach.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
     </div>
@@ -951,14 +1039,14 @@
 <!-- PRICING -->
 <section class="section pricing-section" id="pricing">
     <div style="text-align:center"><span class="section-label">Transparent Pricing</span></div>
-    <h2 class="section-title reveal">Affordable for Every Business</h2>
-    <p class="section-subtitle">Clear, honest pricing with no hidden fees</p>
+    <h2 class="section-title reveal">Affordable Digital Marketing Pricing in Tamil Nadu</h2>
+    <p class="section-subtitle">Transparent pricing with no hidden fees. Choose from our expert-designed packages or customize your own</p>
 
     <div class="pricing-categories">
 
         <!-- Social Media -->
         <div class="reveal">
-            <h1 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/marking.png" alt="Social Media Marketing" style="width: 3.5%; height: 3.5%;"> Social Media Services</h1>
+            <h3 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/marking.png" alt="Social Media Marketing Pricing" style="width: 3.5%; height: 3.5%;"> Social Media Services</h3>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-name">Account Setup</div>
@@ -998,7 +1086,7 @@
 
         <!-- GMB -->
         <div class="reveal">
-            <h1 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/my bussness.png" alt="Google My Business" style="width: 3.5%; height: 3.5%;"> Google My Business</h1 >
+            <h3 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/my bussness.png" alt="Google My Business Pricing" style="width: 3.5%; height: 3.5%;"> Google My Business</h3>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-name">GMB Creation</div>
@@ -1026,7 +1114,7 @@
 
         <!-- WhatsApp + Digital Card -->
         <div class="reveal">
-            <h1 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/chat.png" alt="WhatsApp Automation" style="width: 3.5%; height: 3.5%;"> WhatsApp Automation & Digital Card</h1>
+            <h3 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/chat.png" alt="WhatsApp Automation Pricing" style="width: 3.5%; height: 3.5%;"> WhatsApp Automation & Digital Card</h3>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-name">WhatsApp Automation Setup</div>
@@ -1046,7 +1134,7 @@
 
         <!-- Websites -->
         <div class="reveal">
-            <h1 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/website.png" alt="Website Development" style="width: 3.5%; height: 3.5%;"> Website Development</h1>
+            <h3 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/website.png" alt="Website Development Pricing" style="width: 3.5%; height: 3.5%;"> Website Development</h3>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-name">Basic Website</div>
@@ -1076,7 +1164,7 @@
 
         <!-- Billing + CRM -->
         <div class="reveal">
-            <h1 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/billing.png" alt="Billing Software" style="width: 3.5%; height: 3.5%;"> Billing Software & Client Management</h1>
+            <h3 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/billing.png" alt="Billing Software Pricing" style="width: 3.5%; height: 3.5%;"> Billing Software & Client Management</h3>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-name">Basic Billing System</div>
@@ -1101,35 +1189,27 @@
 
         <!-- Training -->
         <div class="reveal">
-            <h1 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/training.png" alt="Training Programs" style="width: 3.5%; height: 3.5%;"> Training Programs</h1>
+            <h3 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/training.png" alt="Digital Marketing Training Pricing" style="width: 3.5%; height: 3.5%;"> Training Programs</h3>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-name">1-Hour Webinar</div>
                     <div class="pricing-desc">Quick intro to digital marketing</div>
-                    <div class="pricing-amount"><span class="price-main">₹199</span></div>
                     <span class="pricing-offer">First 3 Students FREE</span>
                     <ul class="pricing-features"><li>1-hour live session</li><li>Q&A included</li></ul>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-name">Basic Course</div>
                     <div class="pricing-desc">Foundation digital marketing skills</div>
-                    <span class="price-original">₹999</span>
-                    <div class="pricing-amount"><span class="price-main">₹799</span></div>
-                    <span class="pricing-offer">Limited Offer</span>
                     <ul class="pricing-features"><li>Core concepts</li><li>Practical exercises</li><li>Certificate</li></ul>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-name">Intermediate Course</div>
                     <div class="pricing-desc">Level up your digital skills</div>
-                    <span class="price-original">₹2,999</span>
-                    <div class="pricing-amount"><span class="price-main">₹2,499</span></div>
-                    <span class="pricing-offer">Save ₹500</span>
                     <ul class="pricing-features"><li>Advanced strategies</li><li>Live projects</li><li>Mentorship</li></ul>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-name">Advanced Course</div>
                     <div class="pricing-desc">Master-level digital marketing training</div>
-                    <div class="pricing-amount"><span class="price-main">₹5,999</span></div>
                     <ul class="pricing-features"><li>Complete curriculum</li><li>1-on-1 coaching</li><li>Job-ready skills</li><li>Certificate</li></ul>
                 </div>
             </div>
@@ -1143,8 +1223,8 @@
 <!-- PACKAGES -->
 <section class="section" id="packages">
     <div style="text-align:center"><span class="section-label">🔥 Most Popular</span></div>
-    <h2 class="section-title reveal">Bundle & Save More</h2>
-    <p class="section-subtitle">Hand-picked combinations for maximum growth at the best value</p>
+    <h2 class="section-title reveal">Premium Bundles - Best Value</h2>
+    <p class="section-subtitle">Hand-picked service combinations for maximum digital marketing growth at the best value. Perfect for businesses ready to scale</p>
 
     <div class="packages-grid">
         <div class="package-card starter reveal">
@@ -1160,7 +1240,7 @@
                 <li>Basic Social Media Management</li>
                 <li>Monthly Reporting</li>
             </ul>
-            <button class="package-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
+            <button class="package-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Get Started with Starter Plan">Get Started →</button>
         </div>
 
         <div class="package-card growth reveal">
@@ -1177,7 +1257,7 @@
                 <li>GMB Setup & Optimization</li>
                 <li>Audience Growth Support</li>
             </ul>
-            <button class="package-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Growth Plan →</button>
+            <button class="package-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Get Growth Plan - Digital Marketing Bundle">Get Growth Plan →</button>
         </div>
 
         <div class="package-card premium reveal">
@@ -1195,7 +1275,7 @@
                 <li>Digital Visiting Card</li>
                 <li>Priority Support</li>
             </ul>
-            <button class="package-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Go Premium →</button>
+            <button class="package-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Go Premium - Complete Digital Marketing Solution">Go Premium →</button>
         </div>
     </div>
 </section>
@@ -1205,13 +1285,13 @@
 <!-- PORTFOLIO -->
 <section class="section" id="portfolio">
     <div style="text-align:center"><span class="section-label">Our Work</span></div>
-    <h2 class="section-title reveal">Results We've Delivered</h2>
-    <p class="section-subtitle">Real projects, measurable outcomes</p>
+    <h2 class="section-title reveal">Portfolio: Real Projects & Results</h2>
+    <p class="section-subtitle">Real digital marketing projects and measurable outcomes. See how we've transformed businesses in Kovilpatti and Tamil Nadu</p>
 
     <div class="portfolio-grid">
         <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/sj_design_agency.jpeg.jpg" alt="SJ Design Agency" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('sj-design')" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/sj_design_agency.jpeg.jpg" alt="SJ Design Agency Branding Project - Social Media Setup and Poster Design" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('sj-design')" aria-label="View SJ Design Agency Project Details" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
                 <span class="portfolio-tag">Brand Design</span>
                 <h3 class="portfolio-title">SJ Design Agency Branding</h3>
@@ -1219,8 +1299,8 @@
             </div>
         </div>
         <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/powerbuild_hardware.jpeg.jpg" alt="PowerBuild Hardware" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('powerbuild')" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/powerbuild_hardware.jpeg.jpg" alt="PowerBuild Hardware Logo Design - Professional Branding and Facebook Setup" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('powerbuild')" aria-label="View PowerBuild Hardware Project Details" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
                 <span class="portfolio-tag">Logo Design</span>
                 <h3 class="portfolio-title">PowerBuild Hardware Logo</h3>
@@ -1228,8 +1308,8 @@
             </div>
         </div>
         <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/ms_design_creatix.jpeg.jpg" alt="MS Design Creatix" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('ms-creatix')" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/ms_design_creatix.jpeg.jpg" alt="MS Design Creatix - Creative Branding and Visual Identity Design" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('ms-creatix')" aria-label="View MS Design Creatix Project Details" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
                 <span class="portfolio-tag">Creative Branding</span>
                 <h3 class="portfolio-title">MS Design Creatix Identity</h3>
@@ -1237,8 +1317,8 @@
             </div>
         </div>
         <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/petnest-pet-store.jpeg.png" alt="Petnest Pet Store" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('petnest')" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/petnest-pet-store.jpeg.png" alt="Petnest Pet Store Branding - Logo and Social Media Management" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('petnest')" aria-label="View Petnest Pet Store Project Details" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
                 <span class="portfolio-tag">Packaging</span>
                 <h3 class="portfolio-title">Petnest Pet Store Branding</h3>
@@ -1246,8 +1326,8 @@
             </div>
         </div>
         <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/trendwear_fashion.jpg" alt="Trendwear Fashion" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('trendwear')" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/trendwear_fashion.jpg" alt="Trendwear Fashion Brand - Logo Design and Social Media Setup" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('trendwear')" aria-label="View Trendwear Fashion Project Details" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
                 <span class="portfolio-tag">Fashion Branding</span>
                 <h3 class="portfolio-title">Trendwear Fashion Identity</h3>
@@ -1255,8 +1335,8 @@
             </div>
         </div>
         <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/kovilpatti_snakes.png" alt="Kovilpatti Snakes" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('kovilpatti-snakes')" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/kovilpatti_snakes.png" alt="Kovilpatti Snakes - Branding with Social Media and Google My Business" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('kovilpatti-snakes')" aria-label="View Kovilpatti Snakes Project Details" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
                 <span class="portfolio-tag">Brand Design</span>
                 <h3 class="portfolio-title">Kovilpatti Snakes</h3>
@@ -1265,8 +1345,8 @@
         </div>
         
         <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/aj_collection.png" alt="AJ Collection " style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('aj-collection')" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/aj_collection.png" alt="AJ Collection Fashion Brand - Complete Digital Marketing Package" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('aj-collection')" aria-label="View AJ Collection Project Details" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
                 <span class="portfolio-tag">Fashion Branding</span>
                 <h3 class="portfolio-title">AJ Collection</h3>
@@ -1296,39 +1376,39 @@
 <!-- WHY US -->
 <section class="section">
     <div style="text-align:center"><span class="section-label">Why MMKS</span></div>
-    <h2 class="section-title reveal">What Sets Us Apart</h2>
-    <p class="section-subtitle">Results-driven, affordable, and made for Tamil Nadu businesses</p>
+    <h2 class="section-title reveal">Why Choose MMKS for Digital Marketing?</h2>
+    <p class="section-subtitle">Results-driven strategies, affordable pricing, and deep expertise in Tamil Nadu market. Here's what sets us apart from other digital agencies</p>
 
     <div class="features-grid">
         <div class="feature">
-            <div class="feature-icon"><img src="./soruces/Proven Track Record.png" alt="Proven Track Record"></div>
+            <div class="feature-icon"><img src="./soruces/Proven Track Record.png" alt="Proven Track Record - 5+ Years Experience"></div>
             <h3 class="feature-title">Proven Track Record</h3>
-            <p class="feature-desc">5+ years delivering exceptional results for 50+ businesses across Tamil Nadu.</p>
+            <p class="feature-desc">5+ years of digital marketing expertise delivering exceptional results for 50+ businesses across Tamil Nadu with documented success stories.</p>
         </div>
         <div class="feature">
-            <div class="feature-icon"><img src="./soruces/Truly Affordable.png" alt="Truly Affordable"></div>
-            <h3 class="feature-title">Truly Affordable</h3>
-            <p class="feature-desc">Premium quality at prices designed for small and growing businesses.</p>
+            <div class="feature-icon"><img src="./soruces/Truly Affordable.png" alt="Truly Affordable - Premium Quality Budget Pricing"></div>
+            <h3 class="feature-title">Truly Affordable Pricing</h3>
+            <p class="feature-desc">Premium quality digital marketing services at prices designed specifically for small and growing businesses without compromising on results.</p>
         </div>
         <div class="feature">
-            <div class="feature-icon"><img src="./soruces/Data-Driven Results.png" alt="Data-Driven Results"></div>
+            <div class="feature-icon"><img src="./soruces/Data-Driven Results.png" alt="Data-Driven Results - Analytics and Performance Metrics"></div>
             <h3 class="feature-title">Data-Driven Results</h3>
-            <p class="feature-desc">Every decision backed by analytics and measurable performance metrics.</p>
+            <p class="feature-desc">Every marketing decision backed by real analytics and measurable performance metrics. We focus on ROI, not vanity metrics, to drive actual business growth.</p>
         </div>
         <div class="feature">
-            <div class="feature-icon"><img src="./soruces/Local Expertise.png" alt="Local Expertise"></div>
-            <h3 class="feature-title">Local Expertise</h3>
-            <p class="feature-desc">Deep understanding of Tamil Nadu markets, culture, and consumer behavior.</p>
+            <div class="feature-icon"><img src="./soruces/Local Expertise.png" alt="Local Expertise - Tamil Nadu Market Knowledge"></div>
+            <h3 class="feature-title">Local Market Expertise</h3>
+            <p class="feature-desc">Deep understanding of Tamil Nadu markets, local consumer behavior, and regional business culture. We market TO your customers, not AT them.</p>
         </div>
         <div class="feature">
-            <div class="feature-icon"><img src="./soruces/Dedicated Support.png" alt="Dedicated Support"></div>
-            <h3 class="feature-title">Dedicated Support</h3>
-            <p class="feature-desc">Responsive support team available via WhatsApp for quick assistance.</p>
+            <div class="feature-icon"><img src="./soruces/Dedicated Support.png" alt="Dedicated Support - WhatsApp and Quick Assistance"></div>
+            <h3 class="feature-title">Dedicated 24/7 Support</h3>
+            <p class="feature-desc">Responsive support team available via WhatsApp, email, and phone for quick assistance and ongoing client success. We're always here when you need us.</p>
         </div>
         <div class="feature">
-            <div class="feature-icon"><img src="./soruces/Customized Plans.png" alt="Customized Plans"></div>
-            <h3 class="feature-title">Customized Plans</h3>
-            <p class="feature-desc">Every strategy tailored specifically to your business goals and budget.</p>
+            <div class="feature-icon"><img src="./soruces/Customized Plans.png" alt="Customized Plans - Personalized Digital Marketing Strategy"></div>
+            <h3 class="feature-title">100% Customized Plans</h3>
+            <p class="feature-desc">Every strategy is tailored specifically to your business goals, target audience, and budget. No cookie-cutter solutions – only what works for YOU.</p>
         </div>
     </div>
 </section>
@@ -1338,8 +1418,8 @@
 <!-- SPECIAL OFFERS -->
 <section class="section">
     <div style="text-align:center"><span class="section-label">🎯 Limited Time</span></div>
-    <h2 class="section-title reveal">Special Offers</h2>
-    <p class="section-subtitle">Don't miss these exclusive deals for new clients</p>
+    <h2 class="section-title reveal">Special Launch Offers</h2>
+    <p class="section-subtitle">Exclusive deals for new clients. Don't miss these limited-time offers to boost your digital marketing at unbeatable prices</p>
 
     <div class="offers-grid">
         <div class="offer-card reveal">
@@ -1370,8 +1450,8 @@
 <!-- TESTIMONIALS -->
 <section class="section" id="testimonials">
     <div style="text-align:center"><span class="section-label">Client Stories</span></div>
-    <h2 class="section-title reveal">What Our Clients Say</h2>
-    <p class="section-subtitle">Real success stories from businesses we've transformed</p>
+    <h2 class="section-title reveal">Client Testimonials & Success Stories</h2>
+    <p class="section-subtitle">Real success stories from actual businesses we've transformed with digital marketing in Tamil Nadu</p>
 
     <div class="testimonials-container">
         <div class="testimonial-card reveal" id="testimonial-1">
@@ -1410,8 +1490,8 @@
 <!-- CONTACT -->
 <section class="section" id="contact">
     <div style="text-align:center"><span class="section-label">Let's Talk</span></div>
-    <h2 class="section-title reveal">Get In Touch</h2>
-    <p class="section-subtitle">Ready to grow your business? Contact us for a free consultation today</p>
+    <h2 class="section-title reveal">Get Free Digital Marketing Consultation</h2>
+    <p class="section-subtitle">Ready to grow your business online? Contact us today for a free consultation and customized digital marketing strategy for your business</p>
 
     <div class="contact-wrapper">
         <div class="contact-info">
@@ -1523,11 +1603,28 @@
 
 <!-- FLOATING -->
 <div class="floating-actions">
-    <a href="https://wa.me/918608717184" class="fab" target="_blank" title="WhatsApp Us">💬</a>
-    <button class="fab" onclick="scrollToTop()" title="Back to top">⬆️</button>
+    <a href="https://wa.me/918608717184" class="fab" target="_blank" title="WhatsApp Us"><img src="./soruces/whatsapp-button.png" alt="WhatsApp" style="width: 85px; height: 85px; border-radius: 60%;"></a>
+    <button class="fab" onclick="scrollToTop()" title="Back to top"><img src="./soruces/arrow-button.png" alt="Back to top" style="width: 80px; height: 80px; border-radius: 60%;"></button>
 </div>
 
 <script>
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const btn = document.getElementById('mobile-toggle');
+        menu.classList.toggle('active');
+        btn.setAttribute('aria-expanded', menu.classList.contains('active') ? 'true' : 'false');
+    }
+    document.getElementById('mobile-toggle').addEventListener('click', toggleMobileMenu);
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.remove('active');
+            document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false');
+        });
+    });
+
     // Scroll Progress
     window.addEventListener('scroll', () => {
         const el = document.querySelector('.scroll-progress');
