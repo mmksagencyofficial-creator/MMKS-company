@@ -247,7 +247,7 @@
         }
 
         /* SECTIONS */
-        .section { max-width: 1200px; margin: 0 auto; padding: 90px 24px; }
+        .section { max-width: 1200px; margin: 0 auto; padding: 90px 24px; overflow-x: hidden; }
 
         .section-label {
             display: inline-block;
@@ -307,7 +307,7 @@
             border: 1px solid rgba(30, 126, 52, 0.25);
             border-radius: 14px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; margin-bottom: 1.3rem;
+            font-size: px; margin-bottom: 10px;
         }
 
         .service-title {
@@ -507,22 +507,119 @@
         .portfolio-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--navy); }
         .portfolio-result { color: var(--green); font-weight: 600; font-size: 0.88rem; }
 
+        .portfolio-modal {
+            position: fixed; inset: 0; display: none; align-items: center; justify-content: center;
+            z-index: 3000; overflow: auto; padding: 1.5rem;
+        }
+        .portfolio-modal.active { display: flex; }
+        .portfolio-modal-backdrop {
+            position: absolute; inset: 0; background: rgba(15, 33, 55, 0.8);
+        }
+        .portfolio-modal-content {
+            position: relative; width: min(780px, 100%); background: #ffffff;
+            border-radius: 24px; padding: 2rem; box-shadow: 0 30px 80px rgba(15, 33, 55, 0.2);
+            z-index: 1; overflow: hidden;
+        }
+        .portfolio-modal-close {
+            position: absolute; top: 16px; right: 16px; border: none; background: transparent;
+            font-size: 2rem; color: var(--navy); cursor: pointer; line-height: 1;
+        }
+        .portfolio-modal-image {
+            width: 100%; height: 320px; border-radius: 18px; overflow: hidden; margin-bottom: 1.25rem;
+            background: #f4faf6;
+        }
+        .portfolio-modal-image img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        .portfolio-modal-body { color: var(--text-body); }
+        .portfolio-modal-body .portfolio-tag { margin-bottom: 1rem; display: inline-flex; }
+        .portfolio-modal-body .portfolio-title { font-size: 1.7rem; margin-bottom: 0.75rem; }
+        .portfolio-modal-body .portfolio-result { font-size: 1rem; margin-bottom: 1rem; }
+        .portfolio-modal-body .portfolio-desc { color: #5a7a62; line-height: 1.7; font-size: 0.95rem; }
+
         /* WHY US */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 767px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
         .feature {
-            padding: 2rem;
+            min-width: 0;
+            width: 100%;
+            padding: 1.75rem;
             background: #ffffff;
-            border: 1px solid rgba(30, 126, 52, 0.1);
-            border-left: 4px solid var(--green);
-            border-radius: 14px; transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(30, 126, 52, 0.05);
+            border: 1px solid rgba(30, 126, 52, 0.12);
+            border-radius: 18px;
+            transition: box-shadow 0.3s, transform 0.3s;
+            box-shadow: 0 8px 28px rgba(30, 126, 52, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            will-change: auto;
+            box-sizing: border-box;
         }
-        .feature:hover { background: rgba(30, 126, 52, 0.03); transform: translateX(6px); border-left-color: var(--green-mid); }
+        .feature:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(30, 126, 52, 0.12);
+        }
 
-        .feature-icon { font-size: 2.2rem; margin-bottom: 1rem; }
-        .feature-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--navy); }
-        .feature-desc { color: #5a7a62; font-size: 0.9rem; }
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 22px;
+            background: linear-gradient(135deg, rgba(30, 126, 52, 0.12), rgba(36, 163, 61, 0.15));
+            color: var(--green);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .feature-icon img {
+            max-width: 80%;
+            max-height: 80%;
+            width: auto;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .feature-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            color: var(--navy);
+        }
+
+        .feature-desc {
+            color: #5a7a62;
+            font-size: 0.95rem;
+            line-height: 1.75;
+            margin: 0;
+        }
 
         /* TESTIMONIALS */
         .testimonials-container { position: relative; max-width: 850px; margin: 0 auto; }
@@ -805,43 +902,43 @@
 
     <div class="services-grid">
         <div class="service-card reveal">
-            <div class="service-icon">📱</div>
+            <div class="service-icon"><img src="soruces/marking.png" alt="Social Media Marketing" style="width: 100%; height: 100%;"></div>
             <h3 class="service-title">Social Media Marketing</h3>
             <p class="service-desc">Engage your audience across Instagram & Facebook with creative posts, account management, and audience growth strategies.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
         <div class="service-card reveal">
-            <div class="service-icon">📍</div>
+            <div class="service-icon"><img src="soruces/my bussness.png" alt="Google My Business" style="width: 100%; height: 100%;"></div>
             <h3 class="service-title">Google My Business</h3>
             <p class="service-desc">Optimize your local presence — posting updates, replying to reviews, and attracting nearby customers.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
         <div class="service-card reveal">
-            <div class="service-icon">💬</div>
+            <div class="service-icon"><img src="soruces/chat.png" alt="WhatsApp Automation" style="width: 100%; height: 100%;"></div>
             <h3 class="service-title">WhatsApp Automation</h3>
             <p class="service-desc">Direct customer engagement through WhatsApp automation for higher conversion and retention rates.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
         <div class="service-card reveal">
-            <div class="service-icon">🌐</div>
+            <div class="service-icon"><img src="soruces/website.png" alt="Website Development" style="width: 100%; height: 100%;"></div>
             <h3 class="service-title">Website Development</h3>
             <p class="service-desc">Fast, responsive, conversion-optimized websites — from basic to premium business sites.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
         <div class="service-card reveal">
-            <div class="service-icon">🧾</div>
+            <div class="service-icon"><img src="soruces/billing.png" alt="Billing Software" style="width: 100%; height: 100%;"></div>
             <h3 class="service-title">Billing Software</h3>
             <p class="service-desc">Custom billing systems for your business — basic to advanced, tailored to your workflow.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
         <div class="service-card reveal">
-            <div class="service-icon">🎓</div>
+            <div class="service-icon"><img src="soruces/training.png" alt="Training Programs" style="width: 100%; height: 100%;"></div>
             <h3 class="service-title">Training Programs</h3>
             <p class="service-desc">Learn digital marketing from basics to advanced — webinars, courses, and hands-on training available.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
         </div>
         <div class="service-card reveal">
-            <div class="service-icon">💳</div>
+            <div class="service-icon"><img src="soruces/visiting-card.png" alt="Digital Visiting Card" style="width: 100%; height: 100%;"></div>
             <h3 class="service-title">Digital Visiting Card</h3>
             <p class="service-desc">Make a lasting first impression with a professionally designed digital business card.</p>
             <a href="#pricing" class="service-link">View Pricing →</a>
@@ -861,7 +958,7 @@
 
         <!-- Social Media -->
         <div class="reveal">
-            <h3 class="pricing-category-title">📱 Social Media Services</h3>
+            <h1 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/marking.png" alt="Social Media Marketing" style="width: 3.5%; height: 3.5%;"> Social Media Services</h1>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-name">Account Setup</div>
@@ -901,7 +998,7 @@
 
         <!-- GMB -->
         <div class="reveal">
-            <h3 class="pricing-category-title">📍 Google My Business</h3>
+            <h1 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/my bussness.png" alt="Google My Business" style="width: 3.5%; height: 3.5%;"> Google My Business</h1 >
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-name">GMB Creation</div>
@@ -929,7 +1026,7 @@
 
         <!-- WhatsApp + Digital Card -->
         <div class="reveal">
-            <h3 class="pricing-category-title">🤖 WhatsApp Automation & Digital Card</h3>
+            <h1 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/chat.png" alt="WhatsApp Automation" style="width: 3.5%; height: 3.5%;"> WhatsApp Automation & Digital Card</h1>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-name">WhatsApp Automation Setup</div>
@@ -949,7 +1046,7 @@
 
         <!-- Websites -->
         <div class="reveal">
-            <h3 class="pricing-category-title">💻 Website Development</h3>
+            <h1 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/website.png" alt="Website Development" style="width: 3.5%; height: 3.5%;"> Website Development</h1>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-name">Basic Website</div>
@@ -979,7 +1076,7 @@
 
         <!-- Billing + CRM -->
         <div class="reveal">
-            <h3 class="pricing-category-title">🧾 Billing Software & Client Management</h3>
+            <h1 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/billing.png" alt="Billing Software" style="width: 3.5%; height: 3.5%;"> Billing Software & Client Management</h1>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-name">Basic Billing System</div>
@@ -1004,7 +1101,7 @@
 
         <!-- Training -->
         <div class="reveal">
-            <h3 class="pricing-category-title">🎓 Training Programs</h3>
+            <h1 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/training.png" alt="Training Programs" style="width: 3.5%; height: 3.5%;"> Training Programs</h1>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-name">1-Hour Webinar</div>
@@ -1113,61 +1210,86 @@
 
     <div class="portfolio-grid">
         <div class="portfolio-item reveal">
-            <div class="portfolio-image">📊</div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/sj_design_agency.jpeg.jpg" alt="SJ Design Agency" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('sj-design')" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
-                <span class="portfolio-tag">Social Media</span>
-                <h3 class="portfolio-title">Instagram Growth Campaign</h3>
-                <p class="portfolio-result">↑ 150% Followers in 3 months</p>
+                <span class="portfolio-tag">Brand Design</span>
+                <h3 class="portfolio-title">SJ Design Agency Branding</h3>
+                <p class="portfolio-result">Social Media setup and creating poster </p>
             </div>
         </div>
         <div class="portfolio-item reveal">
-            <div class="portfolio-image">🎯</div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/powerbuild_hardware.jpeg.jpg" alt="PowerBuild Hardware" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('powerbuild')" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
-                <span class="portfolio-tag">SEO</span>
-                <h3 class="portfolio-title">E-Commerce SEO Optimization</h3>
-                <p class="portfolio-result">↑ 280% Organic Traffic</p>
+                <span class="portfolio-tag">Logo Design</span>
+                <h3 class="portfolio-title">PowerBuild Hardware Logo</h3>
+                <p class="portfolio-result">Professional Logo Design,Facebook account setup and first poster creation </p>
             </div>
         </div>
         <div class="portfolio-item reveal">
-            <div class="portfolio-image">🌟</div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/ms_design_creatix.jpeg.jpg" alt="MS Design Creatix" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('ms-creatix')" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
-                <span class="portfolio-tag">Web Design</span>
-                <h3 class="portfolio-title">Corporate Website Redesign</h3>
-                <p class="portfolio-result">↑ 95% Conversion Rate</p>
+                <span class="portfolio-tag">Creative Branding</span>
+                <h3 class="portfolio-title">MS Design Creatix Identity</h3>
+                <p class="portfolio-result">Vibrant visual identity for a creative design studio</p>
             </div>
         </div>
         <div class="portfolio-item reveal">
-            <div class="portfolio-image">📈</div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/petnest-pet-store.jpeg.png" alt="Petnest Pet Store" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('petnest')" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
-                <span class="portfolio-tag">GMB</span>
-                <h3 class="portfolio-title">Local Business GMB Boost</h3>
-                <p class="portfolio-result">↑ 340% Local Search Visibility</p>
+                <span class="portfolio-tag">Packaging</span>
+                <h3 class="portfolio-title">Petnest Pet Store Branding</h3>
+                <p class="portfolio-result">Logo Creation,Social Media setup and Google My Business Creations </p>
             </div>
         </div>
         <div class="portfolio-item reveal">
-            <div class="portfolio-image">🎨</div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/trendwear_fashion.jpg" alt="Trendwear Fashion" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('trendwear')" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
-                <span class="portfolio-tag">Branding</span>
-                <h3 class="portfolio-title">Complete Brand Overhaul</h3>
-                <p class="portfolio-result">↑ Brand Recognition 200%</p>
+                <span class="portfolio-tag">Fashion Branding</span>
+                <h3 class="portfolio-title">Trendwear Fashion Identity</h3>
+                <p class="portfolio-result">Stylish logo and Poster brand design , Social Media setup </p>
             </div>
         </div>
         <div class="portfolio-item reveal">
-            <div class="portfolio-image">💬</div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" style="margin:0">View Details</button></div>
+            <div class="portfolio-image"><img src="./soruces/kovilpatti_snakes.png" alt="Kovilpatti Snakes" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('kovilpatti-snakes')" style="margin:0">View Details</button></div>
             <div class="portfolio-info">
-                <span class="portfolio-tag">WhatsApp</span>
-                <h3 class="portfolio-title">WhatsApp Lead Generation</h3>
-                <p class="portfolio-result">↑ 420% Lead Conversion</p>
+                <span class="portfolio-tag">Brand Design</span>
+                <h3 class="portfolio-title">Kovilpatti Snakes</h3>
+                <p class="portfolio-result"> Social Media Setup,Google My Business Account,Logo and Poster Created </p>
             </div>
         </div>
+        
+        <div class="portfolio-item reveal">
+            <div class="portfolio-image"><img src="./soruces/aj_collection.png" alt="AJ Collection " style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('aj-collection')" style="margin:0">View Details</button></div>
+            <div class="portfolio-info">
+                <span class="portfolio-tag">Fashion Branding</span>
+                <h3 class="portfolio-title">AJ Collection</h3>
+                <p class="portfolio-result">Stylish Logo Creation,Social Media Setup,Google My Business Creation,Website Development and Digital Visiting Card</p>
+            </div>
+        </div>
+
     </div>
 </section>
+
+<div class="portfolio-modal" id="portfolio-modal" aria-hidden="true">
+    <div class="portfolio-modal-backdrop" onclick="closePortfolioModal()"></div>
+    <div class="portfolio-modal-content">
+        <button class="portfolio-modal-close" onclick="closePortfolioModal()">×</button>
+        <div class="portfolio-modal-image"><img id="modal-image" src="" alt="Portfolio detail"></div>
+        <div class="portfolio-modal-body">
+            <span id="modal-tag" class="portfolio-tag"></span>
+            <h3 id="modal-title" class="portfolio-title"></h3>
+            <p id="modal-result" class="portfolio-result"></p>
+            <p id="modal-description" class="portfolio-desc"></p>
+        </div>
+    </div>
+</div>
 
 <div class="section-divider"></div>
 
@@ -1178,33 +1300,33 @@
     <p class="section-subtitle">Results-driven, affordable, and made for Tamil Nadu businesses</p>
 
     <div class="features-grid">
-        <div class="feature reveal">
-            <div class="feature-icon">✅</div>
+        <div class="feature">
+            <div class="feature-icon"><img src="./soruces/Proven Track Record.png" alt="Proven Track Record"></div>
             <h3 class="feature-title">Proven Track Record</h3>
             <p class="feature-desc">5+ years delivering exceptional results for 50+ businesses across Tamil Nadu.</p>
         </div>
-        <div class="feature reveal">
-            <div class="feature-icon">💰</div>
+        <div class="feature">
+            <div class="feature-icon"><img src="./soruces/Truly Affordable.png" alt="Truly Affordable"></div>
             <h3 class="feature-title">Truly Affordable</h3>
             <p class="feature-desc">Premium quality at prices designed for small and growing businesses.</p>
         </div>
-        <div class="feature reveal">
-            <div class="feature-icon">📊</div>
+        <div class="feature">
+            <div class="feature-icon"><img src="./soruces/Data-Driven Results.png" alt="Data-Driven Results"></div>
             <h3 class="feature-title">Data-Driven Results</h3>
             <p class="feature-desc">Every decision backed by analytics and measurable performance metrics.</p>
         </div>
-        <div class="feature reveal">
-            <div class="feature-icon">🌐</div>
+        <div class="feature">
+            <div class="feature-icon"><img src="./soruces/Local Expertise.png" alt="Local Expertise"></div>
             <h3 class="feature-title">Local Expertise</h3>
             <p class="feature-desc">Deep understanding of Tamil Nadu markets, culture, and consumer behavior.</p>
         </div>
-        <div class="feature reveal">
-            <div class="feature-icon">💬</div>
+        <div class="feature">
+            <div class="feature-icon"><img src="./soruces/Dedicated Support.png" alt="Dedicated Support"></div>
             <h3 class="feature-title">Dedicated Support</h3>
             <p class="feature-desc">Responsive support team available via WhatsApp for quick assistance.</p>
         </div>
-        <div class="feature reveal">
-            <div class="feature-icon">🎯</div>
+        <div class="feature">
+            <div class="feature-icon"><img src="./soruces/Customized Plans.png" alt="Customized Plans"></div>
             <h3 class="feature-title">Customized Plans</h3>
             <p class="feature-desc">Every strategy tailored specifically to your business goals and budget.</p>
         </div>
@@ -1311,7 +1433,7 @@
                 <div class="contact-icon">📧</div>
                 <div class="contact-details">
                     <h4>Email</h4>
-                    <p><a href="mailto:hello@mmksdigital.com">hello@mmksdigital.com</a></p>
+                    <p><a href="mailto:mmksagency.official@gmail.com">mmksagency.official@gmail.com</a></p>
                 </div>
             </div>
             <div class="contact-item reveal">
@@ -1383,10 +1505,8 @@
         <div class="footer-section">
             <h3>Follow Us</h3>
             <div class="social-icons">
-                <a href="https://facebook.com" class="social-icon" target="_blank">f</a>
-                <a href="https://instagram.com" class="social-icon" target="_blank">📷</a>
-                <a href="https://linkedin.com" class="social-icon" target="_blank">in</a>
-                <a href="https://twitter.com" class="social-icon" target="_blank">𝕏</a>
+                <a href="https://www.facebook.com/share/1BmhkRfUFC/" class="social-icon" target="_blank">f</a>
+                <a href="https://www.instagram.com/mmks_digital_marketing_?igsh=NnhmeDF5c2d1bnRu" class="social-icon" target="_blank">📷</a>
                 <a href="https://wa.me/918608717184" class="social-icon" target="_blank">💬</a>
             </div>
             <br>
@@ -1449,6 +1569,76 @@
             if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         });
     });
+
+    const portfolioDetails = {
+        'sj-design': {
+            img: 'soruces/sj_design_agency.jpeg.jpg',
+            tag: 'Brand Design',
+            title: 'SJ Design Agency Branding',
+            result: 'Professional graphic design and brand identity',
+            description: 'A polished visual identity package designed for high-end brand positioning, including logo, stationery, and marketing visuals.'
+        },
+        'powerbuild': {
+            img: 'soruces/powerbuild_hardware.jpeg.jpg',
+            tag: 'Logo Design',
+            title: 'PowerBuild Hardware Logo',
+            result: 'Strong brand identity for a construction hardware business',
+            description: 'A robust logo design that reflects strength and reliability, paired with a color system that works across digital and print.'
+        },
+        'ms-creatix': {
+            img: 'soruces/ms_design_creatix.jpeg.jpg',
+            tag: 'Creative Branding',
+            title: 'MS Design Creatix Identity',
+            result: 'Vibrant visual identity for a creative design studio',
+            description: 'A colorful and modern brand system created for a creative agency, focused on showing energy, innovation, and professionalism.'
+        },
+        'petnest': {
+            img: 'soruces/petnest-pet-store.jpeg.png',
+            tag: 'Packaging',
+            title: 'Petnest Pet Store Branding',
+            result: 'Warm, friendly branding for a pet store',
+            description: 'A charming brand look developed for a pet store, combining playful imagery with a natural, comforting color palette.'
+        },
+        'trendwear': {
+            img: 'soruces/trendwear_fashion.jpg',
+            tag: 'Fashion Branding',
+            title: 'Trendwear Fashion Identity',
+            result: 'Stylish logo and brand design for a fashion label',
+            description: 'A sleek and fashionable brand identity designed for a modern clothing label, with emphasis on elegance and aspirational appeal.'
+        },
+        'kovilpatti-snakes': {
+            img: './soruces/kovilpatti_snakes.png',
+            tag: 'Sweats Packaging',
+            title: 'Kovilpatti Snakes',
+            result: 'kovlipatti Snakes',
+            description: 'AJ Collection is a stylish womens fashion accessories brand specializing in trendy hair accessories, elegant claw clips, scrunchies, bracelets, and everyday fashion essentials. The brand focuses on combining beauty, comfort, and modern style to create products that enhance every woman’s look. With premium designs, attractive colors, and fashionable collections, AJ Collection brings confidence and elegance to every customer.'
+        },
+        'aj-collection': {
+            img: './soruces/aj_collection.png',
+            tag: 'Fashion Branding',
+            title: 'AJ Collection',
+            result: 'AJ Collection',
+            description: 'AJ Collection is a stylish womens fashion accessories brand specializing in trendy hair accessories, elegant claw clips, scrunchies, bracelets, and everyday fashion essentials. The brand focuses on combining beauty, comfort, and modern style to create products that enhance every woman’s look. With premium designs, attractive colors, and fashionable collections, AJ Collection brings confidence and elegance to every customer.'
+        }
+    };
+
+    function openPortfolioModal(id) {
+        const data = portfolioDetails[id];
+        if (!data) return;
+        document.getElementById('modal-image').src = data.img;
+        document.getElementById('modal-image').alt = data.title;
+        document.getElementById('modal-tag').textContent = data.tag;
+        document.getElementById('modal-title').textContent = data.title;
+        document.getElementById('modal-result').textContent = data.result;
+        document.getElementById('modal-description').textContent = data.description;
+        document.getElementById('portfolio-modal').classList.add('active');
+        document.getElementById('portfolio-modal').setAttribute('aria-hidden', 'false');
+    }
+
+    function closePortfolioModal() {
+        document.getElementById('portfolio-modal').classList.remove('active');
+        document.getElementById('portfolio-modal').setAttribute('aria-hidden', 'true');
+    }
 </script>
 </body>
 </html>
