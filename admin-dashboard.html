@@ -898,6 +898,7 @@
                 let posters = JSON.parse(localStorage.getItem('posters') || '[]');
                 posters.unshift(poster);
                 localStorage.setItem('posters', JSON.stringify(posters));
+                localStorage.setItem('postersLastUpdated', new Date().toISOString());
 
                 showMessage('✅ Poster uploaded successfully!', 'success');
                 document.getElementById('posterTitle').value = '';

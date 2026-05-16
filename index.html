@@ -550,6 +550,7 @@
 
         /* PORTFOLIO */
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        #uploaded-posters-grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
 
         .portfolio-item {
             background: #ffffff;
@@ -557,14 +558,22 @@
             border: 1px solid rgba(30, 126, 52, 0.1);
             cursor: pointer; transition: all 0.3s;
             box-shadow: 0 2px 12px rgba(30, 126, 52, 0.06);
+            display: flex;
+            flex-direction: column;
+            aspect-ratio: 1 / 1;
         }
         .portfolio-item:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(30, 126, 52, 0.12); }
 
         .portfolio-image {
-            width: 100%; height: 200px;
+            width: 90%; height:auto; margin: 1.5rem auto 0;
+            aspect-ratio: 1 / 3;
             background: var(--gradient-mixed);
             display: flex; align-items: center; justify-content: center;
-            font-size: 3.5rem; position: relative; overflow: hidden;
+            font-size: 5.5rem; position: relative; overflow: hidden;
+        }
+
+        .portfolio-image img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
         }
 
         .portfolio-overlay {
@@ -1064,6 +1073,7 @@
             .pricing-category-title img { width: 8% !important; height: 8% !important; }
             .pricing-offer { font-size: 0.65rem; padding: 0.15rem 0.5rem; margin-bottom: 0.8rem; }
             .pricing-features li { font-size: 0.75rem; gap: 0.4rem; }
+            #uploaded-posters-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
@@ -1146,6 +1156,22 @@
 
     <div class="scroll-indicator">↓</div>
 </section>
+
+<!-- UPLOADED POSTERS -->
+<section class="section" id="uploaded-posters">
+    <div style="text-align:center"><span class="section-label">Latest Posters</span></div>
+    <h2 class="section-title reveal">Upcoming Event Of MMKS</h2>
+    <p class="section-subtitle">View the latest promotional posters uploaded by the admin directly on the homepage.</p>
+
+    <div class="portfolio-grid" id="uploaded-posters-grid">
+        <div class="no-posters" style="grid-column: 1/-1; text-align:center; padding:2rem; background: white; border-radius: 16px; border: 1px solid rgba(30, 126, 52, 0.1); box-shadow: 0 10px 30px rgba(30, 126, 52, 0.06);">
+            <div class="no-posters-icon">🎨</div>
+            <p>No posters uploaded yet. Please add a poster from the admin dashboard.</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
 
 <!-- SERVICES -->
 <section class="section" id="services">
@@ -1538,21 +1564,6 @@
 
 <div class="section-divider"></div>
 
-<!-- UPLOADED POSTERS -->
-<section class="section" id="uploaded-posters">
-    <div style="text-align:center"><span class="section-label">Latest Posters</span></div>
-    <h2 class="section-title reveal">Uploaded Posters from Admin</h2>
-    <p class="section-subtitle">View the latest promotional posters uploaded by the admin directly on the homepage.</p>
-
-    <div class="portfolio-grid" id="uploaded-posters-grid">
-        <div class="no-posters" style="grid-column: 1/-1; text-align:center; padding:2rem; background: white; border-radius: 16px; border: 1px solid rgba(30, 126, 52, 0.1); box-shadow: 0 10px 30px rgba(30, 126, 52, 0.06);">
-            <div class="no-posters-icon">🎨</div>
-            <p>No posters uploaded yet. Please add a poster from the admin dashboard.</p>
-        </div>
-    </div>
-</section>
-
-<div class="section-divider"></div>
 
 <!-- WHY US -->
 <section class="section">
@@ -1595,78 +1606,6 @@
 </section>
 
 <div class="section-divider"></div>
-
-<!-- UPCOMING EVENTS - POSTER SECTION -->
-<section class="section">
-    <div style="text-align:center"><span class="section-label">🎯 Limited Time Offers</span></div>
-    <h2 class="section-title reveal">Upcoming Events, Webinars & Courses</h2>
-    <p class="section-subtitle">Join thousands of students, business owners & freelancers learning digital marketing skills to grow online</p>
-
-    <div class="offers-grid">
-        <div class="offer-card reveal" style="background-image: url('soruces/offers.png');">
-            <div class="offer-card-content">
-                <div class="offer-icon">🎓</div>
-                <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <div class="offer-title">Learn Powerful Business Tools</div>
-                    <div class="offer-desc">Complete digital marketing mastery in just 2 weeks</div>
-                </div>
-                <div class="offer-details">
-                    <div class="offer-price">₹999</div>
-                    <div class="offer-period">Per Person • Limited Seats Only!</div>
-                </div>
-                <button class="offer-cta">🚀 Enroll Now</button>
-            </div>
-        </div>
-
-        <div class="offer-card reveal" style="background-image: url('soruces/offers.png');">
-            <div class="offer-card-content">
-                <div class="offer-icon">🤖</div>
-                <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <div class="offer-title">AI Poster Design Masterclass</div>
-                    <div class="offer-desc">Create professional posters with Canva & AI tools in 1 hour</div>
-                </div>
-                <div class="offer-details">
-                    <div class="offer-price">FREE</div>
-                    <div class="offer-period">Live Webinar • Expert Tips Included</div>
-                </div>
-                <button class="offer-cta">🎬 Join Now</button>
-            </div>
-        </div>
-
-        <div class="offer-card reveal" style="background-image: url('soruces/offers.png');">
-            <div class="offer-card-content">
-                <div class="offer-icon">📱</div>
-                <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <div class="offer-title">Social Media Mastery</div>
-                    <div class="offer-desc">From zero to hero on Instagram & Facebook in 4 weeks</div>
-                </div>
-                <div class="offer-details">
-                    <div class="offer-price">₹2,499</div>
-                    <div class="offer-period">4-Week Course • Certificate</div>
-                </div>
-                <button class="offer-cta">📈 Register</button>
-            </div>
-        </div>
-
-        <div class="offer-card reveal" style="background-image: url('soruces/offers.png');">
-            <div class="offer-card-content">
-                <div class="offer-icon">💼</div>
-                <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <div class="offer-title">Complete Digital Package</div>
-                    <div class="offer-desc">Get website, social media setup & SMO in one package</div>
-                </div>
-                <div class="offer-details">
-                    <div class="offer-price">₹19,999</div>
-                    <div class="offer-period">Combo Offer • Limited Time</div>
-                </div>
-                <button class="offer-cta">💎 Get Deal</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="section-divider"></div>
-
 <!-- TESTIMONIALS -->
 <section class="section" id="testimonials">
     <div style="text-align:center"><span class="section-label">Client Stories</span></div>
@@ -1869,11 +1808,46 @@
     }
     setInterval(() => changeTestimonial(1), 8000);
 
-    // Form
+    // Form - Send via WhatsApp and Email
     function handleSubmit(e) {
         e.preventDefault();
-        alert('Thank you! We will contact you on WhatsApp shortly. 📱');
-        e.target.reset();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+        
+        // WhatsApp Message
+        const whatsappMessage = `Hello! I'm ${name}. ${message} You can reach me at ${email} or ${phone}`;
+        const whatsappUrl = `https://wa.me/918608717184?text=${encodeURIComponent(whatsappMessage)}`;
+        
+        // Email via FormSubmit.co
+        const emailData = new FormData();
+        emailData.append('email', email);
+        emailData.append('name', name);
+        emailData.append('phone', phone);
+        emailData.append('message', message);
+        emailData.append('_captcha', 'false');
+        
+        // Send email using FormSubmit
+        fetch('https://formsubmit.co/ajax/mmksagency.official@gmail.com', {
+            method: 'POST',
+            body: emailData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Open WhatsApp after email is sent
+            window.open(whatsappUrl, '_blank');
+            alert('✅ Message sent via Email and WhatsApp! We will contact you soon. 📱');
+            e.target.reset();
+        })
+        .catch(error => {
+            console.error('Email send error:', error);
+            // Still open WhatsApp even if email fails
+            window.open(whatsappUrl, '_blank');
+            alert('✅ Message sent to WhatsApp! Email delivery is being processed. 📱');
+            e.target.reset();
+        });
     }
 
     // Scroll top
@@ -2013,7 +1987,7 @@
             }
 
             grid.innerHTML = posters.map(poster => `
-                <div class="portfolio-item reveal">
+                <div class="portfolio-item">
                     <div class="portfolio-image"><img src="${poster.image}" alt="${poster.title}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22%23999%22%3EImage%20Error%3C/text%3E%3C/svg%3E'" /></div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">Uploaded Poster</span>
@@ -2035,7 +2009,14 @@
 
     // Update homepage posters when admin saves new posters in another tab/page
     window.addEventListener('storage', (event) => {
-        if (event.key === 'posters') {
+        if (event.key === 'posters' || event.key === 'postersLastUpdated') {
+            loadUploadedPosters();
+        }
+    });
+
+    // Refresh posters when returning to the index page after switching tabs
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
             loadUploadedPosters();
         }
     });

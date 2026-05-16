@@ -164,34 +164,48 @@
 
         .feature-list {
             list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(220px, 1fr));
+            gap: 1.5rem;
         }
 
         .feature-item {
             display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1rem;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1.5rem;
             background: rgba(30, 126, 52, 0.02);
-            border-radius: 8px;
-            border-left: 4px solid var(--green);
+            border-radius: 10px;
+            border: 2px solid rgba(30, 126, 52, 0.15);
+            aspect-ratio: 1 / 1;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(30, 126, 52, 0.15);
+            border-color: var(--green);
+            background: rgba(30, 126, 52, 0.05);
         }
 
         .feature-icon {
-            font-size: 1.5rem;
+            font-size: 2.5rem;
             flex-shrink: 0;
         }
 
         .feature-content h3 {
             color: var(--navy);
             margin-bottom: 0.3rem;
+            font-size: 0.95rem;
         }
 
         .feature-content p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            line-height: 1.4;
         }
 
         .cta-button {
@@ -231,6 +245,10 @@
 
             .stats-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .feature-list {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .content-section {
@@ -310,35 +328,35 @@
         <h2 class="section-title">📋 Available Services</h2>
         <ul class="feature-list">
             <li class="feature-item">
-                <div class="feature-icon">🔍</div>
+                <div class="feature-icon"><img src="soruces/seo optimizer.png" alt="SEO Icon" style="width: 112%; height: 110%;"></div>
                 <div class="feature-content">
                     <h3>SEO Optimization</h3>
                     <p>Improve your online visibility with our expert SEO services</p>
                 </div>
             </li>
             <li class="feature-item">
-                <div class="feature-icon">📱</div>
+                <div class="feature-icon"><img src="soruces/marking.png" alt="Social Media Icon" style="width: 100%; height: 100%;"></div>
                 <div class="feature-content">
                     <h3>Social Media Marketing</h3>
                     <p>Grow your social presence and engage with your audience</p>
                 </div>
             </li>
             <li class="feature-item">
-                <div class="feature-icon">💻</div>
+                <div class="feature-icon"><img src="soruces/website.png" alt="Website Development Icon" style="width: 105%; height: 100%;"></div>
                 <div class="feature-content">
                     <h3>Website Development</h3>
                     <p>Professional websites that convert visitors into customers</p>
                 </div>
             </li>
             <li class="feature-item">
-                <div class="feature-icon">💬</div>
+                <div class="feature-icon"><img src="soruces/chat.png" alt="WhatsApp Icon" style="width: 100%; height: 100%;"></div>
                 <div class="feature-content">
                     <h3>WhatsApp Marketing</h3>
                     <p>Direct customer engagement through WhatsApp automation</p>
                 </div>
             </li>
             <li class="feature-item">
-                <div class="feature-icon">🤖</div>
+                <div class="feature-icon"><img src="soruces/ai-marketing.png" alt="AI Icon" style="width: 100%; height: 100%;"></div>
                 <div class="feature-content">
                     <h3>AI Marketing Solutions</h3>
                     <p>Leverage AI to optimize your marketing campaigns</p>
@@ -356,7 +374,7 @@
 
     <!-- SUPPORT SECTION -->
     <div class="content-section">
-        <h2 class="section-title">💬 Need Help?</h2>
+        <h2 class="section-title"><img src="soruces/image.png" alt="Help Icon" style="width: 30px; height: 30px; margin-right: 10px;"> Need Help?</h2>
         <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Our support team is here to help you succeed. Get in touch with us anytime.</p>
         <button class="cta-button" onclick="window.location.href='index.html#contact'">Contact Support</button>
     </div>
