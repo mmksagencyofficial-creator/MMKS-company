@@ -3,2023 +3,1664 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MMKS Digital Marketing Agency - Affordable digital marketing services in Kovilpatti, Tamil Nadu. SEO, social media marketing, website development, WhatsApp marketing, and AI marketing solutions.">
-    <meta name="keywords" content="Digital Marketing Agency Kovilpatti, SEO Services Tamil Nadu, Social Media Marketing, Website Development, WhatsApp Marketing, AI Marketing Agency">
-    <meta name="author" content="MMKS Digital Marketing Agency">
-    <meta name="theme-color" content="#0f2137">
-    
-    <meta property="og:title" content="MMKS Digital Marketing Agency - Affordable Digital Solutions">
-    <meta property="og:description" content="Grow your business with smart, creative, and affordable digital marketing solutions">
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "MMKS Digital Marketing Agency",
-        "description": "Affordable digital marketing agency specializing in SEO, social media marketing, and website development",
-        "url": "https://mmksdigital.com",
-        "telephone": "+91-8608717184",
-        "areaServed": "TN",
-        "priceRange": "₹",
-        "serviceArea": {
-            "@type": "City",
-            "name": "Kovilpatti"
-        }
-    }
-    </script>
-    
-    <title>MMKS Digital Marketing Agency | Affordable Digital Solutions in Kovilpatti</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-
+    <meta name="description" content="MMKS Digital Marketing Agency helps Tamil Nadu businesses grow online with SEO, social media marketing, branding, website design, and local digital advertising.">
+    <meta name="keywords" content="digital marketing, Tamil Nadu, SEO, social media marketing, branding, website design, local business marketing, MMKS agency">
+    <title>MMKS Digital Marketing Agency - Professional Digital Marketing Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         :root {
-            --navy: #0f2137;
-            --navy-mid: #12294a;
-            --navy-light: #1a3a5c;
-            --green: #1e7e34;
-            --green-mid: #23963d;
-            --green-light: #28a745;
-            --green-bright: #1e7e34;
-            --accent: #23963d;
-            --white: #ffffff;
-            --off-white: #f4faf6;
-            --text-body: #2d3e30;
-            --text-muted: #5a7a62;
-            --border: rgba(30, 126, 52, 0.18);
-            --card-bg: #ffffff;
-            --gradient-green: linear-gradient(135deg, #1e7e34, #34c759);
-            --gradient-navy: linear-gradient(135deg, #0f2137, #1a3a5c);
-            --gradient-mixed: linear-gradient(135deg, #0f2137 0%, #1e7e34 100%);
-            --page-bg: #f4faf6;
-            --section-alt: #edf7f0;
+            --primary-dark: #001F4D;
+            --primary-light: #0033A0;
+            --accent-green: #39B54A;
+            --accent-yellow: #F4C400;
+            --accent-blue: #3B82F6;
+            --white: #FFFFFF;
+            --light-gray: #F5F7FA;
+            --medium-gray: #8B92A0;
+            --dark-gray: #1F2937;
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--page-bg);
-            color: var(--text-body);
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            background: var(--white);
             overflow-x: hidden;
         }
 
-        /* Scroll Progress */
-        .scroll-progress {
-            position: fixed; top: 0; left: 0;
-            height: 3px;
-            background: var(--gradient-green);
-            z-index: 2000; width: 0%;
-            transition: width 0.1s;
-        }
-
-        /* NAV */
-        nav {
-            position: fixed; top: 0; width: 100%;
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(16px);
-            border-bottom: 5px solid rgba(30, 126, 52, 0.15);
-            padding: 0.1rem 0rem;
-            box-shadow: 0 2px 20px rgba(30, 126, 52, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 0.9rem 1.8rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
         }
 
-        .nav-container {
-            max-width: 1200px; margin: 0 auto;
-            padding: 0 24px;
-            display: flex; justify-content: space-between; align-items: center;
-            gap: 1rem;
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            padding: 0.8rem 1.8rem;
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
         }
 
         .logo {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.9rem; font-weight: 900;
+            font-size: 1.8rem;
+            font-weight: 800;
             letter-spacing: -1px;
-            background: var(--gradient-green);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-        .nav-links a {
-            color: #2d3e30; text-decoration: none;
-            font-weight: 500; font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover { color: var(--green); }
-        
-        .login-link {
-            border: 2px solid var(--green) !important;
-            padding: 0.4rem 1rem !important;
-            border-radius: 50px !important;
-            color: var(--green) !important;
-            font-weight: 600 !important;
-            transition: all 0.3s !important;
-        }
-        .login-link:hover {
-            background: var(--green) !important;
-            color: white !important;
+        .logo img {
+            width: auto;
+            max-width: 250px;
+            max-height:150px;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
-        .cta-btn {
-            background: var(--gradient-green);
-            color: white; padding: 0.6rem 1.4rem;
-            border: none; border-radius: 50px;
-            cursor: pointer; font-weight: 700;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            margin-left: 1rem;
-        }
-        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(30, 126, 52, 0.4); }
-
-        .mobile-menu-btn { display: none; background: none; border: none; color: #2d3e30; font-size: 1.5rem; cursor: pointer; z-index: 999; }
-        
-        .mobile-menu {
-            display: none;
-            position: fixed; top: 62px; left: 0; right: 0;
-            background: #ffffff;
-            flex-direction: column; gap: 0;
-            list-style: none;
-            box-shadow: 0 4px 20px rgba(30, 126, 52, 0.15);
-            z-index: 998;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        .mobile-menu.active { display: flex; max-height: 400px; }
-        .mobile-menu li { padding: 0; }
-        .mobile-menu a {
-            display: block; padding: 1rem 24px; color: #2d3e30; text-decoration: none;
-            font-weight: 500; border-bottom: 1px solid rgba(30, 126, 52, 0.1);
-            transition: background 0.3s;
-        }
-        .mobile-menu a:hover { background: rgba(30, 126, 52, 0.05); color: var(--green); }
-        
-        .mobile-menu .login-link {
-            border: none !important;
-            padding: 1rem 24px !important;
-            border-radius: 0 !important;
-            background: transparent !important;
-            color: #2d3e30 !important;
-            font-weight: 500 !important;
-            border-bottom: 1px solid rgba(30, 126, 52, 0.1) !important;
-        }
-        .mobile-menu .login-link:hover {
-            background: rgba(30, 126, 52, 0.05) !important;
-            color: var(--green) !important;
-        }
-        
-        .mobile-menu .cta-btn {
-            display: block;
-            margin: 1rem 24px;
-            text-align: center;
-        }
-
-        /* HERO */
-        .hero {
-            margin-top: 62px;
-            min-height: 100vh;
-            display: flex; align-items: center; justify-content: center;
-            position: relative; overflow: hidden;
-            background: radial-gradient(ellipse at 80% 20%, rgba(30, 126, 52, 0.08) 0%, transparent 60%),
-                        radial-gradient(ellipse at 10% 80%, rgba(52, 199, 89, 0.06) 0%, transparent 50%),
-                        linear-gradient(160deg, #ffffff 0%, #f4faf6 50%, #edf7f0 100%);
-        }
-
-        .hero-grid {
-            position: absolute; inset: 0;
-            background-image: linear-gradient(rgba(30,126,52,0.04) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(30,126,52,0.04) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
-
-        .hero-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            pointer-events: none;
-        }
-        .orb1 { width: 400px; height: 400px; background: rgba(30, 126, 52, 0.1); top: -80px; right: -80px; animation: drift 18s ease-in-out infinite; }
-        .orb2 { width: 300px; height: 300px; background: rgba(52, 199, 89, 0.07); bottom: -60px; left: -60px; animation: drift 24s ease-in-out infinite reverse; }
-
-        @keyframes drift {
-            0%, 100% { transform: translate(0, 0); }
-            33% { transform: translate(30px, -20px); }
-            66% { transform: translate(-20px, 30px); }
-        }
-
-        .hero-content {
-            position: relative; z-index: 10;
-            max-width: 900px; text-align: center;
-            padding: 0 24px;
-            animation: riseIn 1s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes riseIn {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: rgba(30, 126, 52, 0.1);
-            border: 1px solid rgba(30, 126, 52, 0.3);
-            color: var(--green);
-            padding: 0.4rem 1rem; border-radius: 50px;
-            font-size: 0.82rem; font-weight: 600;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        h1 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: clamp(2.4rem, 7vw, 4rem);
-            font-weight: 900;
-            line-height: 1.15;
-            margin-bottom: 1.2rem;
-            color: var(--navy);
-            letter-spacing: -2px;
-        }
-
-        .gradient-text {
-            background: var(--gradient-green);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            font-size: 1.15rem; color: #5a7a62;
-            margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;
-        }
-
-        .hero-stats {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem; margin: 3rem 0;
-            background: rgba(255, 255, 255, 0.85);
-            border: 1px solid rgba(30, 126, 52, 0.15);
-            border-radius: 20px; padding: 2rem;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 30px rgba(30, 126, 52, 0.08);
-        }
-
-        .stat { text-align: center; }
-        .stat-number {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 2.8rem; font-weight: 900;
-            background: var(--gradient-green);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .logo-text {
+            display: flex;
+            flex-direction: column;
             line-height: 1;
         }
-        .stat-label { color: #5a7a62; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 0.4rem; }
 
-        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; }
-
-        .btn {
-            padding: 0.9rem 2rem; border: none; border-radius: 50px;
-            font-weight: 700; cursor: pointer; transition: all 0.3s;
-            font-size: 0.95rem;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        .btn-primary { background: var(--gradient-green); color: white; }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(30, 126, 52, 0.4); }
-        .btn-secondary { background: transparent; color: var(--green-light); border: 2px solid var(--green-light); }
-        .btn-secondary:hover { background: var(--green-light); color: white; transform: translateY(-3px); }
-
-        .scroll-indicator {
-            position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-            animation: bounce 2s infinite; color: #5a7a62; font-size: 1.3rem;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-10px); }
-        }
-
-        /* SECTIONS */
-        .section { max-width: 1200px; margin: 0 auto; padding: 90px 24px; overflow-x: hidden; }
-
-        .section-label {
-            display: inline-block;
-            background: rgba(30, 126, 52, 0.1);
-            border: 1px solid rgba(30, 126, 52, 0.25);
-            color: var(--green);
-            padding: 0.3rem 0.9rem; border-radius: 50px;
-            font-size: 0.75rem; font-weight: 700;
-            letter-spacing: 2px; text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            font-weight: 900;
-            text-align: center; margin-bottom: 0.8rem;
-            color: var(--navy); letter-spacing: -1px;
-        }
-
-        .section-subtitle { text-align: center; color: #5a7a62; margin-bottom: 4rem; font-size: 1.05rem; }
-
-        /* SERVICES */
-        /* SERVICES GRID - SQUARE CARDS */
-        .services-grid {
-            display: flex;
-            gap: 2.5rem;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding-bottom: 20px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .services-grid::-webkit-scrollbar {
-            display: none;
-        }
-
-        .service-card {
-            min-width: 380px;
-            aspect-ratio: auto;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            border-radius: 18px; 
-            padding: 3rem 1.5rem;
-            position: relative; 
-            overflow: hidden;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
-            backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        .service-card::after {
-            content: '';
-            position: absolute; inset: 0;
-            background: radial-gradient(circle at top right, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
-            opacity: 0; 
-            transition: opacity 0.3s;
-            pointer-events: none;
-        }
-
-        .service-card:hover {
-            border-color: rgba(0, 229, 255, 0.5);
-            transform: translateY(-12px);
-            box-shadow: 0 20px 60px rgba(0, 229, 255, 0.2);
-        }
-        .service-card:hover::after { opacity: 1; }
-
-        .service-icon {
-            width: 98px; height: 98px;
-            background: rgba(30, 126, 52, 0.15);
-            border: 1px solid rgba(30, 126, 52, 0.25);
-            border-radius: 14px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: px; margin-bottom: 10px;
-        }
-
-        .service-title {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 2.06rem; font-weight: 700;
-            margin-bottom: 0.8rem; color: var(--navy);
-        }
-
-        .service-desc { 
-            color: #5a7a62; margin-bottom: 1.2rem; 
-            font-size: 1.00rem; 
-            line-height: 1.7; }
-
-        .service-link {
-            color: var(--green); text-decoration: none;
-            font-weight: 600; font-size: 1.05rem;
-            display: inline-flex; align-items: center; gap: 0.4rem;
-            transition: gap 0.3s;
-        }
-        .service-link:hover { gap: 0.8rem; }
-
-        /* PRICING */
-        .pricing-section { background: var(--section-alt); }
-
-        .pricing-categories { display: flex; flex-direction: column; gap: 3rem; }
-
-        .pricing-category-title {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.4rem; font-weight: 800;
-            color: var(--navy); margin-bottom: 1.5rem;
-            padding-left: 1rem;
-            border-left: 4px solid var(--green);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.2rem;
-        }
-
-        .pricing-card {
-            background: #ffffff;
-            border: 1px solid rgba(30, 126, 52, 0.12);
-            border-radius: 16px; padding: 1.8rem;
-            position: relative; transition: all 0.3s;
-            box-shadow: 0 2px 12px rgba(30, 126, 52, 0.05);
-        }
-
-        .pricing-card:hover {
-            border-color: rgba(30, 126, 52, 0.3);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(30, 126, 52, 0.12);
-        }
-
-        .pricing-card.popular {
-            border-color: rgba(30, 126, 52, 0.4);
-            background: linear-gradient(135deg, #ffffff 0%, #f0faf2 100%);
-            box-shadow: 0 4px 20px rgba(30, 126, 52, 0.12);
-        }
-
-        .popular-badge {
-            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-            background: var(--gradient-green);
-            color: white; padding: 0.25rem 1rem;
-            border-radius: 50px; font-size: 0.72rem; font-weight: 700;
-            letter-spacing: 1px; white-space: nowrap;
-        }
-
-        .pricing-name {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1rem; font-weight: 700; color: var(--navy);
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-desc { color: #5a7a62; font-size: 0.83rem; margin-bottom: 1.2rem; line-height: 1.5; }
-
-        .pricing-amount {
-            display: flex; align-items: baseline; gap: 0.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .price-main {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 2rem; font-weight: 900; color: var(--green);
-        }
-        .price-period { font-size: 0.8rem; color: #5a7a62; }
-        .price-original {
-            text-decoration: line-through; color: #aaa;
-            font-size: 0.85rem; display: block;
-        }
-
-        .pricing-offer {
-            display: inline-block;
-            background: rgba(30, 126, 52, 0.1);
-            border: 1px solid rgba(30, 126, 52, 0.2);
-            color: var(--green);
-            padding: 0.2rem 0.6rem; border-radius: 6px;
-            font-size: 0.72rem; font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-        .pricing-features li { font-size: 0.85rem; color: #5a7a62; display: flex; align-items: center; gap: 0.5rem; }
-        .pricing-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
-
-        /* PACKAGES */
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .package-card {
-            background: #ffffff;
-            border: 2px solid rgba(30, 126, 52, 0.12);
-            border-radius: 22px; padding: 2.5rem;
-            position: relative; transition: all 0.35s;
-            box-shadow: 0 2px 15px rgba(30, 126, 52, 0.06);
-        }
-
-        .package-card.starter { border-color: rgba(30, 126, 52, 0.15); }
-        .package-card.growth { border-color: rgba(30, 126, 52, 0.35); background: linear-gradient(135deg, #ffffff, #f0faf2); }
-        .package-card.premium { border-color: rgba(30, 126, 52, 0.45); background: linear-gradient(135deg, #edf7f0, #ffffff); }
-
-        .package-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(15, 33, 55, 0.7); }
-
-        .package-tier {
-            font-size: 0.75rem; font-weight: 700; letter-spacing: 2px;
-            text-transform: uppercase; margin-bottom: 0.8rem;
-        }
-        .starter .package-tier { color: var(--text-muted); }
-        .growth .package-tier { color: var(--green-light); }
-        .premium .package-tier { color: var(--green-bright); }
-
-        .package-name {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.7rem; font-weight: 900; color: var(--navy);
-            margin-bottom: 0.5rem;
-        }
-
-        .package-tagline { color: #5a7a62; font-size: 0.9rem; margin-bottom: 1.5rem; }
-
-        .package-price {
-            margin-bottom: 0.5rem;
-        }
-        .package-price .price-main { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.5rem; font-weight: 900; color: var(--green); }
-        .package-price .price-original { text-decoration: line-through; color: #aaa; font-size: 1rem; }
-
-        .package-features { list-style: none; margin: 1.5rem 0 2rem; display: flex; flex-direction: column; gap: 0.7rem; }
-        .package-features li { display: flex; align-items: flex-start; gap: 0.6rem; color: var(--text-body); font-size: 0.92rem; }
-        .package-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
-
-        .package-btn {
-            width: 100%; padding: 0.9rem;
-            border-radius: 12px; border: none;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 700; font-size: 0.95rem;
-            cursor: pointer; transition: all 0.3s;
-        }
-
-        .starter .package-btn { background: rgba(30, 126, 52, 0.08); border: 1.5px solid rgba(30, 126, 52, 0.3); color: var(--green); }
-        .starter .package-btn:hover { background: rgba(30, 126, 52, 0.15); }
-        .growth .package-btn, .premium .package-btn { background: var(--gradient-green); color: white; }
-        .growth .package-btn:hover, .premium .package-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(30, 126, 52, 0.4); }
-
-        /* PORTFOLIO */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        #uploaded-posters-grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
-
-        .portfolio-item {
-            background: #ffffff;
-            border-radius: 18px; overflow: hidden;
-            border: 1px solid rgba(30, 126, 52, 0.1);
-            cursor: pointer; transition: all 0.3s;
-            box-shadow: 0 2px 12px rgba(30, 126, 52, 0.06);
-            display: flex;
-            flex-direction: column;
-            aspect-ratio: 1 / 1;
-        }
-        .portfolio-item:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(30, 126, 52, 0.12); }
-
-        .portfolio-image {
-            width: 90%; height:auto; margin: 1.5rem auto 0;
-            aspect-ratio: 1 / 3;
-            background: var(--gradient-mixed);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 5.5rem; position: relative; overflow: hidden;
-        }
-
-        .portfolio-image img {
-            width: 100%; height: 100%; object-fit: cover; display: block;
-        }
-
-        .portfolio-overlay {
-            position: absolute; inset: 0;
-            background: rgba(15, 33, 55, 0.85);
-            display: flex; align-items: center; justify-content: center;
-            opacity: 0; transition: opacity 0.3s;
-        }
-        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
-
-        .portfolio-info { padding: 1.4rem; }
-        .portfolio-tag {
-            display: inline-block; background: rgba(30, 126, 52, 0.08);
-            border: 1px solid rgba(30, 126, 52, 0.18);
-            color: var(--green);
-            padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.72rem; font-weight: 600; margin-bottom: 0.6rem;
-        }
-        .portfolio-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--navy); }
-        .portfolio-result { color: var(--green); font-weight: 600; font-size: 0.88rem; }
-
-        .portfolio-modal {
-            position: fixed; inset: 0; display: none; align-items: center; justify-content: center;
-            z-index: 3000; overflow: auto; padding: 1.5rem;
-        }
-        .portfolio-modal.active { display: flex; }
-        .portfolio-modal-backdrop {
-            position: absolute; inset: 0; background: rgba(15, 33, 55, 0.8);
-        }
-        .portfolio-modal-content {
-            position: relative; width: min(780px, 100%); background: #ffffff;
-            border-radius: 24px; padding: 2rem; box-shadow: 0 30px 80px rgba(15, 33, 55, 0.2);
-            z-index: 1; overflow: hidden;
-        }
-        .portfolio-modal-close {
-            position: absolute; top: 16px; right: 16px; border: none; background: transparent;
-            font-size: 2rem; color: var(--navy); cursor: pointer; line-height: 1;
-        }
-        .portfolio-modal-image {
-            width: 100%; height: 320px; border-radius: 18px; overflow: hidden; margin-bottom: 1.25rem;
-            background: #f4faf6;
-        }
-        .portfolio-modal-image img {
-            width: 100%; height: 100%; object-fit: cover;
-        }
-        .portfolio-modal-body { color: var(--text-body); }
-        .portfolio-modal-body .portfolio-tag { margin-bottom: 1rem; display: inline-flex; }
-        .portfolio-modal-body .portfolio-title { font-size: 1.7rem; margin-bottom: 0.75rem; }
-        .portfolio-modal-body .portfolio-result { font-size: 1rem; margin-bottom: 1rem; }
-        .portfolio-modal-body .portfolio-desc { color: #5a7a62; line-height: 1.7; font-size: 0.95rem; }
-
-        /* WHY US */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-
-        @media (min-width: 768px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 767px) {
-            .features-grid {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
-        }
-
-        @keyframes slideInFromRight {
-            from { opacity: 0; transform: translateX(100px); }
-            to { opacity: 1; transform: translateX(10px); }
-        }
-
-        .feature {
-            min-width: 0;
-            width: 100%;
-            padding: 2.2rem;
-            background: #ffffff;
-            border: 1px solid rgba(30, 126, 52, 0.12);
-            border-radius: 18px;
-            transition: box-shadow 0.3s, transform 0.3s;
-            box-shadow: 0 8px 28px rgba(30, 126, 52, 0.08);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            will-change: transform;
-            box-sizing: border-box;
-            animation: float 3s ease-in-out infinite, slideInFromRight 0.6s ease-out forwards;
-        }
-        .feature:nth-child(1) { animation-delay: 0s, 0s; }
-        .feature:nth-child(2) { animation-delay: 0.2s, 0.1s; }
-        .feature:nth-child(3) { animation-delay: 0.4s, 0.2s; }
-        .feature:nth-child(4) { animation-delay: 0.2s, 0.3s; }
-        .feature:nth-child(5) { animation-delay: 0.4s, 0.4s; }
-        .feature:nth-child(6) { animation-delay: 0.6s, 0.5s; }
-        .feature:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 36px rgba(30, 126, 52, 0.12);
-        }
-
-        .feature-icon {
-            font-size: 2.2rem;
-            margin-bottom: 2.2rem;
-            width: 90px;
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 22px;
-            background: linear-gradient(135deg, rgba(30, 126, 52, 0.12), rgba(36, 163, 61, 0.15));
-            color: var(--green);
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-
-        .feature-icon img {
-            max-width: 80%;
-            max-height: 80%;
-            width: auto;
-            height: auto;
-            display: block;
-            object-fit: contain;
-        }
-
-        .feature-title {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.2rem;
+        .logo-text span {
+            font-size: 1rem;
             font-weight: 800;
-            margin-bottom: 0.8rem;
-            color: var(--navy);
+            color: var(--dark-gray);
         }
 
-        .feature-desc {
-            color: #5a7a62;
-            font-size: 0.95rem;
-            line-height: 1.75;
-            margin: 0;
+        .logo-text small {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
         }
 
-        /* TESTIMONIALS */
-        .testimonials-container { position: relative; max-width: 850px; margin: 0 auto; }
-
-        .testimonial-card {
-            background: #ffffff;
-            border: 1px solid rgba(30, 126, 52, 0.12);
-            border-radius: 20px; padding: 3rem;
-            text-align: center; animation: fadeIn 0.5s ease-out;
-            box-shadow: 0 4px 25px rgba(30, 126, 52, 0.08);
-        }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        .testimonial-stars { margin-bottom: 1.2rem; font-size: 1.4rem; letter-spacing: 0.2rem; }
-        .testimonial-text { font-size: 1.08rem; margin-bottom: 2rem; color: #2d3e30; font-style: italic; line-height: 1.8; }
-
-        .testimonial-author { display: flex; align-items: center; justify-content: center; gap: 1rem; }
-        .author-avatar {
-            width: 50px; height: 50px; border-radius: 50%;
-            background: var(--gradient-green);
-            display: flex; align-items: center; justify-content: center;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 800; color: white; font-size: 1rem;
-        }
-        .author-info h4 { font-size: 1rem; color: var(--navy); margin-bottom: 0.2rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
-        .author-info p { font-size: 0.82rem; color: #5a7a62; }
-
-        .carousel-controls { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
-        .carousel-btn {
-            width: 42px; height: 42px; border-radius: 50%;
-            border: 2px solid rgba(30, 126, 52, 0.4);
-            background: transparent; color: var(--green-bright);
-            cursor: pointer; transition: all 0.3s; font-size: 1rem;
-        }
-        .carousel-btn:hover { background: var(--green); border-color: var(--green); color: white; }
-
-        /* UPCOMING EVENTS - PROFESSIONAL POSTER STYLE */
-        .offers-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-            gap: 2.5rem;
-            perspective: 1200px;
-        }
-
-        .offer-card {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border: 3px solid var(--green);
-            border-radius: 20px; 
-            padding: 0;
-            text-align: center; 
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(30, 126, 52, 0.2);
+        .nav-links {
             display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            aspect-ratio: 3/4.2;
-            position: relative;
-            transform-style: preserve-3d;
-            min-height: 480px;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+            margin-left: auto;
         }
 
-        .offer-card::after {
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: var(--transition);
+            padding-bottom: 0.3rem;
+        }
+
+        .nav-links a::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, rgba(15, 33, 55, 0.3) 0%, rgba(15, 33, 55, 0.5) 40%, rgba(15, 33, 55, 0.9) 100%);
-            pointer-events: none;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .btn-contact-nav {
+            margin-left: 1.5rem;
+            background: var(--accent-yellow);
+            color: var(--dark-gray);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-contact-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5);
+            background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-gray);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 80px;
+            background-image: url('src/BG%20IMAGE.jpg'), radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), transparent 28%), linear-gradient(135deg, #1F2A82 0%, #323DDB 45%, #0E79D3 100%);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+            min-height: calc(100vh - 80px);
+            padding: 5rem 0 4rem;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+            opacity: 0.2;
             z-index: 1;
         }
 
-        .offer-card:hover { 
-            transform: translateY(-16px) scale(1.03);
-            border-color: var(--green-light);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(30, 126, 52, 0.3);
-        }
-
-        .offer-card-content {
+        .hero-content {
             position: relative;
             z-index: 2;
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.2fr 0.9fr;
+            gap: 10rem;
+            align-items: center;
+        }
+
+        .hero-left h1 {
+            font-size: clamp(3rem, 5vw, 4.8rem);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 1.6rem;
+            animation: fadeInUp 0.8s ease-out;
+            letter-spacing: -1.4px;
+            max-width: 760px;
+        }
+
+        .hero-left p {
+            font-size: 1.05rem;
+            line-height: 1.2;
+            margin-bottom: 22rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+            max-width: 620px;
+            gap: 10px;
+        }
+
+        .hero-left .hero-note {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 12.5rem;
+            max-width: 600px;
+        }
+
+        .hero-right {
+            animation: fadeInRight 0.8s ease-out 0.4s backwards;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            padding: 2.5rem 1.8rem;
-            height: 100%;
-            text-align: center;
+            align-items: flex-end;
+            gap: 0;
         }
 
-        .offer-icon { 
-            font-size: 3.5rem; 
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 90px;
-            height: 90px;
-            background: rgba(52, 199, 89, 0.25);
-            border: 2.5px solid var(--green-light);
-            border-radius: 14px;
-            animation: float 3s ease-in-out infinite;
-            box-shadow: 0 8px 24px rgba(52, 199, 89, 0.3);
+        .floating-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(16px);
+            border-radius: 28px;
+            padding: 2rem;
+            max-width: 460px;
+            width: 100%;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .offer-title { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            font-size: 1.5rem; 
-            font-weight: 900; 
-            color: #ffffff; 
-            margin-bottom: 0.8rem;
-            line-height: 1.3;
-            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-            letter-spacing: -0.5px;
-        }
-
-        .offer-desc { 
-            color: rgba(255, 255, 255, 0.92); 
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-top: auto;
-            padding-top: 1.2rem;
-            border-top: 2.5px solid rgba(52, 199, 89, 0.4);
-            font-weight: 500;
-        }
-
-        .offer-details {
-            position: relative;
-            z-index: 2;
-            margin: 1.2rem 0 0 0;
-            padding: 1rem;
-            background: rgba(15, 33, 55, 0.5);
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(52, 199, 89, 0.3);
-        }
-
-        .offer-price {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--green-light);
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        .offer-period {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.85rem;
-            margin-top: 0.3rem;
-        }
-
-        .offer-cta {
-            margin-top: 1.2rem;
-            padding: 0.8rem 1.8rem;
-            background: var(--gradient-green);
-            color: white;
-            border: none;
-            border-radius: 22px;
+        .floating-card h3 {
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
             font-weight: 800;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            box-shadow: 0 8px 24px rgba(30, 126, 52, 0.4);
+            text-align: center;
+            letter-spacing: -0.4px;
+            font-size: 1.3rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 0.88rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .offer-cta:hover {
-            transform: scale(1.08);
-            box-shadow: 0 12px 32px rgba(30, 126, 52, 0.5);
-        }
-
-        /* CONTACT */
-        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-
-        .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
-
-        .contact-item { display: flex; gap: 1rem; align-items: flex-start; }
-        .contact-icon {
-            width: 48px; height: 48px; flex-shrink: 0;
-            background: rgba(30, 126, 52, 0.15);
-            border: 1px solid rgba(30, 126, 52, 0.25);
-            border-radius: 12px;
-            display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
-        }
-        .contact-details h4 { color: var(--navy); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; margin-bottom: 0.3rem; }
-        .contact-details p { color: #5a7a62; font-size: 0.92rem; }
-        .contact-details a { color: var(--green); text-decoration: none; transition: color 0.3s; }
-        .contact-details a:hover { color: var(--green-mid); }
-
-        .contact-form {
-            background: #ffffff;
-            border: 1px solid rgba(30, 126, 52, 0.12);
-            border-radius: 20px; padding: 2.5rem;
-            box-shadow: 0 4px 25px rgba(30, 126, 52, 0.07);
-        }
-
-        .form-group { margin-bottom: 1.3rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2d3e30; font-size: 0.88rem; letter-spacing: 0.3px; }
-
         .form-group input,
         .form-group textarea {
-            width: 100%; padding: 0.8rem 1rem;
-            border: 1.5px solid rgba(30, 126, 52, 0.18);
-            background: #f9fdf9;
-            border-radius: 10px; color: #2d3e30;
-            font-family: 'DM Sans', sans-serif; font-size: 0.93rem;
-            transition: all 0.3s;
+            padding: 1rem 1rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background: #FFFFFF;
+            color: #111827;
         }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #9CA3AF;
+        }
+
         .form-group input:focus,
         .form-group textarea:focus {
-            outline: none; border-color: var(--green);
-            box-shadow: 0 0 0 3px rgba(30, 126, 52, 0.1);
-            background: #ffffff;
-        }
-        .form-group textarea { resize: vertical; min-height: 110px; }
-
-        .form-submit {
-            width: 100%; padding: 1rem;
-            background: var(--gradient-green);
-            color: white; border: none; border-radius: 12px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 700; font-size: 0.95rem;
-            cursor: pointer; transition: all 0.3s;
-        }
-        .form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(30, 126, 52, 0.4); }
-
-        /* FOOTER */
-        footer {
-            background: var(--navy);
-            border-top: 1px solid rgba(30, 126, 52, 0.2);
-            padding: 4rem 24px 2rem; margin-top: 4rem;
+            outline: none;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 4px rgba(57, 181, 74, 0.12);
         }
 
-        .footer-content {
-            max-width: 1200px; margin: 0 auto;
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem; margin-bottom: 2rem;
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
-        .footer-section h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; color: #ffffff; margin-bottom: 1rem; }
-        .footer-section ul { list-style: none; }
-        .footer-section ul li { margin-bottom: 0.6rem; }
-        .footer-section a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
-        .footer-section a:hover { color: var(--green-bright); }
+        .btn-send {
+            background: var(--accent-yellow);
+            color: var(--dark-gray);
+            padding: 1rem 1.2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+        }
 
-        .footer-tagline {
-            color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.8;
+        .btn-send:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.35);
+            background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+        }
+
+        .info-cards {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12.5rem;
+            margin-top: 10.5rem;
+            width: 200%;
+            z-index: 2;
+        }
+
+        .info-card {
+            backdrop-filter: blur(18px);
+            border-radius: 22px;
+            padding: 1.6rem 1.8rem;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            animation: slideUp 0.8s ease-out 0.6s backwards;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-height: 120px;
+        }
+
+        .info-card.info-hours {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.95));
+        }
+
+        .info-card.info-phone {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.95), rgba(0, 204, 255, 0.95));
+        }
+
+        .info-card i {
+            font-size: 2.2rem;
+            margin-bottom: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.16);
+            border-radius: 14px;
+        }
+
+        .info-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            opacity: 0.9;
+            margin-bottom: 0.35rem;
+        }
+
+        .info-card p {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .info-card.info-phone p {
+            font-size: 1.3rem;
+        }
+
+        .hero-right .floating-card {
+            max-width: 100%;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-right {
+                align-items: center;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .hero {
+                padding: 4rem 0 5rem;
+            }
+
+            .hero-left h1 {
+                font-size: 2.7rem;
+            }
+
+            .hero-left p,
+            .hero-left .hero-note {
+                font-size: 1rem;
+            }
+
+            .floating-card {
+                padding: 1.6rem;
+                border-radius: 24px;
+            }
+
+            .info-cards {
+                padding: 0 1rem;
+            }
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            margin-top: 150px;
+            padding: 6rem 2rem;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--dark-gray);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .about-description {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--medium-gray);
+        }
+
+        .features-list {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        .feature-item i {
+            color: var(--accent-green);
+            font-size: 1.2rem;
+        }
+
+        .btn-learn-more {
+            background: transparent;
+            color: var(--accent-green);
+            padding: 0.8rem 1.8rem;
+            border: 2px solid var(--accent-green);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-learn-more:hover {
+            background: var(--accent-green);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOUNDERS SECTION ===== */
+        .founders {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .founders-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .founders-image {
+            position: relative;
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .founders-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .founders-content {
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .founders-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            letter-spacing: -1px;
+        }
+
+        .founders-content p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .btn-view-more {
+            background: transparent;
+            color: var(--accent-blue);
+            padding: 0.8rem 1.8rem;
+            border: 2px solid var(--accent-blue);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-view-more:hover {
+            background: var(--accent-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ===== PORTFOLIO SECTION ===== */
+        .portfolio {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .portfolio-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .portfolio-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #E5E7EB 0%, #D1D5DB 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-card:hover .portfolio-image {
+            transform: scale(1.05);
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-number {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .portfolio-info {
+            padding: 2rem;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+
+        .portfolio-info p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ===== WHY CHOOSE US SECTION ===== */
+        .why-choose {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .why-choose-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .why-choose-image {
+            position: relative;
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .why-choose-image img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+        }
+
+        .why-choose-content {
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .why-choose-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 2.5rem;
+            color: var(--dark-gray);
+            letter-spacing: -1px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #E5E7EB;
+            transition: var(--transition);
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(10px);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(57, 181, 74, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-green);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+
+        .benefit-content p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+
+        .btn-contact-me {
+            background: var(--accent-yellow);
+            color: var(--dark-gray);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 15px rgba(244, 196, 0, 0.3);
+            margin-top: 1rem;
+        }
+
+        .btn-contact-me:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(244, 196, 0, 0.4);
+            background: #E6B800;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid #E5E7EB;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            background: var(--white);
+        }
+
+        .stars {
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
             font-style: italic;
         }
 
-        .social-icons { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-        .social-icon {
-            width: 40px; height: 40px; border-radius: 50%;
-            background: rgba(30, 126, 52, 0.1);
-            border: 1px solid rgba(30, 126, 52, 0.2);
-            display: flex; align-items: center; justify-content: center;
-            color: var(--green-bright); text-decoration: none;
-            transition: all 0.3s; font-size: 0.9rem; font-weight: 700;
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 0.2rem;
         }
-        .social-icon:hover { background: var(--green); border-color: var(--green); color: white; transform: translateY(-3px); }
+
+        .testimonial-title {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+        }
+     /* ===== FAQ SECTION ===== */
+        .faq {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+ 
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+ 
+        .faq-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+ 
+        .faq-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+ 
+        .faq-title p {
+            color: var(--medium-gray);
+            font-size: 1rem;
+        }
+ 
+        .accordion-item {
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border: 1px solid #E5E7EB;
+            transition: var(--transition);
+        }
+ 
+        .accordion-item:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+ 
+        .accordion-header {
+            padding: 1.5rem;
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            border: none;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+ 
+        .accordion-header:hover {
+            background: var(--light-gray);
+        }
+ 
+        .accordion-header.active {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(57, 181, 74, 0.1) 100%);
+            color: var(--primary-dark);
+        }
+ 
+        .accordion-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+ 
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+ 
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: var(--light-gray);
+        }
+ 
+        .accordion-content.active {
+            max-height: 500px;
+        }
+ 
+        .accordion-text {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--medium-gray);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-section h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-green);
+        }
+
+        .footer-tagline {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-icon:hover {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            transform: translateY(-3px);
+        }
 
         .footer-bottom {
-            max-width: 1200px; margin: 0 auto;
-            text-align: center; padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            color: rgba(255,255,255,0.4); font-size: 0.85rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
         }
 
-        /* FLOATING */
-        .floating-actions {
-            position: fixed; bottom: 30px; right: 30px;
-            z-index: 500; display: flex; flex-direction: column; gap: 0.8rem;
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .fab {
-            width: 56px; height: 56px; border-radius: 50%;
-            background: var(--gradient-green);
-            color: white; display: flex; align-items: center; justify-content: center;
-            text-decoration: none; font-size: 1.4rem;
-            transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(30, 126, 52, 0.4);
-            cursor: pointer; border: none;
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
         }
-        .fab:hover { transform: scale(1.1) translateY(-4px); box-shadow: 0 10px 30px rgba(30, 126, 52, 0.5); }
 
-        /* Loading */
-        .loading-screen {
-            position: fixed; inset: 0;
-            background: #f4faf6;
-            display: flex; align-items: center; justify-content: center;
-            z-index: 2001;
-            animation: fadeOut 0.4s ease-out 1.8s forwards;
+        .contact-item i {
+            margin-top: 0.2rem;
+            color: var(--accent-green);
         }
-        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; pointer-events: none; } }
 
-        .loader {
-            width: 44px; height: 44px;
-            border: 3px solid rgba(30, 126, 52, 0.15);
-            border-top-color: var(--green);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* REVEAL */
-        .reveal { opacity: 0; transform: translateY(25px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-        /* RESPONSIVE */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu { display: flex; }
-            .mobile-menu-btn { display: block; }
-            .nav-container > .cta-btn { display: none; margin-left: 0; }
-            .hero-buttons { flex-direction: column; align-items: center; }
-            .contact-wrapper { grid-template-columns: 1fr; }
-            .footer-content { grid-template-columns: 1fr; }
-            .floating-actions { bottom: 20px; right: 16px; }
-            .section { padding: 60px 20px; }
-            .hero { margin-top: 70px; padding: 40px 20px; min-height: auto; }
-            h1 { font-size: 2rem; letter-spacing: -1px; }
-            .hero-stats { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; }
-            .testimonial-card { padding: 2rem; }
-            
-            /* Service Cards Mobile */
-            .services-grid { gap: 1.5rem; padding-bottom: 15px; }
-            .service-card { min-width: 300px; padding: 2rem 1.5rem; }
-            .service-title { font-size: 1rem; }
-            .service-desc { font-size: 0.85rem; line-height: 1.5; }
-            .service-icon { width: 55px; height: 55px; }
-            
-            /* Pricing Mobile Optimization */
-            .pricing-card { padding: 1.2rem; }
-            .pricing-name { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.4rem; line-height: 1.3; }
-            .pricing-desc { font-size: 0.75rem; margin-bottom: 0.8rem; line-height: 1.4; }
-            .price-main { font-size: 1.5rem; }
-            .price-period { font-size: 0.7rem; }
-            .pricing-category-title { font-size: 1.5rem !important; margin-bottom: 1rem; }
-            .pricing-category-title img { width: 8% !important; height: 8% !important; }
-            .pricing-offer { font-size: 0.65rem; padding: 0.15rem 0.5rem; margin-bottom: 0.8rem; }
-            .pricing-features li { font-size: 0.75rem; gap: 0.4rem; }
-            #uploaded-posters-grid { grid-template-columns: 1fr; }
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: var(--white);
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-left h1 {
+                font-size: 2rem;
+            }
+
+            .hero-left p {
+                font-size: 0.95rem;
+            }
+
+            .info-cards {
+                position: static;
+                grid-template-columns: 1fr;
+                max-width: 100%;
+                margin-top: 2rem;
+            }
+
+            .founders-container,
+            .why-choose-container {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-section-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .features-list {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: flex-start;
+            }
         }
 
-        @media (max-width: 480px) {
-            .hero-stats { grid-template-columns: repeat(3, 1fr); }
-            .stat-number { font-size: 1.8rem; }
-            .services-grid { gap: 1rem; padding-bottom: 10px; }
-            .service-card { min-width: 280px; padding: 1.5rem; }
-        }
+        @media (max-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
 
-        /* Divider */
-        .section-divider {
-            max-width: 1200px; margin: 0 auto;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(30, 126, 52, 0.2), transparent);
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="loading-screen"><div class="loader"></div></div>
-<div class="scroll-progress"></div>
-
-<!-- NAV -->
-<nav>
-    <div class="nav-container">
-        <div class="logo">MMKS</div>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#packages">Packages</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="login.html" class="login-link">Login</a></li>
-        </ul>
-        <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
-        <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle mobile menu">☰</button>
-    </div>
-    <ul class="mobile-menu nav-links" id="mobile-menu">
-        <li><a href="#services" onclick="toggleMobileMenu()">Services</a></li>
-        <li><a href="#pricing" onclick="toggleMobileMenu()">Pricing</a></li>
-        <li><a href="#packages" onclick="toggleMobileMenu()">Packages</a></li>
-        <li><a href="#portfolio" onclick="toggleMobileMenu()">Portfolio</a></li>
-        <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
-        <li><a href="login.html" class="login-link" onclick="toggleMobileMenu()">Login</a></li>
-        <li><button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); toggleMobileMenu();">Get Started</button></li>
-    </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-orb orb1"></div>
-    <div class="hero-orb orb2"></div>
-
-    <div class="hero-content">
-        <div class="hero-badge">🌱 Kovilpatti's Trusted Digital Agency</div>
-        <h1>Professional Digital Marketing Services for Tamil Nadu Businesses</h1>
-        <p class="subtitle">Grow your business with <span class="gradient-text">smart digital marketing</span> — SEO services, social media marketing, website development, and WhatsApp automation at affordable prices</p>
-
-        <div class="hero-stats reveal">
-            <div class="stat">
-                <div class="stat-number" data-target="50">50+</div>
-                <div class="stat-label">Happy Clients</div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="src/LOGO.png" alt="MMKS Logo">
             </div>
-            <div class="stat">
-                <div class="stat-number" data-target="200">200+</div>
-                <div class="stat-label">Projects Done</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number" data-target="5">5+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-        </div>
-
-        <div class="hero-buttons">
-            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Book Free Consultation Call">Book Free Consultation</button>
-            <button class="btn btn-secondary" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})" aria-label="View Service Packages and Pricing">View Packages</button>
-        </div>
-    </div>
-
-    <div class="scroll-indicator">↓</div>
-</section>
-
-<!-- UPLOADED POSTERS -->
-<section class="section" id="uploaded-posters">
-    <div style="text-align:center"><span class="section-label">Latest Posters</span></div>
-    <h2 class="section-title reveal">Upcoming Event Of MMKS</h2>
-    <p class="section-subtitle">View the latest promotional posters uploaded by the admin directly on the homepage.</p>
-
-    <div class="portfolio-grid" id="uploaded-posters-grid">
-        <div class="no-posters" style="grid-column: 1/-1; text-align:center; padding:2rem; background: white; border-radius: 16px; border: 1px solid rgba(30, 126, 52, 0.1); box-shadow: 0 10px 30px rgba(30, 126, 52, 0.06);">
-            <div class="no-posters-icon">🎨</div>
-            <p>No posters uploaded yet. Please add a poster from the admin dashboard.</p>
-        </div>
-    </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SERVICES -->
-<section class="section" id="services">
-    <div style="text-align:center"><span class="section-label">What We Do</span></div>
-    <h2 class="section-title reveal">Digital Marketing Services in Kovilpatti & Tamil Nadu</h2>
-    <p class="section-subtitle">Award-winning SEO, social media marketing, and website development services tailored for your business growth</p>
-
-    <div class="services-grid">
-        <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/marking.png" alt="Social Media Marketing Services" style="width: 100%; height: 100%;"></div>
-            <h3 class="service-title">Social Media Marketing</h3>
-            <p class="service-desc">Professional social media management across Instagram and Facebook.<br> We create engaging posts, grow your audience, <br> Increase customer engagement with data-driven strategies for businesses in Tamil Nadu.</p>
-            <a href="#pricing" class="service-link">View Pricing →</a>
-        </div>
-        <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/my bussness.png" alt="Google My Business Optimization" style="width: 100%; height: 100%;"></div>
-            <h3 class="service-title">Google My Business (GMB) Management</h3>
-            <p class="service-desc">Maximize your local SEO visibility with expert Google My Business optimization.<br> We manage posts, respond to reviews, <br>attract nearby customers searching for your services in Kovilpatti and Tamil Nadu.</p>
-            <a href="#pricing" class="service-link">View Pricing →</a>
-        </div>
-        <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/chat.png" alt="WhatsApp Marketing Automation" style="width: 100%; height: 100%;"></div>
-            <h3 class="service-title">WhatsApp Automation & Marketing</h3>
-            <p class="service-desc">Engage customers directly via WhatsApp with automated marketing campaigns. <br>Increase conversion rates and customer retention with personalized messaging,<br>automated follow-ups.</p>
-            <a href="#pricing" class="service-link">View Pricing →</a>
-        </div>
-        <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/website.png" alt="Website Development and Design" style="width: 100%; height: 100%;"></div>
-            <h3 class="service-title">Website Development & Design</h3>
-            <p class="service-desc">Custom-built, fast-loading, mobile-responsive websites optimized for conversions. <br>From basic business sites to advanced e-commerce platforms with SEO integration.</p>
-            <a href="#pricing" class="service-link">View Pricing →</a>
-        </div>
-        <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/billing.png" alt="Billing and Invoicing Software" style="width: 100%; height: 100%;"></div>
-            <h3 class="service-title">Billing & Invoicing Software</h3>
-            <p class="service-desc">Streamline your business operations with custom billing software. <br>From simple invoice generation to advanced client management with automated reports,<br>multi-user support.</p>
-            <a href="#pricing" class="service-link">View Pricing →</a>
-        </div>
-        <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/training.png" alt="Digital Marketing Training and Courses" style="width: 100%; height: 100%;"></div>
-            <h3 class="service-title">Digital Marketing Training & Courses</h3>
-            <p class="service-desc">Comprehensive digital marketing training from basics to advanced levels.<br>Live webinars, online courses, <br>hands-on projects to help you master SEO, social media, and content marketing.</p>
-            <a href="#pricing" class="service-link">View Pricing →</a>
-        </div>
-        <div class="service-card reveal">
-            <div class="service-icon"><img src="soruces/visiting-card.png" alt="Digital Visiting Card Creator" style="width: 100%; height: 100%;"></div>
-            <h3 class="service-title">Digital Visiting Card</h3>
-            <p class="service-desc">Professional digital business cards that make lasting impressions.<br> Shareable, trackable, and eco-friendly — perfect for modern networking and client outreach.</p>
-            <a href="#pricing" class="service-link">View Pricing →</a>
-        </div>
-    </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- PRICING -->
-<section class="section pricing-section" id="pricing">
-    <div style="text-align:center"><span class="section-label">Transparent Pricing</span></div>
-    <h2 class="section-title reveal">Affordable Digital Marketing Pricing in Tamil Nadu</h2>
-    <p class="section-subtitle">Transparent pricing with no hidden fees. Choose from our expert-designed packages or customize your own</p>
-
-    <div class="pricing-categories">
-
-        <!-- Social Media -->
-        <div class="reveal">
-            <h3 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/marking.png" alt="Social Media Marketing Pricing" style="width: 3.5%; height: 3.5%;"> Social Media Services</h3>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-name">Account Setup</div>
-                    <div class="pricing-desc">Instagram & Facebook creation, bio, logo, and 1 promo post</div>
-                    <div class="pricing-amount"><span class="price-main">₹999</span><span class="price-period">one-time</span></div>
-                    <span class="pricing-offer">FREE with any monthly plan</span>
-                    <ul class="pricing-features">
-                        <li>Instagram & Facebook setup</li>
-                        <li>Bio & logo upload</li>
-                        <li>1 promotional post</li>
-                    </ul>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-name">12 Posts Creation</div>
-                    <div class="pricing-desc">Creative post designs with captions for 1 month</div>
-                    <div class="pricing-amount"><span class="price-main">₹1,499</span><span class="price-period">/month</span></div>
-                    <ul class="pricing-features">
-                        <li>12 creative post designs</li>
-                        <li>Engaging captions</li>
-                        <li>Brand-aligned visuals</li>
-                    </ul>
-                </div>
-                <div class="pricing-card popular">
-                    <div class="popular-badge">🔥 POPULAR</div>
-                    <div class="pricing-name">Social Media Management</div>
-                    <div class="pricing-desc">Complete page handling, engagement & growth</div>
-                    <div class="pricing-amount"><span class="price-main">₹1,999</span><span class="price-period">/month</span></div>
-                    <ul class="pricing-features">
-                        <li>Posting & scheduling</li>
-                        <li>Page handling</li>
-                        <li>Audience engagement</li>
-                        <li>Basic growth support</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- GMB -->
-        <div class="reveal">
-            <h3 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/my bussness.png" alt="Google My Business Pricing" style="width: 3.5%; height: 3.5%;"> Google My Business</h3>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-name">GMB Creation</div>
-                    <div class="pricing-desc">Professional Google My Business setup</div>
-                    <div class="pricing-amount"><span class="price-main">₹999</span><span class="price-period">one-time</span></div>
-                    <ul class="pricing-features"><li>Full GMB setup</li><li>Profile optimization</li></ul>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-name">GMB Management</div>
-                    <div class="pricing-desc">Ongoing GMB optimization and management</div>
-                    <div class="pricing-amount"><span class="price-main">₹2,499</span><span class="price-period">/month</span></div>
-                    <ul class="pricing-features"><li>Post updates</li><li>Reply to reviews</li><li>Profile optimization</li></ul>
-                </div>
-                <div class="pricing-card popular">
-                    <div class="popular-badge">💰 BEST VALUE</div>
-                    <div class="pricing-name">GMB Combo</div>
-                    <div class="pricing-desc">Creation + Management together</div>
-                    <span class="price-original">₹3,499</span>
-                    <div class="pricing-amount"><span class="price-main">₹2,999</span></div>
-                    <span class="pricing-offer">Save ₹500</span>
-                    <ul class="pricing-features"><li>Complete GMB setup</li><li>1 month management</li><li>Combo discount</li></ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- WhatsApp + Digital Card -->
-        <div class="reveal">
-            <h3 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/chat.png" alt="WhatsApp Automation Pricing" style="width: 3.5%; height: 3.5%;"> WhatsApp Automation & Digital Card</h3>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-name">WhatsApp Automation Setup</div>
-                    <div class="pricing-desc">Full automation system setup</div>
-                    <div class="pricing-amount"><span class="price-main">₹2,999</span><span class="price-period">setup</span></div>
-                    <span class="pricing-offer">15 Days FREE Maintenance</span>
-                    <ul class="pricing-features"><li>Full automation setup</li><li>15 days free maintenance</li><li>₹999/month after</li></ul>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-name">Digital Visiting Card</div>
-                    <div class="pricing-desc">Professional digital business card</div>
-                    <div class="pricing-amount"><span class="price-main">₹399</span><span class="price-period">one-time</span></div>
-                    <ul class="pricing-features"><li>Professional design</li><li>Shareable digital format</li><li>Contact details</li></ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Websites -->
-        <div class="reveal">
-            <h3 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/website.png" alt="Website Development Pricing" style="width: 3.5%; height: 3.5%;"> Website Development</h3>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-name">Basic Website</div>
-                    <div class="pricing-desc">Clean, responsive site for small businesses</div>
-                    <span class="price-original">₹5,999</span>
-                    <div class="pricing-amount"><span class="price-main">₹4,999</span></div>
-                    <span class="pricing-offer">Limited Time Offer</span>
-                    <ul class="pricing-features"><li>Responsive design</li><li>Fast loading</li><li>Basic pages</li></ul>
-                </div>
-                <div class="pricing-card popular">
-                    <div class="popular-badge">⭐ RECOMMENDED</div>
-                    <div class="pricing-name">Business Website</div>
-                    <div class="pricing-desc">Full-featured business website</div>
-                    <span class="price-original">₹12,999</span>
-                    <div class="pricing-amount"><span class="price-main">₹10,999</span></div>
-                    <span class="pricing-offer">Save ₹2,000</span>
-                    <ul class="pricing-features"><li>Custom design</li><li>Multiple pages</li><li>Contact & lead forms</li><li>SEO optimized</li></ul>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-name">Premium Website</div>
-                    <div class="pricing-desc">Advanced features & custom solutions</div>
-                    <div class="pricing-amount"><span class="price-main">₹24,999+</span></div>
-                    <ul class="pricing-features"><li>Advanced features</li><li>E-commerce ready</li><li>Custom integrations</li><li>Priority support</li></ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Billing + CRM -->
-        <div class="reveal">
-            <h3 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/billing.png" alt="Billing Software Pricing" style="width: 3.5%; height: 3.5%;"> Billing Software & Client Management</h3>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-name">Basic Billing System</div>
-                    <div class="pricing-desc">Simple, easy-to-use billing solution</div>
-                    <div class="pricing-amount"><span class="price-main">₹7,999</span><span class="price-period">one-time</span></div>
-                    <ul class="pricing-features"><li>Invoice generation</li><li>Basic reports</li><li>Customer records</li></ul>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-name">Advanced Billing System</div>
-                    <div class="pricing-desc">Full-featured billing & management</div>
-                    <div class="pricing-amount"><span class="price-main">₹19,999+</span></div>
-                    <ul class="pricing-features"><li>Advanced reports</li><li>Multi-user support</li><li>Custom workflows</li></ul>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-name">Client Management</div>
-                    <div class="pricing-desc">Complete CRM for your business</div>
-                    <div class="pricing-amount"><span class="price-main">₹2,999</span><span class="price-period">/month</span></div>
-                    <ul class="pricing-features"><li>Client tracking</li><li>Follow-up reminders</li><li>Communication logs</li></ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Training -->
-        <div class="reveal">
-            <h3 class="pricing-category-title" style="font-size: 2.7rem;"><img src="soruces/training.png" alt="Digital Marketing Training Pricing" style="width: 3.5%; height: 3.5%;"> Training Programs</h3>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-name">1-Hour Webinar</div>
-                    <div class="pricing-desc">Quick intro to digital marketing</div>
-                    <span class="pricing-offer">First 3 Students FREE</span>
-                    <ul class="pricing-features"><li>1-hour live session</li><li>Q&A included</li></ul>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-name">Basic Course</div>
-                    <div class="pricing-desc">Foundation digital marketing skills</div>
-                    <ul class="pricing-features"><li>Core concepts</li><li>Practical exercises</li><li>Certificate</li></ul>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-name">Intermediate Course</div>
-                    <div class="pricing-desc">Level up your digital skills</div>
-                    <ul class="pricing-features"><li>Advanced strategies</li><li>Live projects</li><li>Mentorship</li></ul>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-name">Advanced Course</div>
-                    <div class="pricing-desc">Master-level digital marketing training</div>
-                    <ul class="pricing-features"><li>Complete curriculum</li><li>1-on-1 coaching</li><li>Job-ready skills</li><li>Certificate</li></ul>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- PACKAGES -->
-<section class="section" id="packages">
-    <div style="text-align:center"><span class="section-label">🔥 Most Popular</span></div>
-    <h2 class="section-title reveal">Premium Bundles - Best Value</h2>
-    <p class="section-subtitle">Hand-picked service combinations for maximum digital marketing growth at the best value. Perfect for businesses ready to scale</p>
-
-    <div class="packages-grid">
-        <div class="package-card starter reveal">
-            <div class="package-tier">🟢 Starter</div>
-            <div class="package-name">Starter Plan</div>
-            <div class="package-tagline">Perfect for new businesses getting online</div>
-            <div class="package-price">
-                <span class="price-original">₹2,499</span>
-                <span class="price-main">₹1,999</span>
-            </div>
-            <ul class="package-features">
-                <li>12 Posts Creation</li>
-                <li>Basic Social Media Management</li>
-                <li>Monthly Reporting</li>
+            <button class="mobile-menu-toggle" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
             </ul>
-            <button class="package-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Get Started with Starter Plan">Get Started →</button>
+            <a href="contact.html" class="btn-contact-nav">Contact Us</a>
         </div>
+    </nav>
 
-        <div class="package-card growth reveal">
-            <div class="package-tier">🔵 Growth</div>
-            <div class="package-name">Growth Plan</div>
-            <div class="package-tagline">Scale up your digital presence fast</div>
-            <div class="package-price">
-                <span class="price-original">₹4,999</span>
-                <span class="price-main">₹3,999</span>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-left">
+                <h1>Professional Digital Marketing Services for Tamil Nadu Businesses</h1>
+                <p>Grow your business with creative digital marketing, branding, and modern design solutions.
+                   <br> We help businesses build a strong online presence and reach the right audience.</p>
             </div>
-            <ul class="package-features">
-                <li>12 Creative Posts</li>
-                <li>Full Social Media Management</li>
-                <li>GMB Setup & Optimization</li>
-                <li>Audience Growth Support</li>
-            </ul>
-            <button class="package-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Get Growth Plan - Digital Marketing Bundle">Get Growth Plan →</button>
-        </div>
-
-        <div class="package-card premium reveal">
-            <div class="package-tier">🔴 Premium</div>
-            <div class="package-name">Premium Plan</div>
-            <div class="package-tagline">Complete digital domination for serious businesses</div>
-            <div class="package-price">
-                <span class="price-original">₹7,999</span>
-                <span class="price-main">₹6,499</span>
-            </div>
-            <ul class="package-features">
-                <li>Social Media Management</li>
-                <li>Google My Business</li>
-                <li>WhatsApp Automation</li>
-                <li>Digital Visiting Card</li>
-                <li>Priority Support</li>
-            </ul>
-            <button class="package-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Go Premium - Complete Digital Marketing Solution">Go Premium →</button>
-        </div>
-    </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- PORTFOLIO -->
-<section class="section" id="portfolio">
-    <div style="text-align:center"><span class="section-label">Our Work</span></div>
-    <h2 class="section-title reveal">Portfolio: Real Projects & Results</h2>
-    <p class="section-subtitle">Real digital marketing projects and measurable outcomes. See how we've transformed businesses in Kovilpatti and Tamil Nadu</p>
-
-    <div class="portfolio-grid">
-        <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/sj_design_agency.jpeg.jpg" alt="SJ Design Agency Branding Project - Social Media Setup and Poster Design" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('sj-design')" aria-label="View SJ Design Agency Project Details" style="margin:0">View Details</button></div>
-            <div class="portfolio-info">
-                <span class="portfolio-tag">Brand Design</span>
-                <h3 class="portfolio-title">SJ Design Agency Branding</h3>
-                <p class="portfolio-result">Social Media setup and creating poster </p>
-            </div>
-        </div>
-        <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/powerbuild_hardware.jpeg.jpg" alt="PowerBuild Hardware Logo Design - Professional Branding and Facebook Setup" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('powerbuild')" aria-label="View PowerBuild Hardware Project Details" style="margin:0">View Details</button></div>
-            <div class="portfolio-info">
-                <span class="portfolio-tag">Logo Design</span>
-                <h3 class="portfolio-title">PowerBuild Hardware Logo</h3>
-                <p class="portfolio-result">Professional Logo Design,Facebook account setup and first poster creation </p>
-            </div>
-        </div>
-        <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/ms_design_creatix.jpeg.jpg" alt="MS Design Creatix - Creative Branding and Visual Identity Design" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('ms-creatix')" aria-label="View MS Design Creatix Project Details" style="margin:0">View Details</button></div>
-            <div class="portfolio-info">
-                <span class="portfolio-tag">Creative Branding</span>
-                <h3 class="portfolio-title">MS Design Creatix Identity</h3>
-                <p class="portfolio-result">Vibrant visual identity for a creative design studio</p>
-            </div>
-        </div>
-        <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/petnest-pet-store.jpeg.png" alt="Petnest Pet Store Branding - Logo and Social Media Management" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('petnest')" aria-label="View Petnest Pet Store Project Details" style="margin:0">View Details</button></div>
-            <div class="portfolio-info">
-                <span class="portfolio-tag">Packaging</span>
-                <h3 class="portfolio-title">Petnest Pet Store Branding</h3>
-                <p class="portfolio-result">Logo Creation,Social Media setup and Google My Business Creations </p>
-            </div>
-        </div>
-        <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/trendwear_fashion.jpg" alt="Trendwear Fashion Brand - Logo Design and Social Media Setup" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('trendwear')" aria-label="View Trendwear Fashion Project Details" style="margin:0">View Details</button></div>
-            <div class="portfolio-info">
-                <span class="portfolio-tag">Fashion Branding</span>
-                <h3 class="portfolio-title">Trendwear Fashion Identity</h3>
-                <p class="portfolio-result">Stylish logo and Poster brand design , Social Media setup </p>
-            </div>
-        </div>
-        <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/kovilpatti_snakes.png" alt="Kovilpatti Snakes - Branding with Social Media and Google My Business" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('kovilpatti-snakes')" aria-label="View Kovilpatti Snakes Project Details" style="margin:0">View Details</button></div>
-            <div class="portfolio-info">
-                <span class="portfolio-tag">Brand Design</span>
-                <h3 class="portfolio-title">Kovilpatti Snakes</h3>
-                <p class="portfolio-result"> Social Media Setup,Google My Business Account,Logo and Poster Created </p>
-            </div>
-        </div>
-        
-        <div class="portfolio-item reveal">
-            <div class="portfolio-image"><img src="./soruces/aj_collection.png" alt="AJ Collection Fashion Brand - Complete Digital Marketing Package" style="width:100%; height:100%; object-fit:cover;"></div>
-            <div class="portfolio-overlay"><button class="btn btn-primary" onclick="openPortfolioModal('aj-collection')" aria-label="View AJ Collection Project Details" style="margin:0">View Details</button></div>
-            <div class="portfolio-info">
-                <span class="portfolio-tag">Fashion Branding</span>
-                <h3 class="portfolio-title">AJ Collection</h3>
-                <p class="portfolio-result">Stylish Logo Creation,Social Media Setup,Google My Business Creation,Website Development and Digital Visiting Card</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<div class="portfolio-modal" id="portfolio-modal" aria-hidden="true">
-    <div class="portfolio-modal-backdrop" onclick="closePortfolioModal()"></div>
-    <div class="portfolio-modal-content">
-        <button class="portfolio-modal-close" onclick="closePortfolioModal()">×</button>
-        <div class="portfolio-modal-image"><img id="modal-image" src="soruces/sj_design_agency.jpeg.jpg" alt="Portfolio detail"></div>
-        <div class="portfolio-modal-body">
-            <span id="modal-tag" class="portfolio-tag"></span>
-            <h3 id="modal-title" class="portfolio-title"></h3>
-            <p id="modal-result" class="portfolio-result"></p>
-            <p id="modal-description" class="portfolio-desc"></p>
-        </div>
-    </div>
-</div>
-
-<div class="section-divider"></div>
-
-
-<!-- WHY US -->
-<section class="section">
-    <div style="text-align:center"><span class="section-label">Why MMKS</span></div>
-    <h2 class="section-title reveal">Why Choose MMKS for Digital Marketing?</h2>
-    <p class="section-subtitle">Results-driven strategies, affordable pricing, and deep expertise in Tamil Nadu market. Here's what sets us apart from other digital agencies</p>
-
-    <div class="features-grid">
-        <div class="feature">
-            <div class="feature-icon"><img src="./soruces/Proven Track Record.png" alt="Proven Track Record - 5+ Years Experience"></div>
-            <h3 class="feature-title">Proven Track Record</h3>
-            <p class="feature-desc">5+ years of digital marketing expertise delivering exceptional results for 50+ businesses across Tamil Nadu with documented success stories.</p>
-        </div>
-        <div class="feature">
-            <div class="feature-icon"><img src="./soruces/Truly Affordable.png" alt="Truly Affordable - Premium Quality Budget Pricing"></div>
-            <h3 class="feature-title">Truly Affordable Pricing</h3>
-            <p class="feature-desc">Premium quality digital marketing services at prices designed specifically for small and growing businesses without compromising on results.</p>
-        </div>
-        <div class="feature">
-            <div class="feature-icon"><img src="./soruces/Data-Driven Results.png" alt="Data-Driven Results - Analytics and Performance Metrics"></div>
-            <h3 class="feature-title">Data-Driven Results</h3>
-            <p class="feature-desc">Every marketing decision backed by real analytics and measurable performance metrics. We focus on ROI, not vanity metrics, to drive actual business growth.</p>
-        </div>
-        <div class="feature">
-            <div class="feature-icon"><img src="./soruces/Local Expertise.png" alt="Local Expertise - Tamil Nadu Market Knowledge"></div>
-            <h3 class="feature-title">Local Market Expertise</h3>
-            <p class="feature-desc">Deep understanding of Tamil Nadu markets, local consumer behavior, and regional business culture. We market TO your customers, not AT them.</p>
-        </div>
-        <div class="feature">
-            <div class="feature-icon"><img src="./soruces/Dedicated Support.png" alt="Dedicated Support - WhatsApp and Quick Assistance"></div>
-            <h3 class="feature-title">Dedicated 24/7 Support</h3>
-            <p class="feature-desc">Responsive support team available via WhatsApp, email, and phone for quick assistance and ongoing client success. We're always here when you need us.</p>
-        </div>
-        <div class="feature">
-            <div class="feature-icon"><img src="./soruces/Customized Plans.png" alt="Customized Plans - Personalized Digital Marketing Strategy"></div>
-            <h3 class="feature-title">100% Customized Plans</h3>
-            <p class="feature-desc">Every strategy is tailored specifically to your business goals, target audience, and budget. No cookie-cutter solutions – only what works for YOU.</p>
-        </div>
-    </div>
-</section>
-
-<div class="section-divider"></div>
-<!-- TESTIMONIALS -->
-<section class="section" id="testimonials">
-    <div style="text-align:center"><span class="section-label">Client Stories</span></div>
-    <h2 class="section-title reveal">Client Testimonials & Success Stories</h2>
-    <p class="section-subtitle">Real success stories from actual businesses we've transformed with digital marketing in Tamil Nadu</p>
-
-    <div class="testimonials-container">
-        <div class="testimonial-card reveal" id="testimonial-1">
-            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-text">"MMKS transformed our entire digital presence. Within 6 months, our sales increased by 300%. Truly affordable and highly professional!"</p>
-            <div class="testimonial-author">
-                <div class="author-avatar">RK</div>
-                <div class="author-info"><h4>Trend Wear Fashion</h4><p>E-commerce Business Owner, Kovilpatti</p></div>
-            </div>
-        </div>
-        <div class="testimonial-card reveal" id="testimonial-2" style="display:none">
-            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-text">"The GMB management from MMKS brought us so many local customers we never reached before. Best investment for our shop!"</p>
-            <div class="testimonial-author">
-                <div class="author-avatar">SJ</div>
-                <div class="author-info"><h4>SJ Design Agency</h4><p>Design Agency Owner, Tamil Nadu</p></div>
-            </div>
-        </div>
-        <div class="testimonial-card reveal" id="testimonial-3" style="display:none">
-            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-text">"From 2K to 50K Instagram followers in just a few months! MMKS exceeded all our expectations and the pricing is very reasonable."</p>
-            <div class="testimonial-author">
-                <div class="author-avatar">AJ</div>
-                <div class="author-info"><h4>AJ-Collection</h4><p>Fashion Brand Owner</p></div>
-            </div>
-        </div>
-        <div class="carousel-controls">
-            <button class="carousel-btn" onclick="changeTestimonial(-1)">❮</button>
-            <button class="carousel-btn" onclick="changeTestimonial(1)">❯</button>
-        </div>
-    </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- CONTACT -->
-<section class="section" id="contact">
-    <div style="text-align:center"><span class="section-label">Let's Talk</span></div>
-    <h2 class="section-title reveal">Get Free Digital Marketing Consultation</h2>
-    <p class="section-subtitle">Ready to grow your business online? Contact us today for a free consultation and customized digital marketing strategy for your business</p>
-
-    <div class="contact-wrapper">
-        <div class="contact-info">
-            <div class="contact-item reveal">
-                <div class="contact-icon">📱</div>
-                <div class="contact-details">
-                    <h4>WhatsApp</h4>
-                    <p><a href="https://wa.me/918608717184">+91 86087 17184</a></p>
-                </div>
-            </div>
-            <div class="contact-item reveal">
-                <div class="contact-icon">📞</div>
-                <div class="contact-details">
-                    <h4>Phone</h4>
-                    <p><a href="tel:+918608717184">+91 86087 17184</a></p>
-                </div>
-            </div>
-            <div class="contact-item reveal">
-                <div class="contact-icon">📧</div>
-                <div class="contact-details">
-                    <h4>Email</h4>
-                    <p><a href="mailto:mmksagency.official@gmail.com">mmksagency.official@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="contact-item reveal">
-                <div class="contact-icon">📍</div>
-                <div class="contact-details">
-                    <h4>Location</h4>
-                    <p>Kovilpatti, Tamil Nadu, India</p>
-                </div>
-            </div>
-
-            <div style="background: rgba(30,126,52,0.08); border: 1px solid rgba(30,126,52,0.2); border-radius: 14px; padding: 1.5rem; margin-top: 1rem;">
-                <p style="color: var(--green-bright); font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif; margin-bottom: 0.5rem;">✨ Our Promise</p>
-                <p style="color: var(--text-muted); font-size: 0.9rem; font-style: italic;">"Let's grow your business digitally with smart, creative, and affordable solutions."</p>
-            </div>
-        </div>
-
-        <form class="contact-form reveal" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" placeholder="Your full name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="your@email.com" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone / WhatsApp</label>
-                <input type="tel" id="phone" placeholder="+91 86087 17184" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Tell Us About Your Business</label>
-                <textarea id="message" placeholder="What services are you interested in?..." required></textarea>
-            </div>
-            <button type="submit" class="form-submit">Send Message 🚀</button>
-        </form>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <div class="footer-content">
-        <div class="footer-section">
-            <div class="logo" style="margin-bottom: 1rem;">MMKS</div>
-            <p class="footer-tagline">"Let's grow your business digitally with smart, creative, and affordable solutions."</p>
-            <br>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">📍 Kovilpatti, Tamil Nadu, India<br>📱 +91 86087 17184</p>
-        </div>
-        <div class="footer-section">
-            <h3>Services</h3>
-            <ul>
-                <li><a href="#services">Social Media Marketing</a></li>
-                <li><a href="#services">Google My Business</a></li>
-                <li><a href="#services">WhatsApp Automation</a></li>
-                <li><a href="#services">Website Development</a></li>
-                <li><a href="#services">Billing Software</a></li>
-                <li><a href="#services">Training Programs</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Packages</h3>
-            <ul>
-                <li><a href="#packages">🟢 Starter Plan — ₹1,999</a></li>
-                <li><a href="#packages">🔵 Growth Plan — ₹3,999</a></li>
-                <li><a href="#packages">🔴 Premium Plan — ₹6,499</a></li>
-                <li><a href="#contact">Free Consultation</a></li>
-                <li><a href="#pricing">View All Pricing</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Follow Us</h3>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/share/1BmhkRfUFC/" class="social-icon" target="_blank">f</a>
-                <a href="https://www.instagram.com/mmks_digital_marketing_?igsh=NnhmeDF5c2d1bnRu" class="social-icon" target="_blank">📷</a>
-                <a href="https://wa.me/918608717184" class="social-icon" target="_blank">💬</a>
-            </div>
-            <br>
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>© 2024 MMKS Digital Marketing Agency, Kovilpatti. All rights reserved. | Crafted with ❤️ for your success</p>
-    </div>
-</footer>
-
-<!-- FLOATING -->
-<div class="floating-actions">
-    <a href="https://wa.me/918608717184" class="fab" target="_blank" title="WhatsApp Us"><img src="./soruces/whatsapp-button.png" alt="WhatsApp" style="width: 85px; height: 85px; border-radius: 60%;"></a>
-    <button class="fab" onclick="scrollToTop()" title="Back to top"><img src="./soruces/arrow-button.png" alt="Back to top" style="width: 80px; height: 80px; border-radius: 60%;"></button>
-</div>
-
-<script>
-    // Mobile Menu Toggle
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
-        const btn = document.getElementById('mobile-toggle');
-        menu.classList.toggle('active');
-        btn.setAttribute('aria-expanded', menu.classList.contains('active') ? 'true' : 'false');
-    }
-    document.getElementById('mobile-toggle').addEventListener('click', toggleMobileMenu);
-    
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.remove('active');
-            document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false');
-        });
-    });
-
-    // Scroll Progress
-    window.addEventListener('scroll', () => {
-        const el = document.querySelector('.scroll-progress');
-        const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        el.style.width = pct + '%';
-    });
-
-    // Reveal on scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Testimonial carousel
-    let cur = 1;
-    function changeTestimonial(dir) {
-        document.getElementById(`testimonial-${cur}`).style.display = 'none';
-        cur += dir;
-        if (cur > 3) cur = 1;
-        if (cur < 1) cur = 3;
-        document.getElementById(`testimonial-${cur}`).style.display = 'block';
-    }
-    setInterval(() => changeTestimonial(1), 8000);
-
-    // Form - Send via WhatsApp and Email
-    function handleSubmit(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const message = document.getElementById('message').value;
-        
-        // WhatsApp Message
-        const whatsappMessage = `Hello! I'm ${name}. ${message} You can reach me at ${email} or ${phone}`;
-        const whatsappUrl = `https://wa.me/918608717184?text=${encodeURIComponent(whatsappMessage)}`;
-        
-        // Email via FormSubmit.co
-        const emailData = new FormData();
-        emailData.append('email', email);
-        emailData.append('name', name);
-        emailData.append('phone', phone);
-        emailData.append('message', message);
-        emailData.append('_captcha', 'false');
-        
-        // Send email using FormSubmit
-        fetch('https://formsubmit.co/ajax/mmksagency.official@gmail.com', {
-            method: 'POST',
-            body: emailData
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Open WhatsApp after email is sent
-            window.open(whatsappUrl, '_blank');
-            alert('✅ Message sent via Email and WhatsApp! We will contact you soon. 📱');
-            e.target.reset();
-        })
-        .catch(error => {
-            console.error('Email send error:', error);
-            // Still open WhatsApp even if email fails
-            window.open(whatsappUrl, '_blank');
-            alert('✅ Message sent to WhatsApp! Email delivery is being processed. 📱');
-            e.target.reset();
-        });
-    }
-
-    // Scroll top
-    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-
-    // Smooth anchor scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', function(e) {
-            const t = document.querySelector(this.getAttribute('href'));
-            if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-        });
-    });
-
-    const portfolioDetails = {
-        'sj-design': {
-            img: 'soruces/sj_design_agency.jpeg.jpg',
-            tag: 'Brand Design',
-            title: 'SJ Design Agency Branding',
-            result: 'Professional graphic design and brand identity',
-            description: 'A polished visual identity package designed for high-end brand positioning, including logo, stationery, and marketing visuals.'
-        },
-        'powerbuild': {
-            img: 'soruces/powerbuild_hardware.jpeg.jpg',
-            tag: 'Logo Design',
-            title: 'PowerBuild Hardware Logo',
-            result: 'Strong brand identity for a construction hardware business',
-            description: 'A robust logo design that reflects strength and reliability, paired with a color system that works across digital and print.'
-        },
-        'ms-creatix': {
-            img: 'soruces/ms_design_creatix.jpeg.jpg',
-            tag: 'Creative Branding',
-            title: 'MS Design Creatix Identity',
-            result: 'Vibrant visual identity for a creative design studio',
-            description: 'A colorful and modern brand system created for a creative agency, focused on showing energy, innovation, and professionalism.'
-        },
-        'petnest': {
-            img: 'soruces/petnest-pet-store.jpeg.png',
-            tag: 'Packaging',
-            title: 'Petnest Pet Store Branding',
-            result: 'Warm, friendly branding for a pet store',
-            description: 'A charming brand look developed for a pet store, combining playful imagery with a natural, comforting color palette.'
-        },
-        'trendwear': {
-            img: 'soruces/trendwear_fashion.jpg',
-            tag: 'Fashion Branding',
-            title: 'Trendwear Fashion Identity',
-            result: 'Stylish logo and brand design for a fashion label',
-            description: 'A sleek and fashionable brand identity designed for a modern clothing label, with emphasis on elegance and aspirational appeal.'
-        },
-        'kovilpatti-snakes': {
-            img: './soruces/kovilpatti_snakes.png',
-            tag: 'Sweats Packaging',
-            title: 'Kovilpatti Snakes',
-            result: 'kovlipatti Snakes',
-            description: 'AJ Collection is a stylish womens fashion accessories brand specializing in trendy hair accessories, elegant claw clips, scrunchies, bracelets, and everyday fashion essentials. The brand focuses on combining beauty, comfort, and modern style to create products that enhance every woman’s look. With premium designs, attractive colors, and fashionable collections, AJ Collection brings confidence and elegance to every customer.'
-        },
-        'aj-collection': {
-            img: './soruces/aj_collection.png',
-            tag: 'Fashion Branding',
-            title: 'AJ Collection',
-            result: 'AJ Collection',
-            description: 'AJ Collection is a stylish womens fashion accessories brand specializing in trendy hair accessories, elegant claw clips, scrunchies, bracelets, and everyday fashion essentials. The brand focuses on combining beauty, comfort, and modern style to create products that enhance every woman’s look. With premium designs, attractive colors, and fashionable collections, AJ Collection brings confidence and elegance to every customer.'
-        }
-    };
-
-    function openPortfolioModal(id) {
-        const data = portfolioDetails[id];
-        if (!data) return;
-        document.getElementById('modal-image').src = data.img;
-        document.getElementById('modal-image').alt = data.title;
-        document.getElementById('modal-tag').textContent = data.tag;
-        document.getElementById('modal-title').textContent = data.title;
-        document.getElementById('modal-result').textContent = data.result;
-        document.getElementById('modal-description').textContent = data.description;
-        document.getElementById('portfolio-modal').classList.add('active');
-        document.getElementById('portfolio-modal').setAttribute('aria-hidden', 'false');
-    }
-
-    function closePortfolioModal() {
-        document.getElementById('portfolio-modal').classList.remove('active');
-        document.getElementById('portfolio-modal').setAttribute('aria-hidden', 'true');
-    }
-
-    // Load Events from Admin Dashboard
-    function loadAdminEvents() {
-        try {
-            const mmksEvents = JSON.parse(localStorage.getItem('mmksEvents') || '[]');
-            const offersGrid = document.querySelector('.offers-grid');
-            
-            if (mmksEvents.length === 0) {
-                // If no admin events, keep the hardcoded ones
-                return;
-            }
-
-            // Clear and repopulate with admin events
-            offersGrid.innerHTML = mmksEvents.map(event => `
-                <div class="offer-card reveal" style="background-image: url('soruces/offers.png');">
-                    <div class="offer-card-content">
-                        <div class="offer-icon">${event.icon}</div>
-                        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-                            <div class="offer-title">${event.title}</div>
-                            <div class="offer-desc">${event.description}</div>
+            <div class="hero-right">
+                <div class="floating-card">
+                    <h3>Request a Call Back</h3>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" placeholder="Your name" required>
                         </div>
-                        <div class="offer-details">
-                            <div class="offer-price">${event.price}</div>
-                            <div class="offer-period">${event.period}</div>
+                        <div class="form-group">
+                            <label>Last name</label>
+                            <input type="text" placeholder="Your last name" required>
                         </div>
-                        <button class="offer-cta">${event.cta}</button>
+                        <div class="form-group">
+                            <label>Your email*</label>
+                            <input type="email" placeholder="Your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message*</label>
+                            <textarea placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-send">Send Message</button>
+                    </form>
+                </div>
+                <div class="info-cards">
+                    <div class="info-card info-hours">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Mon-Sat 8am-8pm</p>
+                        </div>
+                    </div>
+                    <div class="info-card info-phone">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Emergency Call</h3>
+                            <p>+91 86087 17184</p>
+                        </div>
                     </div>
                 </div>
-            `).join('');
+            </div>
+    </section>
 
-            // Re-observe new elements for animation
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-            }, { threshold: 0.08 });
-            document.querySelectorAll('.offer-card').forEach(el => observer.observe(el));
-        } catch (error) {
-            console.error('Error loading admin events:', error);
-        }
-    }
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <span class="section-subtitle">(WHO I AM)</span>
+            <h2 class="section-title">Licensed, background-checked and local.</h2>
+            <p class="about-description">MMKS Digital Marketing Agency is a modern digital marketing and creative solutions agency focused on helping businesses grow online with smart branding, marketing, and technology-driven strategies. We specialize in services such as Social Media Marketing, SEO, Meta Ads, Content Marketing, Lead Generation, Poster Designing, Branding, and AI-powered business solutions.</p>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Safe registered where required</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Clean, on-time visits</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Digital quotes & receipts</span>
+                </div>
+            </div>
+            <button class="btn-learn-more" onclick="document.getElementById('about-section').scrollIntoView({behavior: 'smooth'})">Learn more about me →</button>
+        </div>
+    </section>
 
-    function loadUploadedPosters() {
-        try {
-            const posters = JSON.parse(localStorage.getItem('posters') || '[]');
-            const grid = document.getElementById('uploaded-posters-grid');
-            if (!grid) return;
+    <!-- FOUNDERS SECTION -->
+    <section class="founders" id="about-section">
+        <div class="founders-container">
+            <div class="founders-image">
+                <img src="src/founder.jpeg" alt="Founders">
+            </div>
+            <div class="founders-content">
+                <span class="section-subtitle" style="color: var(--accent-blue);">(WE ARE FOUNDERS)</span>
+                <h2>I AM SANKARANARAYANAN</h2>
+                <p>Founded with a vision to help businesses grow digitally, MMKS Digital Marketing Agency focuses on creative marketing, practical learning, and real business results. Our goal is to make digital success simple, affordable, and accessible for everyone.</p>
+                <h2 style="margin-top: 2rem;">I'M KABILAL</h2>
+                <p>Passionate about creativity and innovation, the Co-Founder of MMKS Digital Marketing Agency is dedicated to helping brands build a strong online presence through smart digital strategies and modern design solutions.</p>
+                <button class="btn-view-more" onclick="document.getElementById('about-section').scrollIntoView({behavior: 'smooth'});">VIEW MORE</button>
+            </div>
+        </div>
+    </section>
 
-            if (posters.length === 0) {
-                grid.innerHTML = `
-                    <div class="no-posters" style="grid-column: 1/-1; text-align:center; padding:2rem; background: white; border-radius: 16px; border: 1px solid rgba(30, 126, 52, 0.1); box-shadow: 0 10px 30px rgba(30, 126, 52, 0.06);">
-                        <div class="no-posters-icon">🎨</div>
-                        <p>No posters uploaded yet. Please add a poster from the admin dashboard.</p>
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio">
+        <div class="portfolio-container">
+            <div class="portfolio-title">
+                <span class="section-subtitle">(OUR WORK)</span>
+                <h2 class="section-title">Portfolio: Real Projects & Results</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <div class="portfolio-number">1</div>
+                        <img src="src/sj_design_agency.jpeg.jpg" alt="SJ Design Agency Branding">
                     </div>
-                `;
-                return;
-            }
-
-            grid.innerHTML = posters.map(poster => `
-                <div class="portfolio-item">
-                    <div class="portfolio-image"><img src="${poster.image}" alt="${poster.title}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22%23999%22%3EImage%20Error%3C/text%3E%3C/svg%3E'" /></div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">Uploaded Poster</span>
-                        <h3 class="portfolio-title">${poster.title}</h3>
-                        <p class="portfolio-result">${poster.description}</p>
+                        <h3>SJ Design Agency Branding</h3>
+                        <p>Professional graphic design, social media visuals, and brand storytelling for a creative studio.</p>
                     </div>
                 </div>
-            `).join('');
-        } catch (error) {
-            console.error('Error loading uploaded posters:', error);
-        }
-    }
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <div class="portfolio-number">2</div>
+                        <img src="src/powerbuild_hardware.jpeg.jpg" alt="PowerBuild Hardware Branding">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>PowerBuild Hardware</h3>
+                        <p>Powerful brand identity and marketing collateral for a construction and hardware business.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <div class="portfolio-number">3</div>
+                        <img src="src/ms_design_creatix.jpeg.jpg" alt="MS Design Creatix Branding">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>MS Design Creatix</h3>
+                        <p>Creative brand development and visual identity for a modern design agency.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <div class="portfolio-number">4</div>
+                        <img src="src/trendwear_fashion.jpg" alt="Trend Wear Fashion Branding">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Trend Wear Fashion</h3>
+                        <p>Fashion marketing and creative design that supports local retail growth and customer loyalty.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <div class="portfolio-number">5</div>
+                        <img src="src/aj_collection.png" alt="AJ Collection Branding">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>AJ Collection</h3>
+                        <p>Brand refresh and campaign design for a premium clothing label.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <div class="portfolio-number">6</div>
+                        <img src="src/kovilpatti_snakes.png" alt="Kovilpatti Snakes Branding">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Kovilpatti Snakes</h3>
+                        <p>Local business marketing and web presence optimization for a niche regional brand.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
-    // Load events when page loads
-    document.addEventListener('DOMContentLoaded', () => {
-        loadAdminEvents();
-        loadUploadedPosters();
-    });
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="why-choose">
+        <div class="why-choose-container">
+            <div class="why-choose-image">
+                <img src="src/thinking.png" alt="Why Choose Us">
+            </div>
+            <div class="why-choose-content">
+                <h2>Why people choose My Services</h2>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Proven Track Record</h3>
+                        <p>5+ years of digital marketing expertise delivering exceptional results for 50+ businesses across Tamil Nadu with documented success stories.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Truly Affordable Pricing</h3>
+                        <p>Premium quality digital marketing services at prices designed specifically for small and growing businesses without compromising on results.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Dedicated 24/7 Support</h3>
+                        <p>Responsive support team available via WhatsApp, email, and phone for quick assistance and ongoing client success. We're always here when you need us.</p>
+                    </div>
+                </div>
+                <button class="btn-contact-me">Contact Me</button>
+            </div>
+        </div>
+    </section>
 
-    // Update homepage posters when admin saves new posters in another tab/page
-    window.addEventListener('storage', (event) => {
-        if (event.key === 'posters' || event.key === 'postersLastUpdated') {
-            loadUploadedPosters();
-        }
-    });
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <div class="testimonials-header">
+                <h2 class="section-title">Client Testimonials & Success Stories</h2>
+                <p style="color: var(--medium-gray);">Real feedback from real customers</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The GMB management from MMKS brought us so many local customers we never reached before. Best investment for our shop!"</p>
+                    <p class="testimonial-author">SJ Design Agency</p>
+                    <p class="testimonial-title">Design Agency Owner, Tamil Nadu</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"MMKS transformed our entire digital presence. Within 6 months, our sales increased by 300%. Truly affordable and highly professional!"</p>
+                    <p class="testimonial-author">Trend Wear Fashion</p>
+                    <p class="testimonial-title">E-Commerce Business Owner, Kovilpatti, Homeowner</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"From 2K to 50K Instagram followers in just a few months! MMKS exceeded all our expectations and the pricing is very reasonable"</p>
+                    <p class="testimonial-author">AJ-COLLECTION.</p>
+                    <p class="testimonial-title">Fashion brand Owner</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section class="faq">
+        <div class="faq-container">
+            <div class="faq-title">
+                <h2>Have questions? I've got answers.</h2>
+                <p>Common questions about my digital marketing services</p>
+            </div>
+ 
+            <div class="accordion-item">
+                <button class="accordion-header active" onclick="toggleAccordion(this)">
+                    <span>What services does MMKS Digital Marketing Agency provide?</span>
+                    <div class="accordion-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </button>
+                <div class="accordion-content active">
+                    <div class="accordion-text">We provide services like Social Media Marketing, SEO, Meta Ads, Content Marketing, Poster Design, Branding, Lead Generation, and AI-based digital solutions.</div>
+                </div>
+            </div>
+ 
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Is this course beginner friendly?</span>
+                    <div class="accordion-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-text">Yes, all our courses and training programs are completely beginner friendly with practical step-by-step teaching.</div>
+                </div>
+            </div>
+ 
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Do you provide online classes?</span>
+                    <div class="accordion-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-text">Yes, we provide live online classes in both Tamil and English for students, freelancers, and business owners.</div>
+                </div>
+            </div>
+ 
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Will I get practical training and support?</span>
+                    <div class="accordion-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-text">Yes, we focus on real-time practical learning and also provide dedicated support through WhatsApp groups.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MMKS AGENCY</h3>
+                    <p class="footer-tagline">"Let's grow your business digitally with smart, creative, and affordable solutions."</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Social</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 86087 17184</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>mmksagency@official@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Shanmuga nagar, Kadalaiyur road, kovilpatti tamil Nadu -628501</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 MMKS Digital Marketing Agency, Kovilpatti. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: var(--accent-green);"></i> for your success</p>
+            </div>
+        </div>
+    </footer>
 
-    // Refresh posters when returning to the index page after switching tabs
-    document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') {
-            loadUploadedPosters();
+    <script>
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinksMenu = document.getElementById('navLinks');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinksMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksMenu.classList.remove('active');
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+
+        // Set active nav link based on scroll position
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you soon.');
+            document.getElementById('contact-form').reset();
+        });
+
+        // Accordion functionality
+        function toggleAccordion(button) {
+            const accordionItem = button.parentElement;
+            const accordionContent = accordionItem.querySelector('.accordion-content');
+            const isActive = button.classList.contains('active');
+
+            // Close all other accordions
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                if (header !== button) {
+                    header.classList.remove('active');
+                    header.parentElement.querySelector('.accordion-content').classList.remove('active');
+                }
+            });
+
+            // Toggle current accordion
+            button.classList.toggle('active');
+            accordionContent.classList.toggle('active');
         }
-    });
-</script>
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.portfolio-card, .testimonial-card, .service-card').forEach(element => {
+            element.style.opacity = '0';
+            observer.observe(element);
+        });
+    </script>
 </body>
 </html>
